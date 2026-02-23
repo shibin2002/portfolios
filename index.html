@@ -110,7 +110,6 @@
         /* Base Styles */
         body {
             cursor: none;
-            /* We use a custom cursor */
             background-color: #FFFDF5;
             background-image:
                 radial-gradient(#000 1px, transparent 1px),
@@ -149,23 +148,13 @@
         }
 
         @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         @keyframes scroll-reverse {
-            0% {
-                transform: translateX(-50%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
         }
 
         /* Reveal Animation */
@@ -187,29 +176,21 @@
         }
 
         @keyframes glitch-anim {
-            0% {
-                transform: translate(0)
-            }
+            0%   { transform: translate(0) }
+            20%  { transform: translate(-2px, 2px) }
+            40%  { transform: translate(-2px, -2px) }
+            60%  { transform: translate(2px, 2px) }
+            80%  { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
 
-            20% {
-                transform: translate(-2px, 2px)
-            }
-
-            40% {
-                transform: translate(-2px, -2px)
-            }
-
-            60% {
-                transform: translate(2px, 2px)
-            }
-
-            80% {
-                transform: translate(2px, -2px)
-            }
-
-            100% {
-                transform: translate(0)
-            }
+        /* Contact card hover */
+        .contact-item {
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .contact-item:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0px 0px #000;
         }
     </style>
 </head>
@@ -222,8 +203,7 @@
 
     <div id="cursor" class="w-6 h-6 bg-white rounded-full border-2 border-black hidden lg:block"></div>
 
-    <div class="fixed top-0 left-0 h-2 bg-neo-green z-[60] border-b-2 border-black" id="progressBar" style="width: 0%">
-    </div>
+    <div class="fixed top-0 left-0 h-2 bg-neo-green z-[60] border-b-2 border-black" id="progressBar" style="width: 0%"></div>
 
     <nav class="fixed top-0 w-full z-50 px-4 py-4 pointer-events-none">
         <div class="max-w-7xl mx-auto flex justify-between items-center pointer-events-auto">
@@ -242,47 +222,39 @@
                 <a href="#projects"
                     class="px-3 py-1 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors cursor-hover">/WORK</a>
                 <a href="#contact"
-                    class="px-3 py-1 font-mono font-bold text-sm bg-neo-yellow border border-black hover:bg-neo-pink transition-colors cursor-hover">HIRE
-                    ME</a>
+                    class="px-3 py-1 font-mono font-bold text-sm bg-neo-yellow border border-black hover:bg-neo-pink transition-colors cursor-hover">HIRE ME</a>
             </div>
         </div>
     </nav>
 
-    <section
-        class="min-h-screen flex flex-col justify-center items-center px-4 pt-20 relative overflow-hidden border-b-4 border-black">
-        <div
-            class="absolute top-1/3 left-[10%] w-16 h-16 bg-neo-blue border-4 border-black shadow-hard animate-bounce hidden lg:block rotate-12">
-        </div>
-        <div
-            class="absolute bottom-1/3 right-[10%] w-24 h-24 bg-neo-pink rounded-full border-4 border-black shadow-hard hidden lg:block animate-pulse">
-        </div>
+    <!-- HERO -->
+    <section class="min-h-screen flex flex-col justify-center items-center px-4 pt-20 relative overflow-hidden border-b-4 border-black">
+        <div class="absolute top-1/3 left-[10%] w-16 h-16 bg-neo-blue border-4 border-black shadow-hard animate-bounce hidden lg:block rotate-12"></div>
+        <div class="absolute bottom-1/3 right-[10%] w-24 h-24 bg-neo-pink rounded-full border-4 border-black shadow-hard hidden lg:block animate-pulse"></div>
         <div class="absolute top-20 right-20 text-9xl opacity-5 font-black select-none pointer-events-none">CODE</div>
 
         <div class="relative z-10 text-center max-w-5xl">
-            <div
-                class="inline-block bg-neo-white border-2 border-black px-4 py-1 mb-6 shadow-hard rotate-[-2deg] reveal">
+            <div class="inline-block bg-neo-white border-2 border-black px-4 py-1 mb-6 shadow-hard rotate-[-2deg] reveal">
                 <span class="font-mono font-bold text-neo-green bg-black px-2 mr-2">●</span>
                 <span class="font-mono font-bold">SYSTEM STATUS: ONLINE</span>
             </div>
 
-            <h1
-                class="text-[13vw] md:text-[10vw] leading-[0.8] font-black uppercase tracking-tighter mb-6 reveal mix-blend-darken">
+            <h1 class="text-[13vw] md:text-[10vw] leading-[0.8] font-black uppercase tracking-tighter mb-6 reveal mix-blend-darken">
                 FULL STACK<br>
                 <span class="text-white text-stroke-black" style="-webkit-text-stroke: 3px black;">DEVELOPER</span>
             </h1>
 
-            <p
-                class="font-mono text-lg md:text-2xl max-w-2xl mx-auto mb-10 bg-neo-yellow border-2 border-black p-4 shadow-hard reveal rotate-1">
-                I build digital products that refuse to be boring. <br>
-                <b>React • Python • Java • Node</b>
-            </p>
+           <p class="font-mono text-lg md:text-2xl max-w-2xl mx-auto mb-10 bg-neo-yellow border-2 border-black p-4 shadow-hard reveal rotate-1">
+    I turn ideas into fast, sharp, and intentional digital products.<br>
+    <b>React • Node • MySQL • Python</b>
+</p>
 
             <div class="flex flex-col md:flex-row justify-center gap-6 reveal">
                 <a href="#projects"
                     class="bg-black text-white border-2 border-black px-10 py-5 text-xl font-bold shadow-hard hover:bg-neo-green hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
                     VIEW DATABASE
                 </a>
-                <a href="Assets\Resume\Shibin.pdf" download
+                <a href="Assets/Resume/Shibin.pdf" download
                     class="bg-neo-white text-black border-2 border-black px-10 py-5 text-xl font-bold shadow-hard hover:bg-neo-pink hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover flex items-center justify-center gap-2">
                     <i class="ri-download-line"></i> DOWNLOAD CV
                 </a>
@@ -290,6 +262,7 @@
         </div>
     </section>
 
+    <!-- MARQUEE -->
     <div class="border-b-4 border-black bg-neo-blue py-3 relative z-20">
         <div class="marquee-container font-mono font-bold text-2xl text-white">
             <div class="marquee-content">
@@ -299,39 +272,42 @@
         </div>
     </div>
 
+    <!-- ABOUT -->
     <section id="about" class="py-24 px-4 max-w-7xl mx-auto border-x-4 border-black bg-white my-12 shadow-hard-lg">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4 reveal">
                 <div class="aspect-square bg-gray-200 border-4 border-black relative shadow-hard overflow-hidden group">
                     <img src="Assets/images/img.png" alt="Shibin"
                         class="w-full h-full object-cover transition-all duration-500">
-                    
                 </div>
             </div>
             <div class="md:col-span-8 flex flex-col justify-center reveal">
-                <h2 class="text-6xl font-black uppercase mb-6">Who am I?</h2>
-                <p class="font-mono text-xl leading-relaxed mb-6">
-                    I am Shibin. A creative developer who believes the web has become too sanitized. I bring <span
-                        class="bg-neo-yellow px-1 border border-black">personality</span> back to code.
-                </p>
-                <p class="font-mono text-lg mb-8 text-gray-600 border-l-4 border-neo-purple pl-4">
-                    > Specialized in Designing and Web Development.<br>
-                    > Obsessed with Perfection and AI.<br>
-                    > 2+ years of shipping code that works.
-                </p>
+    <h2 class="text-6xl font-black uppercase mb-6">Who am I?</h2>
+    <p class="font-mono text-xl leading-relaxed mb-6">
+        I am Shibin. A developer who treats interfaces like
+        <span class="bg-neo-yellow px-1 border border-black">experiences</span> —
+        not just screens. I design with intent and build with obsession.
+    </p>
+    <p class="font-mono text-lg mb-8 text-gray-600 border-l-4 border-neo-purple pl-4">
+        > Designing interfaces people actually enjoy using.<br>
+        > Building with React, Tailwind, and whatever the job demands.<br>
+        > 2+ years of turning ideas into shipped products.<br>
+        > Currently: deep in AI integrations and loving it.
+    </p>
 
-                <div class="flex gap-4">
-                    <div class="bg-neo-black text-white px-4 py-2 font-mono text-sm border-2 border-transparent">
-                        📍 LOCATION: WORLDWIDE
-                    </div>
-                    <div class="bg-neo-green text-black px-4 py-2 font-mono text-sm border-2 border-black">
-                        🟢 STATUS: AVAILABLE
-                    </div>
-                </div>
-            </div>
+    <div class="flex gap-4 flex-wrap">
+        <div class="bg-neo-black text-white px-4 py-2 font-mono text-sm border-2 border-transparent">
+            📍 LOCATION: Remote / India
+        </div>
+        <div class="bg-neo-green text-black px-4 py-2 font-mono text-sm border-2 border-black">
+            🟢 STATUS: AVAILABLE
+        </div>
+    </div>
+</div>
         </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills" class="py-20 bg-neo-black text-neo-white border-y-4 border-black relative overflow-hidden">
         <div class="absolute inset-0 opacity-20"
             style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 40px 40px;">
@@ -350,145 +326,135 @@
 
             <div class="flex flex-wrap justify-center md:justify-start">
 
-    <!-- ░░ CORE LANGUAGES ░░ -->
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-orange transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ CORE</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">HTML5</div>
-    </div>
+                <!-- CORE LANGUAGES -->
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-orange transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ CORE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">HTML5</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ CORE</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">CSS</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ CORE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">CSS</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">JavaScript</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">JavaScript</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Python</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Python</div>
+                </div>
 
-    
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-purple transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">C++</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-purple transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">C++</div>
-    </div>
+                <!-- FRAMEWORKS & LIBRARIES -->
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LIBRARY</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">REACT</div>
+                </div>
 
-    
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">NEXT.JS</div>
+                </div>
 
-    <!-- ░░ FRAMEWORKS & LIBRARIES ░░ -->
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LIBRARY</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">REACT</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Express</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">NEXT.JS</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Django</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Express</div>
-    </div>
+                <!-- BACKEND & RUNTIME -->
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ BACKEND</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">NODE.JS</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Django</div>
-    </div>
+                <!-- STYLING -->
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-pink transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ STYLING</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">TAILWIND</div>
+                </div>
 
-    
+                <!-- DATABASES -->
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-purple transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ DATA</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">MySQL</div>
+                </div>
 
-    <!-- ░░ BACKEND & RUNTIME ░░ -->
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ BACKEND</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">NODE.JS</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ DATA</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">MongoDB</div>
+                </div>
 
-    <!-- ░░ STYLING ░░ -->
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-pink transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ STYLING</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">TAILWIND</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ QUERY</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GRAPHQL</div>
+                </div>
 
-    <!-- ░░ DATABASES ░░ -->
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-purple transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ DATA</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">MySQL</div>
-    </div>
+                <!-- TOOLS -->
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ VERSION</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GIT</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ DATA</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">MongoDB</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ OPS</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GitHub</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ QUERY</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GRAPHQL</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-pink transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ TOOLS</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">NPM</div>
+                </div>
 
-    <!-- ░░ TOOLS ░░ -->
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ VERSION</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GIT</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-orange transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ TOOLS</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Postman</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ OPS</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GitHub</div>
-    </div>
+                <!-- 3D -->
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ 3D</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">THREE.JS</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-pink transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ TOOLS</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">NPM</div>
-    </div>
+                <!-- OTHER -->
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ OTHER</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">WordPress</div>
+                </div>
 
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-orange transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ TOOLS</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Postman</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ OTHER</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">SEO</div>
+                </div>
 
-    
+                <!-- SOFT SKILLS -->
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ SOFT SKILL</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Presentation</div>
+                </div>
 
-    <!-- ░░ 3D ░░ -->
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ 3D</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">THREE.JS</div>
-    </div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-purple transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ SOFT SKILL</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Planning</div>
+                </div>
 
-    <!-- ░░ OTHER ░░ -->
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ OTHER</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">WordPress</div>
-    </div>
-
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ OTHER</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">SEO</div>
-    </div>
-
-    <!-- ░░ SOFT SKILLS ░░ -->
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ SOFT SKILL</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Presentation</div>
-    </div>
-
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-purple transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ SOFT SKILL</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Planning</div>
-    </div>
-
-    <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-pink transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-        <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ SOFT SKILL</div>
-        <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Teamwork</div>
-    </div>
-
-
-</div>
+                <div class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-pink transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ SOFT SKILL</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Teamwork</div>
+                </div>
+            </div>
 
             <div class="border-t-4 border-white mt-8 pt-4 flex justify-between font-mono text-xs text-gray-500">
                 <span>TOTAL_NODES: 24</span>
@@ -497,52 +463,53 @@
         </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience" class="py-24 px-4 max-w-7xl mx-auto">
         <h2 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter text-center">
             Experience<span class="text-neo-red">_Log</span>
         </h2>
 
         <div class="relative border-l-4 border-black ml-4 md:ml-10 space-y-12">
+
+            <!-- Larklabs -->
             <div class="reveal relative pl-8 md:pl-16">
                 <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-yellow border-4 border-black"></div>
                 <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
-                    <div
-                        class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
-                        <h3 class="text-3xl font-black uppercase">Associate Software Developer </h3>
-                        <span class="font-mono font-bold bg-neo-black text-white px-2 py-1"> May 2025 - PRESENT</span>
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
+                        <h3 class="text-3xl font-black uppercase">Associate Software Developer</h3>
+                        <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">May 2025 - PRESENT</span>
                     </div>
                     <p class="font-mono text-xl mb-2 text-neo-yellow font-bold">@ Larklabs</p>
                     <ul class="list-disc list-inside font-mono text-gray-700 space-y-1">
-                        <li>Working on an ERP system, focusing on frontend development, UI consistency, 
-validation, and workflow logic </li>
+                        <li>Working on an ERP system, focusing on frontend development, UI consistency, validation, and workflow logic</li>
                         <li>Collaborating with backend and product teams to deliver scalable business modules</li>
                         <li>Improving system usability, performance, and maintainability</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Rearway -->
             <div class="reveal relative pl-8 md:pl-16">
                 <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-red border-4 border-black"></div>
                 <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
-                    <div
-                        class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
-                        <h3 class="text-3xl font-black uppercase">Software Developer Intern </h3>
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
+                        <h3 class="text-3xl font-black uppercase">Software Developer Intern</h3>
                         <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">Apr 2025 - May 2025</span>
                     </div>
                     <p class="font-mono text-xl mb-2 text-neo-red font-bold">@ Rearway Technologies</p>
                     <ul class="list-disc list-inside font-mono text-gray-700 space-y-1">
-                        <li>Worked on a bidding application </li>
-                        <li>Implemented UI components and assisted in business logic integration </li>
+                        <li>Worked on a bidding application</li>
+                        <li>Implemented UI components and assisted in business logic integration</li>
                         <li>Participated in requirement analysis and testing</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Strokx -->
             <div class="reveal relative pl-8 md:pl-16">
                 <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-green border-4 border-black"></div>
                 <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
-                    <div
-                        class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
                         <h3 class="text-3xl font-black uppercase">Software Developer Intern</h3>
                         <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">Feb 2025 - Apr 2025</span>
                     </div>
@@ -555,130 +522,134 @@ validation, and workflow logic </li>
                 </div>
             </div>
 
+            <!-- Kerala Digital Park -->
             <div class="reveal relative pl-8 md:pl-16">
                 <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-blue border-4 border-black"></div>
                 <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
-                    <div
-                        class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
-                        <h3 class="text-3xl font-black uppercase">Web Developer Trainee </h3>
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
+                        <h3 class="text-3xl font-black uppercase">Web Developer Trainee</h3>
                         <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">Jan 2025 - Feb 2025</span>
                     </div>
                     <p class="font-mono text-xl mb-2 text-neo-blue font-bold">@ Kerala Digital Park</p>
                     <ul class="list-disc list-inside font-mono text-gray-700 space-y-1">
-                        <li>Created an Event Management Website </li>
+                        <li>Created an Event Management Website</li>
                         <li>Focused on responsive UI, forms, and user interaction</li>
                         <li>Gained real-world exposure to project structure and deployment flow</li>
                     </ul>
                 </div>
             </div>
 
-            
+            <!-- Techmaghi -->
+            <div class="reveal relative pl-8 md:pl-16">
+                <div class="absolute -left-[14px] top-2 w-6 h-6 bg-fuchsia-500 border-4 border-black"></div>
+                <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
+                        <h3 class="text-3xl font-black uppercase">Web Developer Trainee</h3>
+                        <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">Aug 2024 - Jan 2025</span>
+                    </div>
+                    <p class="font-mono text-xl mb-2 text-fuchsia-500 font-bold">@ Techmaghi</p>
+                    <ul class="list-disc list-inside font-mono text-gray-700 space-y-1">
+    <li>Completed a hands-on Web Development internship with real-world project training.</li>
+<li>Built responsive applications including a Food Ordering, Doctor Booking system and Netflix clone.</li>
+<li>Strengthened frontend fundamentals and practical development workflows.</li>
+</ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects" class="py-24 bg-neo-yellow border-t-4 border-black px-4 overflow-hidden">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-6xl md:text-9xl font-black mb-16 uppercase tracking-tighter text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)] text-stroke-black"
+            <h2 class="text-6xl md:text-9xl font-black mb-16 uppercase tracking-tighter text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)]"
                 style="-webkit-text-stroke: 3px black;">
                 Selected Works
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
                 <article class="reveal group bg-white border-4 border-black p-4 shadow-hard">
-                    <div
-                        class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
+                    <div class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
                         <img src="Assets/images/phisgaurd.webp"
-                            alt="PhisGaurd - AI-powered cybersecurity platform for threat detection by Shibin"
+                            alt="GameLand - gaming portfolio website by Shibin"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
-                            <h3
-                                class="text-4xl font-black uppercase mb-2 group-hover:text-neo-red transition-colors glitch-hover">
-                                GameLand</h3>
+                            <h3 class="text-4xl font-black uppercase mb-2 group-hover:text-neo-red transition-colors glitch-hover">GameLand</h3>
                             <p class="font-mono text-sm mb-4 max-w-md">A visually stunning gaming portfolio website featuring 3D animations, interactive preloader, and dynamic music toggle functionality. Built to showcase gaming products with immersive user experience and modern web technologies.</p>
                             <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
-                                <span class="bg-neo-black text-white px-2 py-1">GSAP </span>
+                                <span class="bg-neo-black text-white px-2 py-1">GSAP</span>
                                 <span class="bg-neo-black text-white px-2 py-1">Vanilla JavaScript</span>
                                 <span class="bg-neo-black text-white px-2 py-1">HTML5 & CSS3</span>
                                 <span class="bg-neo-black text-white px-2 py-1">HTTP Server</span>
                             </div>
                         </div>
                         <a href="https://game-lands.netlify.app/"
-                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm flex-shrink-0">
                             <i class="ri-arrow-right-up-line text-2xl"></i>
                         </a>
                     </div>
                 </article>
 
                 <article class="reveal group bg-white border-4 border-black p-4 shadow-hard mt-0 md:mt-20">
-                    <div
-                        class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
+                    <div class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
                         <img src="Assets/images/stoceasy.png"
-                            alt="StockEasy - Real-time stock market data and portfolio management by Shibin"
+                            alt="Gloria - fashion e-commerce by Shibin"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
-                            <h3
-                                class="text-4xl font-black uppercase mb-2 group-hover:text-neo-blue transition-colors glitch-hover">
-                                Gloria</h3>
+                            <h3 class="text-4xl font-black uppercase mb-2 group-hover:text-neo-blue transition-colors glitch-hover">Gloria</h3>
                             <p class="font-mono text-sm mb-4 max-w-md">Gloria - A sophisticated fashion e-commerce website featuring women's, men's, and kids' clothing collections with accessories, brand showcases, and seasonal sales.</p>
                             <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
                                 <span class="bg-neo-black text-white px-2 py-1">Vanilla JavaScript</span>
                                 <span class="bg-neo-black text-white px-2 py-1">HTTP Server</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Vercel Deploymen</span>
                                 <span class="bg-neo-black text-white px-2 py-1">HTML5 & CSS3</span>
                             </div>
                         </div>
                         <a href="https://gloriaa.netlify.app/"
-                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm flex-shrink-0">
                             <i class="ri-arrow-right-up-line text-2xl"></i>
                         </a>
                     </div>
                 </article>
 
                 <article class="reveal group bg-white border-4 border-black p-4 shadow-hard">
-                    <div
-                        class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
+                    <div class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
                         <img src="Assets/images/creative-portfolio.png"
-                            alt="Creative Portfolio - High-end WebGL and GSAP developer showcase by Shibin"
+                            alt="Fizzi - 3D soda brand website by Shibin"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
-                            <h3
-                                class="text-4xl font-black uppercase mb-2 group-hover:text-neo-pink transition-colors glitch-hover">
-                                Fizzi</h3>
+                            <h3 class="text-4xl font-black uppercase mb-2 group-hover:text-neo-pink transition-colors glitch-hover">Fizzi</h3>
                             <p class="font-mono text-sm mb-4 max-w-md">A visually stunning 3D interactive website for FIZZI soda brand featuring immersive WebGL experiences, floating 3D soda cans, fluid animations, and modern headless CMS integration for dynamic content management.</p>
                             <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
                                 <span class="bg-neo-black text-white px-2 py-1">Next.js 14</span>
-                                <span class="bg-neo-black text-white px-2 py-1">React Three Fiber (R3F)</span>
+                                <span class="bg-neo-black text-white px-2 py-1">React Three Fiber</span>
                                 <span class="bg-neo-black text-white px-2 py-1">Three.js</span>
                                 <span class="bg-neo-black text-white px-2 py-1">Prismic</span>
                                 <span class="bg-neo-black text-white px-2 py-1">CLSX</span>
-
                             </div>
                         </div>
                         <a href="https://fizzi-gilt-one.vercel.app/"
-                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm flex-shrink-0">
                             <i class="ri-arrow-right-up-line text-2xl"></i>
                         </a>
                     </div>
                 </article>
 
                 <article class="reveal group bg-white border-4 border-black p-4 shadow-hard mt-0 md:mt-20">
-                    <div
-                        class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
+                    <div class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
                         <img src="Assets/images/habit-tracker.png"
-                            alt="Android Habit Tracker - Material Design productivity app by Shibin"
+                            alt="Karyasthan - event management platform by Shibin"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
-                            <h3
-                                class="text-4xl font-black uppercase mb-2 group-hover:text-neo-orange transition-colors glitch-hover">
-                                KARYASTHAN</h3>
+                            <h3 class="text-4xl font-black uppercase mb-2 group-hover:text-neo-orange transition-colors glitch-hover">KARYASTHAN</h3>
                             <p class="font-mono text-sm mb-4 max-w-md">A comprehensive event management platform featuring wedding planning, corporate events, and birthday party services with admin dashboard, gallery management, and client booking capabilities.</p>
                             <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
                                 <span class="bg-neo-black text-white px-2 py-1">Node.js</span>
@@ -688,23 +659,21 @@ validation, and workflow logic </li>
                             </div>
                         </div>
                         <a href="https://kar-liard.vercel.app/"
-                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm flex-shrink-0">
                             <i class="ri-arrow-right-up-line text-2xl"></i>
                         </a>
                     </div>
                 </article>
-                 <article class="reveal group bg-white border-4 border-black p-4 shadow-hard">
-                    <div
-                        class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
-                        <img src="Assets\images\verde.png"
-                            alt="Creative Portfolio - High-end WebGL and GSAP developer showcase by Shibin"
+
+                <article class="reveal group bg-white border-4 border-black p-4 shadow-hard">
+                    <div class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
+                        <img src="Assets/images/verde.png"
+                            alt="Verde - eco-luxury e-commerce by Shibin"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
-                            <h3
-                                class="text-4xl font-black uppercase mb-2 group-hover:text-neo-pink transition-colors glitch-hover">
-                                Verde</h3>
+                            <h3 class="text-4xl font-black uppercase mb-2 group-hover:text-neo-pink transition-colors glitch-hover">Verde</h3>
                             <p class="font-mono text-sm mb-4 max-w-md">A premium eco-luxury e-commerce website showcasing outdoor living essentials, featuring modern design with curated collections of planters, greenery, and refined outdoor furniture for timeless spaces.</p>
                             <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
                                 <span class="bg-neo-black text-white px-2 py-1">React</span>
@@ -714,24 +683,21 @@ validation, and workflow logic </li>
                             </div>
                         </div>
                         <a href="https://verde-ten-iota.vercel.app/"
-                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm flex-shrink-0">
                             <i class="ri-arrow-right-up-line text-2xl"></i>
                         </a>
                     </div>
                 </article>
 
                 <article class="reveal group bg-white border-4 border-black p-4 shadow-hard mt-0 md:mt-20">
-                    <div
-                        class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
-                        <img src="Assets\images\coffee.jpg"
-                            alt="Android Habit Tracker - Material Design productivity app by Shibin"
+                    <div class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
+                        <img src="Assets/images/coffee.jpg"
+                            alt="Coffee Address - coffeehouse brand website by Shibin"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
-                            <h3
-                                class="text-4xl font-black uppercase mb-2 group-hover:text-neo-orange transition-colors glitch-hover">
-                                Coffee Address</h3>
+                            <h3 class="text-4xl font-black uppercase mb-2 group-hover:text-neo-orange transition-colors glitch-hover">Coffee Address</h3>
                             <p class="font-mono text-sm mb-4 max-w-md">A modern coffeehouse brand website showcasing premium coffee experiences, brand storytelling, signature menu items, branch locations, and business expansion opportunities.</p>
                             <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
                                 <span class="bg-neo-black text-white px-2 py-1">React</span>
@@ -741,12 +707,12 @@ validation, and workflow logic </li>
                             </div>
                         </div>
                         <a href="https://coffeeaddress.vercel.app/"
-                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm flex-shrink-0">
                             <i class="ri-arrow-right-up-line text-2xl"></i>
                         </a>
                     </div>
                 </article>
-                <!-- End Projects -->
+
             </div>
 
             <div class="text-center mt-24">
@@ -758,10 +724,10 @@ validation, and workflow logic </li>
         </div>
     </section>
 
+    <!-- TESTIMONIALS -->
     <section id="reports" class="py-24 bg-neo-black border-t-4 border-black overflow-hidden relative">
         <div class="max-w-7xl mx-auto px-4">
-            <div
-                class="flex items-center gap-2 mb-16 bg-white/5 border-2 border-white/10 p-4 inline-flex shadow-hard shadow-neo-blue/20">
+            <div class="flex items-center gap-2 mb-16 bg-white/5 border-2 border-white/10 p-4 inline-flex shadow-hard shadow-neo-blue/20">
                 <div class="flex gap-2">
                     <div class="h-3 w-3 bg-red-500 rounded-full border border-black"></div>
                     <div class="h-3 w-3 bg-yellow-500 rounded-full border border-black"></div>
@@ -775,311 +741,251 @@ validation, and workflow logic </li>
         <div class="marquee-container group cursor-hover">
             <div class="marquee-content flex gap-8 py-12 px-4 select-none">
                 <!-- Original Set -->
-                <div
-                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-green/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                <div class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-green/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-green"></div>
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-green text-xs font-bold tracking-widest uppercase">REPORT_001.log
-                        </div>
+                        <div class="font-mono text-neo-green text-xs font-bold tracking-widest uppercase">REPORT_001.log</div>
                         <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
                     </div>
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Student @ MGM COLLEGE
-                        </div>
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Shibin Proved no matter how pressure or
-                        less time is he makes projects complete outstandingly"</p>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Abu Thahir @ MGM COLLEGE</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Shibin performs exceptionally well under pressure and always delivers high-quality results on time."</p>
                     <div class="flex text-neo-green/60 gap-1 text-lg">
-                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                     </div>
                 </div>
 
-                <div
-                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                <div class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-blue"></div>
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">REPORT_002.log
-                        </div>
+                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">REPORT_002.log</div>
                         <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
                     </div>
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: CEO @ Strokx
-                        </div>
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Fast, reliable, and actually has good
-                        taste in design. A rare combination."</p>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: CEO @ Strokx</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Fast, reliable, and demonstrates exceptional design judgment — a rare and valuable combination."</p>
                     <div class="flex text-neo-blue/60 gap-1 text-lg">
-                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                     </div>
                 </div>
 
-                <div
-                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-pink/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                <div class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-pink/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-pink"></div>
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-pink text-xs font-bold tracking-widest uppercase">REPORT_003.log
-                        </div>
+                        <div class="font-mono text-neo-pink text-xs font-bold tracking-widest uppercase">REPORT_003.log</div>
                         <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
                     </div>
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Dev @ Larklabs
-                        </div>
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Cleanest code I've seen in years. He
-                        knows how to handle complex state management."</p>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Dev @ Larklabs</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Writes exceptionally clean, maintainable code and handles complex state management with confidence."</p>
                     <div class="flex text-neo-pink/60 gap-1 text-lg">
-                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                     </div>
                 </div>
 
-                <div
-                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-purple/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                <div class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-purple/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-purple"></div>
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-purple text-xs font-bold tracking-widest uppercase">
-                            REPORT_004.log</div>
+                        <div class="font-mono text-neo-purple text-xs font-bold tracking-widest uppercase">REPORT_004.log</div>
                         <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
                     </div>
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Dev @
-                        Rearway Technologies</div>
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Creative designing idea and provided a
-                        Unique UI experience."</p>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Dev @ Rearway Technologies</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Transformed ideas into a clean, modern UI with strong usability and visual impact."</p>
                     <div class="flex text-neo-purple/60 gap-1 text-lg">
-                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                     </div>
                 </div>
 
-                <div
-                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-orange/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                <div class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-orange/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-orange"></div>
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-orange text-xs font-bold tracking-widest uppercase">
-                            REPORT_005.log</div>
+                        <div class="font-mono text-neo-orange text-xs font-bold tracking-widest uppercase">REPORT_005.log</div>
                         <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
                     </div>
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: UX Designer @
-                        Larklabs</div>
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Highly intuitive UX. Delivered exactly
-                        what we needed before we even knew we needed it."</p>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: UX Designer @ Larklabs</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Designed an intuitive user experience and anticipated needs before we even recognized them."</p>
                     <div class="flex text-neo-orange/60 gap-1 text-lg">
-                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                     </div>
                 </div>
 
-                <!-- Duplicate Set for Loop -->
-                <div
-                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-green/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                <!-- Duplicate Set for seamless loop -->
+                <div class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-green/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-green"></div>
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-green text-xs font-bold tracking-widest uppercase">REPORT_001.log
-                        </div>
+                        <div class="font-mono text-neo-green text-xs font-bold tracking-widest uppercase">REPORT_001.log</div>
                         <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
                     </div>
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Student @ MGM COLLEGE
-                        </div>
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Shibin Proved no matter how pressure or
-                        less time is he makes projects complete outstandingly"</p>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Abu Thahir @ MGM COLLEGE</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Shibin performs exceptionally well under pressure and always delivers high-quality results on time."</p>
                     <div class="flex text-neo-green/60 gap-1 text-lg">
-                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                     </div>
                 </div>
 
-                <div
-                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                <div class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-blue"></div>
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">REPORT_002.log
-                        </div>
+                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">REPORT_002.log</div>
                         <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
                     </div>
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: CEO @ Strokx
-                        </div>
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Fast, reliable, and actually has good
-                        taste in design. A rare combination."</p>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: CEO @ Strokx</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Fast, reliable, and demonstrates exceptional design judgment — a rare and valuable combination."</p>
                     <div class="flex text-neo-blue/60 gap-1 text-lg">
-                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                     </div>
                 </div>
 
-                <div
-                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-pink/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                <div class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-pink/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-pink"></div>
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-pink text-xs font-bold tracking-widest uppercase">REPORT_003.log
-                        </div>
+                        <div class="font-mono text-neo-pink text-xs font-bold tracking-widest uppercase">REPORT_003.log</div>
                         <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
                     </div>
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Dev @ Larklabs
-                        </div>
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Cleanest code I've seen in years. He
-                        knows how to handle complex state management."</p>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Dev @ Larklabs</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Writes exceptionally clean, maintainable code and handles complex state management with confidence."</p>
                     <div class="flex text-neo-pink/60 gap-1 text-lg">
-                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                     </div>
                 </div>
 
-                <div
-                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-purple/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                <div class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-purple/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-purple"></div>
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-purple text-xs font-bold tracking-widest uppercase">
-                            REPORT_004.log</div>
+                        <div class="font-mono text-neo-purple text-xs font-bold tracking-widest uppercase">REPORT_004.log</div>
                         <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
                     </div>
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Dev @
-                        Rearway Technologies</div>
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Creative designing idea and provided a
-                        Unique UI experience."</p>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: Dev @ Rearway Technologies</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Transformed ideas into a clean, modern UI with strong usability and visual impact."</p>
                     <div class="flex text-neo-purple/60 gap-1 text-lg">
-                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                     </div>
                 </div>
 
-                <div
-                    class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-orange/50 hover:-translate-y-2 transition-all duration-500 relative group/card overflow-hidden text-left whitespace-normal">
+                <div class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard hover:border-neo-orange/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-orange"></div>
-                    <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-orange text-xs font-bold tracking-widest uppercase">
-                            REPORT_005.log</div>
+                        <div class="font-mono text-neo-orange text-xs font-bold tracking-widest uppercase">REPORT_005.log</div>
                         <div class="text-[10px] font-mono text-gray-500">2025.txt</div>
                     </div>
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: UX Designer @
-                        Larklabs</div>
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Highly intuitive UX. Delivered exactly
-                        what we needed before we even knew we needed it."</p>
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">FROM: UX Designer @ Larklabs</div>
+                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">"Designed an intuitive user experience and anticipated needs before we even recognized them."</p>
                     <div class="flex text-neo-orange/60 gap-1 text-lg">
-                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i
-                            class="ri-star-fill"></i><i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="py-24 px-4 max-w-5xl mx-auto">
         <div class="bg-white border-4 border-black shadow-hard-xl p-8 md:p-12 relative reveal mt-12">
-            <div
-                class="absolute -top-10 -left-6 bg-neo-yellow border-4 border-black px-6 py-2 shadow-hard rotate-[-5deg]">
+            <div class="absolute -top-10 -left-6 bg-neo-yellow border-4 border-black px-6 py-2 shadow-hard rotate-[-5deg]">
                 <span class="font-black text-2xl">START A PROJECT</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+
+                <!-- Left: Heading + availability -->
                 <div>
                     <h2 class="text-6xl font-black uppercase mb-6 leading-[0.85]">Let's<br>Talk<br>Code.</h2>
-                    <p class="font-mono text-lg mb-8 text-gray-600">
-                        I am currently available for freelance work and open to full-time opportunities.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black">
-                                <i class="ri-mail-line text-xl"></i>
-                            </div>
-                            <a href="mailto:shibinshoukath0@gmail.com"
-                                class="text-xl font-bold hover:bg-neo-blue cursor-hover">shibinshoukath0@gmail.com</a>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black">
-                                <i class="ri-map-pin-line text-xl"></i>
-                            </div>
-                            <span class="text-xl font-bold">Remote / Earth</span>
-                        </div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="w-3 h-3 rounded-full bg-neo-green border-2 border-black animate-pulse inline-block"></span>
+                        <span class="font-mono font-bold text-sm uppercase tracking-widest">Available for freelance &amp; full-time</span>
                     </div>
+                    <p class="font-mono text-sm text-gray-600 border-l-4 border-neo-yellow pl-4 leading-relaxed">
+                        I build fast, accessible, and memorable web experiences. Got a project or role in mind? Let's make it happen.
+                    </p>
                 </div>
 
-                <form id="contact-form" class="space-y-6 bg-gray-50 p-6 border-2 border-black"
-                    onsubmit="event.preventDefault(); this.innerHTML='<div class=\'py-20 text-center\'><i class=\'ri-checkbox-circle-fill text-6xl text-neo-green mb-4 block\'></i><h3 class=\'text-2xl font-black uppercase\'>Transmission Received</h3><p class=\'font-mono text-sm mt-2\'>System response initialized. I will reach out shortly.</p></div>'">
-                    <div class="flex flex-col">
-                        <label class="font-mono font-bold mb-1 uppercase text-xs">Identity</label>
-                        <input type="text" placeholder="NAME / COMPANY"
-                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover">
+                <!-- Right: Contact cards -->
+                <div class="space-y-4">
+
+                    <!-- Email -->
+                    <a href="mailto:shibinshoukath0@gmail.com"
+                        class="contact-item flex items-center gap-4 border-2 border-black p-4 shadow-hard bg-white cursor-hover">
+                        <div class="w-12 h-12 bg-neo-blue flex items-center justify-center border-2 border-black flex-shrink-0">
+                            <i class="ri-mail-send-line text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-mono text-xs font-bold uppercase tracking-widest text-gray-400 mb-0.5">Email</div>
+                            <div class="font-bold text-sm">shibinshoukath0@gmail.com</div>
+                        </div>
+                        <i class="ri-arrow-right-up-line ml-auto text-gray-400"></i>
+                    </a>
+
+                    <!-- Phone -->
+                    <a href="tel:+919526353831"
+                        class="contact-item flex items-center gap-4 border-2 border-black p-4 shadow-hard bg-white cursor-hover">
+                        <div class="w-12 h-12 bg-neo-red flex items-center justify-center border-2 border-black flex-shrink-0">
+                            <i class="ri-phone-line text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-mono text-xs font-bold uppercase tracking-widest text-gray-400 mb-0.5">Phone</div>
+                            <div class="font-bold text-sm">+91 9526353831</div>
+                        </div>
+                        <i class="ri-arrow-right-up-line ml-auto text-gray-400"></i>
+                    </a>
+
+                    <!-- Location -->
+                    <div class="flex items-center gap-4 border-2 border-black p-4 shadow-hard bg-white">
+                        <div class="w-12 h-12 bg-neo-yellow flex items-center justify-center border-2 border-black flex-shrink-0">
+                            <i class="ri-map-pin-2-line text-neo-black text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-mono text-xs font-bold uppercase tracking-widest text-gray-400 mb-0.5">Location</div>
+                            <div class="font-bold text-sm">Remote / India 🇮🇳</div>
+                        </div>
                     </div>
-                    <div class="flex flex-col">
-                        <label class="font-mono font-bold mb-1 uppercase text-xs">Coordinates</label>
-                        <input type="email" placeholder="EMAIL ADDRESS"
-                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover">
-                    </div>
-                    <div class="flex flex-col">
-                        <label class="font-mono font-bold mb-1 uppercase text-xs">Transmission</label>
-                        <textarea rows="4" placeholder="PROJECT DETAILS..."
-                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all resize-none cursor-hover"></textarea>
-                    </div>
-                    <button type="submit"
-                        class="w-full bg-neo-blue text-white font-black text-xl py-4 border-2 border-black shadow-hard neo-button hover:bg-neo-black hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
-                        TRANSMIT DATA
-                    </button>
-                </form>
+
+                    <!-- CTA Button -->
+                    <a href="mailto:shibinshoukath0@gmail.com"
+                        class="inline-flex items-center gap-3 bg-neo-black text-white border-2 border-black px-8 py-4 font-mono font-bold uppercase shadow-hard hover:bg-neo-green hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
+                        <i class="ri-send-plane-2-line"></i> Send a Message
+                    </a>
+
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="bg-black text-white py-16 px-4 border-t-8 border-neo-green font-mono relative overflow-hidden">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
             <div class="col-span-1 md:col-span-2">
                 <h2 class="text-4xl font-black mb-6">Shibin.</h2>
-                <p class="text-gray-400 max-w-sm">
-                    Designing for the future with the raw aesthetics of the past. No cookies, no trackers, just code.
-                </p>
+                <p class="text-gray-400 max-w-3xl">
+Designing scalable digital experiences with the raw discipline of the past and the innovation of the future.
+Built with clarity, performance, and privacy at the core.
+No unnecessary dependencies. No invasive tracking.
+Just clean architecture, thoughtful design, and reliable code that delivers real results.                </p>
             </div>
 
             <div>
                 <h3 class="font-bold text-neo-green mb-4 border-b border-gray-700 pb-2">SITEMAP</h3>
                 <ul class="space-y-2 text-gray-400">
-                    <li><a href="#"
-                            class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">Home</a>
-                    </li>
-                    <li><a href="#projects"
-                            class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">Works</a>
-                    </li>
-                    <li><a href="#about"
-                            class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">About</a>
-                    </li>
-                    <li><a href="#contact"
-                            class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">Contact</a>
-                    </li>
+                    <li><a href="#" class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">Home</a></li>
+                    <li><a href="#projects" class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">Works</a></li>
+                    <li><a href="#about" class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">About</a></li>
+                    <li><a href="#contact" class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">Contact</a></li>
                 </ul>
             </div>
 
             <div>
                 <h3 class="font-bold text-neo-green mb-4 border-b border-gray-700 pb-2">SOCIALS</h3>
                 <div class="flex gap-4">
-                    <a href="https://www.facebook.com/shibin.shoukath/"
-                        class="text-2xl hover:text-neo-blue transition-colors cursor-hover"><i
-                            class="ri-facebook-fill"></i></a>
-                    <a href="https://www.instagram.com/_shibin02"
-                        class="text-2xl hover:text-neo-pink transition-colors cursor-hover"><i
-                            class="ri-instagram-fill"></i></a>
-                    <a href="https://github.com/shibin2002"
-                        class="text-2xl hover:text-neo-yellow transition-colors cursor-hover"><i
-                            class="ri-github-fill"></i></a>
-                    <a href="https://www.linkedin.com/in/shibin2002"
-                        class="text-2xl hover:text-neo-purple transition-colors cursor-hover"><i
-                            class="ri-linkedin-fill"></i></a>
+                    <a href="https://www.facebook.com/shibin.shoukath/" class="text-2xl hover:text-neo-blue transition-colors cursor-hover"><i class="ri-facebook-fill"></i></a>
+                    <a href="https://www.instagram.com/_shibin02" class="text-2xl hover:text-neo-pink transition-colors cursor-hover"><i class="ri-instagram-fill"></i></a>
+                    <a href="https://github.com/shibin2002" class="text-2xl hover:text-neo-yellow transition-colors cursor-hover"><i class="ri-github-fill"></i></a>
+                    <a href="https://www.linkedin.com/in/shibin2002" class="text-2xl hover:text-neo-purple transition-colors cursor-hover"><i class="ri-linkedin-fill"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="text-center mt-16 pt-8 border-t border-gray-800 text-gray-500 text-sm">
-            <p>© 2025 Shibin </p>
+            <p>© 2025 Shibin</p>
         </div>
 
-        <div
-            class="absolute bottom-0 left-0 w-full text-[20vw] font-black text-white opacity-[0.03] leading-none select-none pointer-events-none text-center">
-            BRUTAL
+        <div class="absolute bottom-0 left-0 w-full text-[20vw] font-black text-white opacity-[0.03] leading-none select-none pointer-events-none text-center">
+            SHIBIN
         </div>
     </footer>
 
@@ -1094,12 +1000,11 @@ validation, and workflow logic </li>
             cursor.style.transform = `translate(-50%, -50%)`;
         });
 
-        // Add hover effect to cursor
         hoverElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
                 cursor.style.width = '60px';
                 cursor.style.height = '60px';
-                cursor.style.backgroundColor = '#FBFF48'; // Neo Yellow
+                cursor.style.backgroundColor = '#FBFF48';
                 cursor.style.mixBlendMode = 'normal';
                 cursor.style.border = '2px solid black';
             });
@@ -1116,76 +1021,53 @@ validation, and workflow logic </li>
         async function fetchGitHubStats() {
             try {
                 const response = await fetch('https://api.github.com/users/Shibin43-ops', {
-                    headers: {
-                        'Accept': 'application/vnd.github.v3+json'
-                    }
+                    headers: { 'Accept': 'application/vnd.github.v3+json' }
                 });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const data = await response.json();
 
-                // Update stats (only existing elements)
                 document.getElementById('repos-count').textContent = data.public_repos || '0';
                 document.getElementById('followers-count').textContent = data.followers || '0';
 
-                // Format creation date
                 if (data.created_at) {
                     const date = new Date(data.created_at);
-                    const formattedDate = date.toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'short'
-                    });
-                    document.getElementById('created-at').textContent = formattedDate;
+                    document.getElementById('created-at').textContent = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
                 }
 
-                // Update contribution count (approximation) - only if element exists
+                const contribValue = `${(data.public_repos * 20) + (data.followers * 5)}+`;
                 const contribHeader = document.getElementById('total-contributions');
                 const contribGrid = document.getElementById('total-contributions-grid');
-                const contribValue = `${(data.public_repos * 20) + (data.followers * 5)}+`;
-
                 if (contribHeader) contribHeader.textContent = contribValue;
                 if (contribGrid) contribGrid.textContent = contribValue;
 
             } catch (error) {
                 console.error('Error fetching GitHub stats:', error);
-                // Set fallback values for existing elements only
-                document.getElementById('repos-count').textContent = 'ERR';
-                document.getElementById('followers-count').textContent = 'ERR';
-                document.getElementById('created-at').textContent = 'N/A';
-                const contribElement = document.getElementById('total-contributions');
-                if (contribElement) {
-                    contribElement.textContent = 'API Error';
-                }
+                const ids = ['repos-count', 'followers-count', 'created-at'];
+                ids.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = id === 'created-at' ? 'N/A' : 'ERR';
+                });
             }
         }
 
-        // Call on page load
         fetchGitHubStats();
 
-        // Scroll Reveal Logic
+        // Scroll Reveal
         const revealElements = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
-
         revealElements.forEach(el => revealObserver.observe(el));
 
         // Scroll Progress Bar
         window.onscroll = function () {
-            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            let scrolled = (winScroll / height) * 100;
-            document.getElementById("progressBar").style.width = scrolled + "%";
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById("progressBar").style.width = (winScroll / height * 100) + "%";
         };
     </script>
 </body>
-
 
 </html>
