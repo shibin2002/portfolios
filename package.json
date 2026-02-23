@@ -5,7 +5,7 @@
   "description": "Minimal package.json to allow npm operations for the NeoBrutalist site",
   "scripts": {
     "start": "npx http-server -c-1 . -p 5080",
-    "build": "your-build-command"
+    "build": "echo 'Static site - no build step needed'"
 
   }
 }
