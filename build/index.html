@@ -1,1389 +1,2054 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Shibin | Professional Full Stack Developer specializing in high-performance web experiences.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shibin | Professional Full Stack Developer specializing in high-performance web experiences."
+    />
     <title>Shibin | Full Stack Developer</title>
-    <meta name="theme-color" content="#0A0A0F">
+    <meta name="theme-color" content="#0A0A0F" />
 
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-TLNG322R');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TLNG322R");
+    </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;900&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'acid': '#A6CC00',
-                        'coral': '#FF5C4D',
-                        'sky': '#4DAAFF',
-                        'violet': '#9B6DFF',
-                        'mint': '#00E5A0',
-                        'cream': '#F5F0E8',
-                        'ink': '#0A0A0F',
-                        'graphite': '#1A1A24',
-                        'slate': '#2A2A38',
-                        'muted': '#6B6B80',
-                    },
-                    fontFamily: {
-                        'display': ['Syne', 'sans-serif'],
-                        'mono': ['DM Mono', 'monospace'],
-                        'body': ['Outfit', 'sans-serif'],
-                    },
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              acid: "#A6CC00",
+              coral: "#FF5C4D",
+              sky: "#4DAAFF",
+              violet: "#9B6DFF",
+              mint: "#00E5A0",
+              cream: "#F5F0E8",
+              ink: "#0A0A0F",
+              graphite: "#1A1A24",
+              slate: "#2A2A38",
+              muted: "#6B6B80",
+            },
+            fontFamily: {
+              display: ["Syne", "sans-serif"],
+              mono: ["DM Mono", "monospace"],
+              body: ["Outfit", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
 
     <style>
-        :root {
-            --acid: #A6CC00;
-            --coral: #FF5C4D;
-            --sky: #4DAAFF;
-            --violet: #9B6DFF;
-            --mint: #00E5A0;
-            --cream: #F5F0E8;
-            --ink: #0A0A0F;
-        }
+      :root {
+        --acid: #a6cc00;
+        --coral: #ff5c4d;
+        --sky: #4daaff;
+        --violet: #9b6dff;
+        --mint: #00e5a0;
+        --cream: #f5f0e8;
+        --ink: #0a0a0f;
+      }
 
-        * {
-            box-sizing: border-box;
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        html {
-            overflow-x: hidden;
+      html {
+        overflow-x: hidden;
+      }
+
+      body {
+        cursor: none;
+        background-color: var(--ink);
+        color: var(--cream);
+        font-family: "Outfit", sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* CURSOR */
+      #cursor {
+        pointer-events: none;
+        position: fixed;
+        z-index: 9999;
+        width: 20px;
+        height: 20px;
+        background: var(--acid);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.25s,
+          height 0.25s,
+          opacity 0.2s;
+        mix-blend-mode: exclusion;
+        top: 0;
+        left: 0;
+      }
+
+      #cursor.big {
+        width: 56px;
+        height: 56px;
+      }
+
+      /* GRAIN */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 100;
+        opacity: 0.5;
+      }
+
+      /* NAV */
+      .nav-pill {
+        background: rgba(26, 26, 36, 0.85);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 100px;
+      }
+
+      .nav-link {
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #888;
+        padding: 8px 16px;
+        border-radius: 100px;
+        transition:
+          color 0.2s,
+          background 0.2s;
+      }
+
+      .nav-link:hover {
+        color: var(--cream);
+        background: rgba(255, 255, 255, 0.07);
+      }
+
+      .nav-cta {
+        background: #979893;
+        color: var(--ink);
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 8px 18px;
+        border-radius: 100px;
+        font-weight: 500;
+        transition:
+          opacity 0.2s,
+          transform 0.2s;
+      }
+
+      .nav-cta:hover {
+        opacity: 0.85;
+        transform: scale(0.97);
+      }
+
+      /* MOBILE MENU toggle */
+      #menuToggle {
+        display: none;
+        color: var(--cream);
+        font-size: 24px;
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      @media (max-width: 768px) {
+        #cursor {
+          display: none;
         }
 
         body {
-            cursor: none;
-            background-color: var(--ink);
-            color: var(--cream);
-            font-family: 'Outfit', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* CURSOR */
-        #cursor {
-            pointer-events: none;
-            position: fixed;
-            z-index: 9999;
-            width: 20px;
-            height: 20px;
-            background: var(--acid);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width .25s, height .25s, opacity .2s;
-            mix-blend-mode: exclusion;
-            top: 0;
-            left: 0;
-        }
-
-        #cursor.big {
-            width: 56px;
-            height: 56px;
-        }
-
-        /* GRAIN */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 100;
-            opacity: .5;
-        }
-
-        /* NAV */
-        .nav-pill {
-            background: rgba(26, 26, 36, 0.85);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 100px;
+          cursor: auto;
         }
 
         .nav-link {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            color: #888;
-            padding: 8px 16px;
-            border-radius: 100px;
-            transition: color .2s, background .2s;
+          display: none;
         }
 
-        .nav-link:hover {
-            color: var(--cream);
-            background: rgba(255, 255, 255, 0.07);
+        #menuToggle {
+          display: block;
+        }
+
+        .nav-pill {
+          width: 95%;
+          justify-content: space-between;
+          padding: 8px 16px;
         }
 
         .nav-cta {
-            background: #979893;
-            color: var(--ink);
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            padding: 8px 18px;
-            border-radius: 100px;
-            font-weight: 500;
-            transition: opacity .2s, transform .2s;
+          display: none;
         }
+      }
 
-        .nav-cta:hover {
-            opacity: .85;
-            transform: scale(.97);
-        }
+      /* MOBILE OVERLAY */
+      #mobileMenu {
+        position: fixed;
+        inset: 0;
+        background: var(--ink);
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        padding: 40px;
+        transform: translateY(-100%);
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-        /* MOBILE MENU toggle */
-        #menuToggle {
-            display: none;
-            color: var(--cream);
-            font-size: 24px;
-            cursor: pointer;
-            padding: 4px;
-        }
+      #mobileMenu.active {
+        transform: translateY(0);
+      }
 
-        @media (max-width: 768px) {
-            #cursor {
-                display: none;
-            }
+      .mobile-link {
+        font-family: "Syne", sans-serif;
+        font-size: 42px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--cream);
+        letter-spacing: -0.02em;
+        transition: color 0.3s;
+      }
 
-            body {
-                cursor: auto;
-            }
+      .mobile-link:hover {
+        color: var(--acid);
+      }
 
-            .nav-link {
-                display: none;
-            }
+      .mobile-link span {
+        font-family: "DM Mono", monospace;
+        font-size: 14px;
+        color: var(--acid);
+        margin-right: 12px;
+        vertical-align: middle;
+      }
 
-            #menuToggle {
-                display: block;
-            }
+      #closeMenu {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        color: var(--cream);
+        font-size: 32px;
+        cursor: pointer;
+      }
 
-            .nav-pill {
-                width: 95%;
-                justify-content: space-between;
-                padding: 8px 16px;
-            }
+      /* HERO */
+      .hero-word {
+        display: block;
+        /* block so each word is on its own line and never clips */
+        overflow: clip;
+        overflow-clip-margin: 4px;
+        /* small breathing room so descenders never clip */
+        line-height: 1.05;
+        padding-bottom: 0.05em;
+        /* prevents bottom descender clipping */
+      }
 
-            .nav-cta {
-                display: none;
-            }
-        }
+      .hero-word span {
+        display: inline-block;
+        opacity: 0;
+        transform: translateY(100%);
+      }
 
-        /* MOBILE OVERLAY */
-        #mobileMenu {
-            position: fixed;
-            inset: 0;
-            background: var(--ink);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-            padding: 40px;
-            transform: translateY(-100%);
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+      .hero-badge {
+        background: rgba(166, 204, 0, 0.1);
+        border: 1px solid rgba(166, 204, 0, 0.3);
+        color: var(--acid);
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        padding: 6px 14px;
+        border-radius: 100px;
+        animation: fadeIn 1s ease 1.4s both;
+      }
 
-        #mobileMenu.active {
-            transform: translateY(0);
-        }
-
-        .mobile-link {
-            font-family: 'Syne', sans-serif;
-            font-size: 42px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: var(--cream);
-            letter-spacing: -0.02em;
-            transition: color 0.3s;
-        }
-
-        .mobile-link:hover {
-            color: var(--acid);
-        }
-
-        .mobile-link span {
-            font-family: 'DM Mono', monospace;
-            font-size: 14px;
-            color: var(--acid);
-            margin-right: 12px;
-            vertical-align: middle;
-        }
-
-        #closeMenu {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            color: var(--cream);
-            font-size: 32px;
-            cursor: pointer;
-        }
-
-        /* HERO */
-        .hero-word {
-            display: block;
-            /* block so each word is on its own line and never clips */
-            overflow: clip;
-            overflow-clip-margin: 4px;
-            /* small breathing room so descenders never clip */
-            line-height: 1.05;
-            padding-bottom: 0.05em;
-            /* prevents bottom descender clipping */
-        }
-
-        .hero-word span {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(100%);
-        }
-
-        .hero-badge {
-            background: rgba(166, 204, 0, 0.1);
-            border: 1px solid rgba(166, 204, 0, 0.3);
-            color: var(--acid);
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            letter-spacing: .1em;
-            padding: 6px 14px;
-            border-radius: 100px;
-            animation: fadeIn 1s ease 1.4s both;
-        }
-
-
-        /* =============================================
+      /* =============================================
            FIX 1: Hero heading — fluid from 320px to 1440px
            Replaces old clamp(3rem,14vw,8rem)
         ============================================= */
 
-        /* =============================================
+      /* =============================================
            FIX 2: Ensure hero section clips properly
         ============================================= */
-        .hero-section {
-            overflow: hidden;
+      .hero-section {
+        overflow: hidden;
+      }
+
+      /* MARQUEE */
+      .marquee-track {
+        display: flex;
+        animation: marquee 35s linear infinite;
+        width: max-content;
+      }
+
+      @keyframes marquee {
+        from {
+          transform: translateX(0);
         }
 
-        /* MARQUEE */
-        .marquee-track {
-            display: flex;
-            animation: marquee 35s linear infinite;
-            width: max-content;
+        to {
+          transform: translateX(-50%);
         }
+      }
 
-        @keyframes marquee {
-            from {
-                transform: translateX(0);
-            }
+      .marquee-wrap:hover .marquee-track {
+        animation-play-state: paused;
+      }
 
-            to {
-                transform: translateX(-50%);
-            }
-        }
+      /* REVEAL */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        will-change: transform, opacity;
+      }
 
-        .marquee-wrap:hover .marquee-track {
-            animation-play-state: paused;
-        }
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
 
-        /* REVEAL */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            will-change: transform, opacity;
-        }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
 
-        .reveal-delay-1 {
-            transition-delay: .1s;
-        }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
 
-        .reveal-delay-2 {
-            transition-delay: .2s;
-        }
+      /* CARDS */
+      .card {
+        background: var(--graphite);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
+      }
 
-        .reveal-delay-3 {
-            transition-delay: .3s;
-        }
+      .card:hover {
+        border-color: rgba(255, 255, 255, 0.15);
+        transform: translateY(-4px);
+      }
 
-        /* CARDS */
-        .card {
-            background: var(--graphite);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
-            transition: border-color .3s, transform .3s;
-        }
+      /* SKILL TAGS */
+      .skill-tag {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 100px;
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        padding: 6px 14px;
+        color: #bbb;
+        transition: all 0.2s;
+      }
 
-        .card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-4px);
-        }
+      .skill-tag:hover {
+        background: rgba(166, 204, 0, 0.08);
+        border-color: rgba(166, 204, 0, 0.3);
+        color: var(--acid);
+      }
 
-        /* SKILL TAGS */
-        .skill-tag {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 100px;
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            letter-spacing: .05em;
-            padding: 6px 14px;
-            color: #bbb;
-            transition: all .2s;
-        }
+      /* SKILL GRID */
+      .skill-cell {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 22px 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        cursor: default;
+      }
 
-        .skill-tag:hover {
-            background: rgba(166, 204, 0, 0.08);
-            border-color: rgba(166, 204, 0, 0.3);
-            color: var(--acid);
-        }
+      .skill-cell:hover {
+        background: rgba(166, 204, 0, 0.05);
+        border-color: rgba(166, 204, 0, 0.2);
+      }
 
-        /* SKILL GRID */
-        .skill-cell {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 22px 18px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all .3s ease;
-            cursor: default;
-        }
+      .skill-cell .label {
+        font-family: "Outfit", sans-serif;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        color: var(--acid);
+        opacity: 0.8;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
 
-        .skill-cell:hover {
-            background: rgba(166, 204, 0, 0.05);
-            border-color: rgba(166, 204, 0, 0.2);
-        }
+      .skill-cell .name {
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: var(--cream);
+      }
 
-        .skill-cell .label {
-            font-family: 'Outfit', sans-serif;
-            font-size: 11px;
-            letter-spacing: .05em;
-            color: var(--acid);
-            opacity: .8;
-            font-weight: 400;
-            text-transform: uppercase;
-        }
+      /* EXPERIENCE */
+      .exp-card {
+        background: var(--graphite);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 16px;
+        padding: 32px;
+        transition: border-color 0.3s;
+      }
 
-        .skill-cell .name {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            font-size: 20px;
-            text-transform: uppercase;
-            color: var(--cream);
-        }
+      .exp-card:hover {
+        border-color: rgba(200, 255, 0, 0.2);
+      }
 
-        /* EXPERIENCE */
+      /* FIX 3: Exp card padding on mobile */
+      @media (max-width: 640px) {
         .exp-card {
-            background: var(--graphite);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 16px;
-            padding: 32px;
-            transition: border-color .3s;
+          padding: 20px 16px;
         }
+      }
 
-        .exp-card:hover {
-            border-color: rgba(200, 255, 0, 0.2);
-        }
+      .exp-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid var(--ink);
+        flex-shrink: 0;
+      }
 
-        /* FIX 3: Exp card padding on mobile */
-        @media (max-width: 640px) {
-            .exp-card {
-                padding: 20px 16px;
-            }
-        }
+      /* PROJECTS */
+      .project-card {
+        background: var(--graphite);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        overflow: hidden;
+        transition:
+          transform 0.3s,
+          border-color 0.3s;
+      }
 
-        .exp-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: 2px solid var(--ink);
-            flex-shrink: 0;
-        }
+      .project-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(255, 255, 255, 0.14);
+      }
 
-        /* PROJECTS */
-        .project-card {
-            background: var(--graphite);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: transform .3s, border-color .3s;
-        }
+      .project-img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        display: block;
+        transition: scale 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-        .project-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 255, 255, 0.14);
-        }
+      .project-card:hover .project-img {
+        scale: 1.03;
+      }
 
-        .project-img {
-            width: 100%;
-            aspect-ratio: 16/9;
-            object-fit: cover;
-            display: block;
-            transition: scale .5s cubic-bezier(.16, 1, .3, 1);
-        }
+      /* TESTIMONIALS */
+      .testi-card {
+        width: 380px;
+        flex-shrink: 0;
+        background: var(--graphite);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        padding: 32px;
+      }
 
-        .project-card:hover .project-img {
-            scale: 1.03;
-        }
-
-        /* TESTIMONIALS */
+      @media (max-width: 640px) {
         .testi-card {
-            width: 380px;
-            flex-shrink: 0;
-            background: var(--graphite);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
-            padding: 32px;
+          width: 300px;
+          padding: 24px;
         }
 
-        @media (max-width: 640px) {
-            .testi-card {
-                width: 300px;
-                padding: 24px;
-            }
-
-            .big-stat {
-                font-size: 3rem;
-            }
-
-            section {
-                padding-top: 4rem;
-                padding-bottom: 4rem;
-            }
-        }
-
-        /* CONTACT */
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            background: var(--graphite);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 14px;
-            padding: 18px 22px;
-            transition: border-color .2s, transform .2s;
-            color: var(--cream);
-            text-decoration: none;
-        }
-
-        .contact-link:hover {
-            border-color: rgba(166, 204, 0, 0.25);
-            transform: translateX(4px);
-        }
-
-        /* PROGRESS BAR */
-        #progressBar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 2px;
-            background: var(--acid);
-            z-index: 200;
-            transition: width .1s;
-        }
-
-        /* SECTION LABEL */
-        .section-label {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            letter-spacing: .15em;
-            text-transform: uppercase;
-            color: var(--acid);
-            opacity: .7;
-        }
-
-        /* GLOW */
-        .glow-acid {
-            text-shadow: 0 0 40px rgba(166, 204, 0, .3);
-        }
-
-        .glow-coral {
-            text-shadow: 0 0 40px rgba(255, 92, 77, .3);
-        }
-
-        /* PILL BADGE */
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 100px;
-            padding: 4px 12px;
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            color: #888;
-        }
-
-        /* DIVIDER */
-        .divider {
-            border: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            margin: 0;
-        }
-
-        /* BIG NUM */
         .big-stat {
-            font-family: 'Syne', sans-serif;
-            font-weight: 800;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            color: var(--acid);
-            line-height: 1;
+          font-size: 3rem;
         }
 
-        /* FOOTER */
-        footer a {
-            color: #666;
-            transition: color .2s;
-        }
-
-        footer a:hover {
-            color: var(--cream);
-        }
-
-        /* ABOUT PHOTO */
-        .about-photo {
-            border-radius: 24px;
-            overflow: hidden;
-            aspect-ratio: 3/4;
-            position: relative;
-        }
-
-        .about-photo::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 40%, rgba(10, 10, 15, .8));
-        }
-
-        .about-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* FIX 4: About photo — full width on mobile */
-        @media (max-width: 768px) {
-            .about-photo {
-                max-width: 100% !important;
-                aspect-ratio: 4/3;
-            }
-        }
-
-        /* ANIMATED RING */
-        @keyframes spin-slow {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .spin-slow {
-            animation: spin-slow 20s linear infinite;
-        }
-
-        /* HERO BG */
-        .hero-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            pointer-events: none;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--ink);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: rgba(166, 204, 0, .3);
-            border-radius: 2px;
-        }
-
-        /* FIX 5: Hero badge font size on very small screens */
-        @media (max-width: 400px) {
-            .hero-badge {
-                font-size: 9px;
-                padding: 5px 10px;
-            }
-        }
-
-        /* Prevent horizontal scroll on all sections */
         section {
-            overflow-x: hidden;
+          padding-top: 4rem;
+          padding-bottom: 4rem;
         }
+      }
 
-        /* ── HERO HEADING ──────────────────────────────
+      /* CONTACT */
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        background: var(--graphite);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 14px;
+        padding: 18px 22px;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+        color: var(--cream);
+        text-decoration: none;
+      }
+
+      .contact-link:hover {
+        border-color: rgba(166, 204, 0, 0.25);
+        transform: translateX(4px);
+      }
+
+      /* PROGRESS BAR */
+      #progressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        background: var(--acid);
+        z-index: 200;
+        transition: width 0.1s;
+      }
+
+      /* SECTION LABEL */
+      .section-label {
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--acid);
+        opacity: 0.7;
+      }
+
+      /* GLOW */
+      .glow-acid {
+        text-shadow: 0 0 40px rgba(166, 204, 0, 0.3);
+      }
+
+      .glow-coral {
+        text-shadow: 0 0 40px rgba(255, 92, 77, 0.3);
+      }
+
+      /* PILL BADGE */
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 100px;
+        padding: 4px 12px;
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        color: #888;
+      }
+
+      /* DIVIDER */
+      .divider {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        margin: 0;
+      }
+
+      /* BIG NUM */
+      .big-stat {
+        font-family: "Syne", sans-serif;
+        font-weight: 800;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        color: var(--acid);
+        line-height: 1;
+      }
+
+      /* FOOTER */
+      footer a {
+        color: #666;
+        transition: color 0.2s;
+      }
+
+      footer a:hover {
+        color: var(--cream);
+      }
+
+      /* ABOUT PHOTO */
+      .about-photo {
+        border-radius: 24px;
+        overflow: hidden;
+        aspect-ratio: 3/4;
+        position: relative;
+      }
+
+      .about-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          transparent 40%,
+          rgba(10, 10, 15, 0.8)
+        );
+      }
+
+      .about-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* FIX 4: About photo — full width on mobile */
+      @media (max-width: 768px) {
+        .about-photo {
+          max-width: 100% !important;
+          aspect-ratio: 4/3;
+        }
+      }
+
+      /* ANIMATED RING */
+      @keyframes spin-slow {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .spin-slow {
+        animation: spin-slow 20s linear infinite;
+      }
+
+      /* HERO BG */
+      .hero-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--ink);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(166, 204, 0, 0.3);
+        border-radius: 2px;
+      }
+
+      /* FIX 5: Hero badge font size on very small screens */
+      @media (max-width: 400px) {
+        .hero-badge {
+          font-size: 9px;
+          padding: 5px 10px;
+        }
+      }
+
+      /* Prevent horizontal scroll on all sections */
+      section {
+        overflow-x: hidden;
+      }
+
+      /* ── HERO HEADING ──────────────────────────────
            Fluid scale: 32px @ 320px → 80px @ 800px+
            overflow:visible so slideUp animation isn't clipped
         ────────────────────────────────────────────── */
-        .hero-heading {
-            font-size: clamp(2rem, 10vw, 5rem);
-            line-height: 1.05;
-            overflow: visible;
-            word-break: break-word;
-            overflow-wrap: break-word;
-        }
+      .hero-heading {
+        font-size: clamp(2rem, 10vw, 5rem);
+        line-height: 1.05;
+        overflow: visible;
+        word-break: break-word;
+        overflow-wrap: break-word;
+      }
 
-        /* ── SECTION HEADINGS (TECH_STACK, Experience_Log, etc.) ──
+      /* ── SECTION HEADINGS (TECH_STACK, Experience_Log, etc.) ──
            Fluid scale: 28px @ 320px → 64px @ 1200px+
            white-space:normal + word-break = wraps to next line, never crops
         ────────────────────────────────────────────── */
-        .section-heading {
-            font-size: clamp(1.5rem, 3vw, 4rem);
-            line-height: 1.1;
-            white-space: normal;
-            word-break: break-word;
-            overflow-wrap: break-word;
-            overflow: visible;
-            padding: 0 8px;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* Mobile-specific fix for section headings */
-        @media (max-width: 768px) {
-    .section-heading {
-        font-size: clamp(1.1rem, 5.5vw, 2.2rem) !important;
-        letter-spacing: -0.01em !important;
+      .section-heading {
+        font-size: clamp(1.5rem, 3vw, 4rem);
+        line-height: 1.1;
+        white-space: normal;
         word-break: break-word;
         overflow-wrap: break-word;
-        white-space: normal !important;
         overflow: visible;
-    }
-    .section-heading .split-word {
-        display: inline !important;
-        white-space: normal !important;
-    }
-    .section-heading .split-char {
-        display: inline !important;
-    }
-}
+        padding: 0 8px;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
 
-        /* ── CONTACT HEADING (Let's Talk Code.) ───────
+      /* Mobile-specific fix for section headings */
+      @media (max-width: 768px) {
+        .section-heading {
+          font-size: clamp(1.1rem, 5.5vw, 2.2rem) !important;
+          letter-spacing: -0.01em !important;
+          word-break: break-word;
+          overflow-wrap: break-word;
+          white-space: normal !important;
+          overflow: visible;
+        }
+        .section-heading .split-word {
+          display: inline !important;
+          white-space: normal !important;
+        }
+        .section-heading .split-char {
+          display: inline !important;
+        }
+      }
+
+      /* ── CONTACT HEADING (Let's Talk Code.) ───────
            Bigger fluid scale since it's the hero of the section
         ────────────────────────────────────────────── */
-        .contact-heading {
-            font-size: clamp(2rem, 9vw, 4.5rem);
-            line-height: 1;
-            white-space: normal;
-            word-break: break-word;
-            overflow-wrap: break-word;
-            overflow: visible;
-        }
+      .contact-heading {
+        font-size: clamp(2rem, 9vw, 4.5rem);
+        line-height: 1;
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        overflow: visible;
+      }
 
-        /* ── ABOUT HEADING (Who am I?) ─────────────── */
-        .about-heading {
-            font-size: clamp(1.75rem, 7vw, 3.75rem);
-            line-height: 1.05;
-            white-space: normal;
-            word-break: break-word;
-            overflow-wrap: break-word;
-            overflow: visible;
-        }
+      /* ── ABOUT HEADING (Who am I?) ─────────────── */
+      .about-heading {
+        font-size: clamp(1.75rem, 7vw, 3.75rem);
+        line-height: 1.05;
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        overflow: visible;
+      }
 
-        /* Skills grid — 3 cols on very small screens */
-        @media (max-width: 400px) {
-            .skill-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-            }
+      /* Skills grid — 3 cols on very small screens */
+      @media (max-width: 400px) {
+        .skill-grid {
+          grid-template-columns: repeat(3, 1fr) !important;
         }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- GTM noscript -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLNG322R" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TLNG322R"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
 
     <div id="cursor"></div>
     <div id="progressBar"></div>
 
     <!-- NAV -->
-    <nav class="fixed top-0 left-0 right-0 z-[60] flex justify-center pt-5 px-4">
-        <div class="nav-pill flex items-center gap-1 px-2 py-2 w-auto transition-all duration-300">
-            <a href="#" class="font-display font-bold text-sm text-cream px-4 mr-2"
-                style="letter-spacing:-.02em;">Shibin<span style="color:var(--acid)">.</span></a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#experience" class="nav-link">Logs</a>
-            <a href="#projects" class="nav-link">Work</a>
-            <a href="#contact" class="nav-cta">Hire Me</a>
-            <div id="menuToggle"><i class="ri-menu-4-line"></i></div>
-        </div>
+    <nav
+      class="fixed top-0 left-0 right-0 z-[60] flex justify-center pt-5 px-4"
+    >
+      <div
+        class="nav-pill flex items-center gap-1 px-2 py-2 w-auto transition-all duration-300"
+      >
+        <a
+          href="#"
+          class="font-display font-bold text-sm text-cream px-4 mr-2"
+          style="letter-spacing: -0.02em"
+          >Shibin<span style="color: var(--acid)">.</span></a
+        >
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Logs</a>
+        <a href="#projects" class="nav-link">Work</a>
+        <a href="#contact" class="nav-cta">Hire Me</a>
+        <div id="menuToggle"><i class="ri-menu-4-line"></i></div>
+      </div>
     </nav>
 
     <!-- MOBILE MENU OVERLAY -->
     <div id="mobileMenu">
-        <div id="closeMenu"><i class="ri-close-line"></i></div>
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#skills" class="mobile-link">Skills</a>
-        <a href="#experience" class="mobile-link">Logs</a>
-        <a href="#projects" class="mobile-link">Work</a>
-        <a href="#contact" class="mobile-link">Contact</a>
-        <div class="mt-8 flex gap-6">
-            <a href="https://github.com/shibin2002" target="_blank" class="text-2xl text-muted hover:text-acid"><i
-                    class="ri-github-fill"></i></a>
-            <a href="https://linkedin.com/in/shibin2002" target="_blank" class="text-2xl text-muted hover:text-acid"><i
-                    class="ri-linkedin-fill"></i></a>
-            <a href="https://instagram.com/_shibin02" target="_blank" class="text-2xl text-muted hover:text-acid"><i
-                    class="ri-instagram-fill"></i></a>
-        </div>
+      <div id="closeMenu"><i class="ri-close-line"></i></div>
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#experience" class="mobile-link">Logs</a>
+      <a href="#projects" class="mobile-link">Work</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+      <div class="mt-8 flex gap-6">
+        <a
+          href="https://github.com/shibin2002"
+          target="_blank"
+          class="text-2xl text-muted hover:text-acid"
+          ><i class="ri-github-fill"></i
+        ></a>
+        <a
+          href="https://linkedin.com/in/shibin2002"
+          target="_blank"
+          class="text-2xl text-muted hover:text-acid"
+          ><i class="ri-linkedin-fill"></i
+        ></a>
+        <a
+          href="https://instagram.com/_shibin02"
+          target="_blank"
+          class="text-2xl text-muted hover:text-acid"
+          ><i class="ri-instagram-fill"></i
+        ></a>
+      </div>
     </div>
 
     <!-- HERO -->
     <!-- FIX: Added hero-section class for overflow:hidden, px-6 for side padding on mobile -->
     <section
-        class="hero-section relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24">
-        <!-- Orbs -->
-        <div class="hero-orb w-96 h-96 bg-violet opacity-10 top-20 -left-32" data-speed="0.05"></div>
-        <div class="hero-orb w-80 h-80 bg-acid opacity-[0.07] bottom-40 -right-20" data-speed="-0.08"></div>
-        <div class="hero-orb w-64 h-64 bg-coral opacity-10 top-1/2 left-1/4" data-speed="0.03"></div>
+      class="hero-section relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24"
+    >
+      <!-- Orbs -->
+      <div
+        class="hero-orb w-96 h-96 bg-violet opacity-10 top-20 -left-32"
+        data-speed="0.05"
+      ></div>
+      <div
+        class="hero-orb w-80 h-80 bg-acid opacity-[0.07] bottom-40 -right-20"
+        data-speed="-0.08"
+      ></div>
+      <div
+        class="hero-orb w-64 h-64 bg-coral opacity-10 top-1/2 left-1/4"
+        data-speed="0.03"
+      ></div>
 
-
-
-        <div class="relative z-10 w-full max-w-5xl">
-            <div class="hero-badge inline-flex items-center gap-2 mb-8">
-                <span class="w-1.5 h-1.5 rounded-full bg-acid animate-pulse"></span>
-                Available for Freelance &amp; Full-time
-            </div>
-
-            <!-- FIX: Replaced inline font-size style with hero-heading class using corrected clamp -->
-            <h1 class="hero-heading font-display font-extrabold uppercase mb-8 tracking-tighter">
-                <div class="hero-word"><span style="animation-delay:.2s">Full</span></div>
-                <div class="hero-word"><span style="color:var(--acid); animation-delay:.35s"
-                        class="glow-acid">Stack</span></div>
-                <div class="hero-word"><span style="animation-delay:.5s">Developer</span></div>
-            </h1>
-
-            <p class="hero-sub font-body text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed"
-                style="color:#9999aa;">
-                Full Stack Developer with 1.8+ years building ERP systems, scalable APIs, and AI-integrated web applications.
-            </p>
-
-            <div class="hero-btns flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#projects" style="background:var(--acid);color:var(--ink);"
-                    class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide transition-all hover:opacity-85 hover:scale-95">
-                    View My Work
-                </a>
-                <a href="https://white-merridie-96.tiiny.site/" target="_blank"
-                    style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);"
-                    class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide text-cream transition-all hover:bg-white/10 flex items-center justify-center gap-2">
-                    <i class="ri-eye-line"></i> View CV
-                </a>
-            </div>
+      <div class="relative z-10 w-full max-w-5xl">
+        <div class="hero-badge inline-flex items-center gap-2 mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-acid animate-pulse"></span>
+          Available for Freelance &amp; Full-time
         </div>
 
+        <!-- FIX: Replaced inline font-size style with hero-heading class using corrected clamp -->
+        <h1
+          class="hero-heading font-display font-extrabold uppercase mb-8 tracking-tighter"
+        >
+          <div class="hero-word">
+            <span style="animation-delay: 0.2s">Full</span>
+          </div>
+          <div class="hero-word">
+            <span
+              style="color: var(--acid); animation-delay: 0.35s"
+              class="glow-acid"
+              >Stack</span
+            >
+          </div>
+          <div class="hero-word">
+            <span style="animation-delay: 0.5s">Developer</span>
+          </div>
+        </h1>
 
+        <p
+          class="hero-sub font-body text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed"
+          style="color: #9999aa"
+        >
+          Full Stack Developer with 1.8+ years building ERP systems, scalable
+          APIs, and AI-integrated web applications.
+        </p>
+
+        <div class="hero-btns flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="#projects"
+            style="background: var(--acid); color: var(--ink)"
+            class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide transition-all hover:opacity-85 hover:scale-95"
+          >
+            View My Work
+          </a>
+          <a
+            href="https://white-merridie-96.tiiny.site/"
+            target="_blank"
+            style="
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+            "
+            class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide text-cream transition-all hover:bg-white/10 flex items-center justify-center gap-2"
+          >
+            <i class="ri-eye-line"></i> View CV
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- MARQUEE -->
-    <div style="background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);"
-        class="py-4 overflow-hidden marquee-wrap">
-        <div class="marquee-track font-mono text-sm" style="color:#e5e3e3;gap:0;">
-            <span style="padding:0 24px;">AVAILABLE FOR HIRE</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">FULL STACK ENGINEER</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">REACT · NODE · TYPESCRIPT</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">POSTGRESQL · MONGODB</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">PERFORMANCE DRIVEN</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">CLEAN · MAINTAINABLE CODE</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">STARTUP READY</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">AVAILABLE FOR HIRE</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">FULL STACK ENGINEER</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">REACT · NODE · TYPESCRIPT</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">POSTGRESQL · MONGODB</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">PERFORMANCE DRIVEN</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">CLEAN · MAINTAINABLE CODE</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-            <span style="padding:0 24px;">STARTUP READY</span>
-            <span style="padding:0 24px;color:var(--acid)">◆</span>
-        </div>
+    <div
+      style="
+        background: rgba(255, 255, 255, 0.03);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      "
+      class="py-4 overflow-hidden marquee-wrap"
+    >
+      <div
+        class="marquee-track font-mono text-sm"
+        style="color: #e5e3e3; gap: 0"
+      >
+        <span style="padding: 0 24px">AVAILABLE FOR HIRE</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">FULL STACK ENGINEER</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">REACT · NODE · TYPESCRIPT</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">POSTGRESQL · MONGODB</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">PERFORMANCE DRIVEN</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">CLEAN · MAINTAINABLE CODE</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">STARTUP READY</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">AVAILABLE FOR HIRE</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">FULL STACK ENGINEER</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">REACT · NODE · TYPESCRIPT</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">POSTGRESQL · MONGODB</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">PERFORMANCE DRIVEN</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">CLEAN · MAINTAINABLE CODE</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+        <span style="padding: 0 24px">STARTUP READY</span>
+        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+      </div>
     </div>
 
     <!-- ABOUT -->
     <section id="about" class="py-32 px-4 max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
-            <div class="md:col-span-5 reveal">
-                <!-- FIX: Removed inline max-width so it inherits full width on mobile -->
-                <div class="about-photo">
-                    <img src="Assets/images/img.png" alt="Shibin">
-                </div>
-            </div>
-            <div class="md:col-span-7 reveal reveal-delay-1">
-                <h2 class="about-heading font-display font-extrabold uppercase mb-6 tracking-tighter leading-[.9]">
-                    Who am I?
-                </h2>
-                <p class="font-body text-lg leading-relaxed mb-6" style="color:#aaa;">
-                    I'm <span style="color:var(--cream)">Shibin</span> — a developer who treats interfaces like
-                    <span style="color:var(--acid)">experiences</span>, not just screens.
-                    I design with intent and build with obsession.
-                </p>
-                <div style="border-left:2px solid rgba(166, 204, 0, .25);padding-left:20px;margin-bottom:32px;">
-                    <p class="font-mono text-sm leading-relaxed" style="color:#c0bfbf;">
-                        <span style="color:var(--acid)">&gt;_</span> Designing interfaces people actually enjoy
-                        using.<br>
-                        <span style="color:var(--acid)">&gt;_</span> Building with React, Tailwind, and whatever the job
-                        demands.<br>
-                        <span style="color:var(--acid)">&gt;_</span> 1.8+ years of turning ideas into shipped
-                        products.<br>
-                        <span style="color:var(--acid)">&gt;_</span> Currently: deep in AI integrations and loving it.
-                    </p>
-                </div>
-                <div class="flex flex-wrap gap-3">
-                    <div class="pill" style="color:#c0bfbf;"><i class="ri-map-pin-2-line" style="color:var(--acid)"></i> Remote / India</div>
-                    <div class="pill" style="color:#c0bfbf;"><i class="ri-circle-fill" style="color:var(--mint);font-size:8px"></i> Available
-                        Now</div>
-                    <div class="pill" style="color:#c0bfbf;"><i class="ri-code-s-slash-line" style="color:var(--sky)"></i> 1.8+ Years Exp</div>
-                </div>
-            </div>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+        <div class="md:col-span-5 reveal">
+          <!-- FIX: Removed inline max-width so it inherits full width on mobile -->
+          <div class="about-photo">
+            <img src="Assets/images/img.png" alt="Shibin" />
+          </div>
         </div>
+        <div class="md:col-span-7 reveal reveal-delay-1">
+          <h2
+            class="about-heading font-display font-extrabold uppercase mb-6 tracking-tighter leading-[.9]"
+          >
+            Who am I?
+          </h2>
+          <p class="font-body text-lg leading-relaxed mb-6" style="color: #aaa">
+            I'm <span style="color: var(--cream)">Shibin</span> — a developer
+            who treats interfaces like
+            <span style="color: var(--acid)">experiences</span>, not just
+            screens. I design with intent and build with obsession.
+          </p>
+          <div
+            style="
+              border-left: 2px solid rgba(166, 204, 0, 0.25);
+              padding-left: 20px;
+              margin-bottom: 32px;
+            "
+          >
+            <p class="font-mono text-sm leading-relaxed" style="color: #c0bfbf">
+              <span style="color: var(--acid)">&gt;_</span> Designing interfaces
+              people actually enjoy using.<br />
+              <span style="color: var(--acid)">&gt;_</span> Building with React,
+              Tailwind, and whatever the job demands.<br />
+              <span style="color: var(--acid)">&gt;_</span> 1.8+ years of
+              turning ideas into shipped products.<br />
+              <span style="color: var(--acid)">&gt;_</span> Currently: deep in
+              AI integrations and loving it.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <div class="pill" style="color: #c0bfbf">
+              <i class="ri-map-pin-2-line" style="color: var(--acid)"></i>
+              Remote / India
+            </div>
+            <div class="pill" style="color: #c0bfbf">
+              <i
+                class="ri-circle-fill"
+                style="color: var(--mint); font-size: 8px"
+              ></i>
+              Available Now
+            </div>
+            <div class="pill" style="color: #c0bfbf">
+              <i class="ri-code-s-slash-line" style="color: var(--sky)"></i>
+              1.8+ Years Exp
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="py-8 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-8 reveal">
-    <div class="w-full text-center md:text-left">
-        <h2 class="section-heading font-display font-extrabold uppercase tracking-tighter">
-            TECH_<span style="color:var(--acid)">STACK</span>
-        </h2>
-    </div>
-</div>
-
-            <!-- FIX: Added skill-grid class and adjusted grid columns for xs screens -->
-            <div class="skill-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 reveal reveal-delay-1"
-                style="border:1px solid rgba(255,255,255,.05);border-radius:16px;overflow:hidden;">
-                <div class="skill-cell"><span class="label">Core</span><span class="name">HTML5</span></div>
-                <div class="skill-cell"><span class="label">Core</span><span class="name">CSS</span></div>
-                <div class="skill-cell"><span class="label">Lang</span><span class="name">JS</span></div>
-                <div class="skill-cell"><span class="label">Lang</span><span class="name">Python</span></div>
-                <div class="skill-cell"><span class="label">Lang</span><span class="name">C++</span></div>
-                <div class="skill-cell"><span class="label">Lib</span><span class="name">React</span></div>
-                <div class="skill-cell"><span class="label">FW</span><span class="name">Next.js</span></div>
-                <div class="skill-cell"><span class="label">FW</span><span class="name">Express</span></div>
-                <div class="skill-cell"><span class="label">FW</span><span class="name">Django</span></div>
-                <div class="skill-cell"><span class="label">BE</span><span class="name">Node.js</span></div>
-                <div class="skill-cell"><span class="label">Style</span><span class="name">Tailwind</span></div>
-                <div class="skill-cell"><span class="label">Data</span><span class="name">MySQL</span></div>
-                <div class="skill-cell"><span class="label">Data</span><span class="name">MongoDB</span></div>
-                <div class="skill-cell"><span class="label">VCS</span><span class="name">Git</span></div>
-                <div class="skill-cell"><span class="label">Tools</span><span class="name">Postman</span></div>
-                <div class="skill-cell"><span class="label">3D</span><span class="name">Three.js</span></div>
-
-            </div>
+      <div class="max-w-6xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-end mb-8 reveal"
+        >
+          <div class="w-full text-center md:text-left">
+            <h2
+              class="section-heading font-display font-extrabold uppercase tracking-tighter"
+            >
+              TECH_<span style="color: var(--acid)">STACK</span>
+            </h2>
+          </div>
         </div>
+
+        <!-- FIX: Added skill-grid class and adjusted grid columns for xs screens -->
+        <div
+          class="skill-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 reveal reveal-delay-1"
+          style="
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+          "
+        >
+          <div class="skill-cell">
+            <span class="label">Core</span><span class="name">HTML5</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">Core</span><span class="name">CSS</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">Lang</span><span class="name">JS</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">Lang</span><span class="name">Python</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">Lang</span><span class="name">C++</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">Lib</span><span class="name">React</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">FW</span><span class="name">Next.js</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">FW</span><span class="name">Express</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">FW</span><span class="name">Django</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">BE</span><span class="name">Node.js</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">Style</span><span class="name">Tailwind</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">Data</span><span class="name">MySQL</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">Data</span><span class="name">MongoDB</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">VCS</span><span class="name">Git</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">Tools</span><span class="name">Postman</span>
+          </div>
+          <div class="skill-cell">
+            <span class="label">3D</span><span class="name">Three.js</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- EXPERIENCE -->
     <section id="experience" class="py-24 px-4 max-w-6xl mx-auto">
-        <div class="mb-16 reveal">
-            <h2 class="section-heading font-display font-extrabold uppercase tracking-tighter">
-                Experience<span style="color:var(--coral)">_Log</span>
-            </h2>
+      <div class="mb-16 reveal">
+        <h2
+          class="section-heading font-display font-extrabold uppercase tracking-tighter"
+        >
+          Experience<span style="color: var(--coral)">_Log</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- Larklabs -->
+        <div class="exp-card reveal" style="border-left: 3px solid #a6cc00">
+          <div
+            class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4"
+          >
+            <div>
+              <h3 class="font-display font-bold text-2xl uppercase mb-1">
+                Associate Software Developer
+              </h3>
+              <p class="font-mono text-sm" style="color: #a6cc00">@ Larklabs</p>
+            </div>
+            <span class="pill whitespace-nowrap" style="color: #c0bfbf"
+              >May 2025 – Present</span
+            >
+          </div>
+          <ul class="space-y-2" style="color: #c0bfbf">
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--acid); margin-top: 2px">▸</span>Working
+              on an ERP system, focusing on frontend development, UI
+              consistency, validation, and workflow logic
+            </li>
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--acid); margin-top: 2px">▸</span
+              >Collaborating with backend and product teams to deliver scalable
+              business modules
+            </li>
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--acid); margin-top: 2px">▸</span
+              >Improving system usability, performance, and maintainability
+            </li>
+          </ul>
         </div>
 
-        <div class="space-y-4">
-            <!-- Larklabs -->
-            <div class="exp-card reveal" style="border-left: 3px solid #A6CC00;">
-                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                    <div>
-                        <h3 class="font-display font-bold text-2xl uppercase mb-1">Associate Software Developer</h3>
-                        <p class="font-mono text-sm" style="color:#A6CC00;">@ Larklabs</p>
-                    </div>
-                    <span class="pill whitespace-nowrap"style="color:#c0bfbf;">May 2025 – Present</span>
-                </div>
-                <ul class="space-y-2" style="color:#c0bfbf;">
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--acid);margin-top:2px">▸</span>Working on an ERP system, focusing on
-                        frontend development, UI consistency, validation, and workflow logic</li>
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--acid);margin-top:2px">▸</span>Collaborating with backend and product
-                        teams to deliver scalable business modules</li>
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--acid);margin-top:2px">▸</span>Improving system usability, performance,
-                        and maintainability</li>
-                </ul>
+        <!-- Rearway -->
+        <div
+          class="exp-card reveal reveal-delay-1"
+          style="border-left: 3px solid #ff5c4d"
+        >
+          <div
+            class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4"
+          >
+            <div>
+              <h3 class="font-display font-bold text-2xl uppercase mb-1">
+                Software Developer Intern
+              </h3>
+              <p class="font-mono text-sm" style="color: #ff5c4d">
+                @ Rearway Technologies
+              </p>
             </div>
-
-            <!-- Rearway -->
-            <div class="exp-card reveal reveal-delay-1" style="border-left: 3px solid #FF5C4D;">
-                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                    <div>
-                        <h3 class="font-display font-bold text-2xl uppercase mb-1">Software Developer Intern</h3>
-                        <p class="font-mono text-sm" style="color:#FF5C4D;">@ Rearway Technologies</p>
-                    </div>
-                    <span class="pill whitespace-nowrap"style="color:#c0bfbf;">Apr 2025 – May 2025</span>
-                </div>
-                <ul class="space-y-2" style="color:#c0bfbf;">
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--coral);margin-top:2px">▸</span>Worked on a bidding application</li>
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--coral);margin-top:2px">▸</span>Implemented UI components and assisted in
-                        business logic integration</li>
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--coral);margin-top:2px">▸</span>Participated in requirement analysis and
-                        testing</li>
-                </ul>
-            </div>
-
-            <!-- Strokx -->
-            <div class="exp-card reveal reveal-delay-2" style="border-left: 3px solid #00E5A0;">
-                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                    <div>
-                        <h3 class="font-display font-bold text-2xl uppercase mb-1">Software Developer Intern</h3>
-                        <p class="font-mono text-sm" style="color:#00E5A0;">@ Strokx</p>
-                    </div>
-                    <span class="pill whitespace-nowrap"style="color:#c0bfbf;">Feb 2025 – Apr 2025</span>
-                </div>
-                <ul class="space-y-2" style="color:#c0bfbf;">
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--mint);margin-top:2px">▸</span>Managing multiple client projects from
-                        initiation to completion</li>
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--mint);margin-top:2px">▸</span>Coordinating with development teams and
-                        ensuring project milestones</li>
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--mint);margin-top:2px">▸</span>Maintaining client relationships and
-                        handling project communications</li>
-                </ul>
-            </div>
-
-            <!-- Kerala Digital Park -->
-            <div class="exp-card reveal reveal-delay-1" style="border-left: 3px solid #4DAAFF;">
-                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                    <div>
-                        <h3 class="font-display font-bold text-2xl uppercase mb-1">Web Developer Trainee</h3>
-                        <p class="font-mono text-sm" style="color:#4DAAFF;">@ Kerala Digital Park</p>
-                    </div>
-                    <span class="pill whitespace-nowrap"style="color:#c0bfbf;">Jan 2025 – Feb 2025</span>
-                </div>
-                <ul class="space-y-2" style="color:#c0bfbf;">
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--sky);margin-top:2px">▸</span>Created an Event Management Website</li>
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--sky);margin-top:2px">▸</span>Focused on responsive UI, forms, and user
-                        interaction</li>
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--sky);margin-top:2px">▸</span>Gained real-world exposure to project
-                        structure and deployment flow</li>
-                </ul>
-            </div>
-
-            <!-- Techmaghi -->
-            <div class="exp-card reveal reveal-delay-2" style="border-left: 3px solid #9B6DFF;">
-                <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                    <div>
-                        <h3 class="font-display font-bold text-2xl uppercase mb-1">Web Developer Trainee</h3>
-                        <p class="font-mono text-sm" style="color:#9B6DFF;">@ Techmaghi</p>
-                    </div>
-                    <span class="pill whitespace-nowrap"style="color:#c0bfbf;">Aug 2024 – Jan 2025</span>
-                </div>
-                <ul class="space-y-2" style="color:#c0bfbf;">
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--violet);margin-top:2px">▸</span>Completed a hands-on Web Development
-                        internship with real-world project training</li>
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--violet);margin-top:2px">▸</span>Built responsive applications including a
-                        Food Ordering, Doctor Booking system and Netflix clone</li>
-                    <li class="flex gap-3 text-sm font-body"><span
-                            style="color:var(--violet);margin-top:2px">▸</span>Strengthened frontend fundamentals and
-                        practical development workflows</li>
-                </ul>
-            </div>
+            <span class="pill whitespace-nowrap" style="color: #c0bfbf"
+              >Apr 2025 – May 2025</span
+            >
+          </div>
+          <ul class="space-y-2" style="color: #c0bfbf">
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--coral); margin-top: 2px">▸</span>Worked
+              on a bidding application
+            </li>
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--coral); margin-top: 2px">▸</span
+              >Implemented UI components and assisted in business logic
+              integration
+            </li>
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--coral); margin-top: 2px">▸</span
+              >Participated in requirement analysis and testing
+            </li>
+          </ul>
         </div>
+
+        <!-- Strokx -->
+        <div
+          class="exp-card reveal reveal-delay-2"
+          style="border-left: 3px solid #00e5a0"
+        >
+          <div
+            class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4"
+          >
+            <div>
+              <h3 class="font-display font-bold text-2xl uppercase mb-1">
+                Software Developer Intern
+              </h3>
+              <p class="font-mono text-sm" style="color: #00e5a0">@ Strokx</p>
+            </div>
+            <span class="pill whitespace-nowrap" style="color: #c0bfbf"
+              >Feb 2025 – Apr 2025</span
+            >
+          </div>
+          <ul class="space-y-2" style="color: #c0bfbf">
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--mint); margin-top: 2px">▸</span>Managing
+              multiple client projects from initiation to completion
+            </li>
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--mint); margin-top: 2px">▸</span
+              >Coordinating with development teams and ensuring project
+              milestones
+            </li>
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--mint); margin-top: 2px">▸</span
+              >Maintaining client relationships and handling project
+              communications
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kerala Digital Park -->
+        <div
+          class="exp-card reveal reveal-delay-1"
+          style="border-left: 3px solid #4daaff"
+        >
+          <div
+            class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4"
+          >
+            <div>
+              <h3 class="font-display font-bold text-2xl uppercase mb-1">
+                Web Developer Trainee
+              </h3>
+              <p class="font-mono text-sm" style="color: #4daaff">
+                @ Kerala Digital Park
+              </p>
+            </div>
+            <span class="pill whitespace-nowrap" style="color: #c0bfbf"
+              >Jan 2025 – Feb 2025</span
+            >
+          </div>
+          <ul class="space-y-2" style="color: #c0bfbf">
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--sky); margin-top: 2px">▸</span>Created
+              an Event Management Website
+            </li>
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--sky); margin-top: 2px">▸</span>Focused
+              on responsive UI, forms, and user interaction
+            </li>
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--sky); margin-top: 2px">▸</span>Gained
+              real-world exposure to project structure and deployment flow
+            </li>
+          </ul>
+        </div>
+
+        <!-- Techmaghi -->
+        <div
+          class="exp-card reveal reveal-delay-2"
+          style="border-left: 3px solid #9b6dff"
+        >
+          <div
+            class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4"
+          >
+            <div>
+              <h3 class="font-display font-bold text-2xl uppercase mb-1">
+                Web Developer Trainee
+              </h3>
+              <p class="font-mono text-sm" style="color: #9b6dff">
+                @ Techmaghi
+              </p>
+            </div>
+            <span class="pill whitespace-nowrap" style="color: #c0bfbf"
+              >Aug 2024 – Jan 2025</span
+            >
+          </div>
+          <ul class="space-y-2" style="color: #c0bfbf">
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--violet); margin-top: 2px">▸</span
+              >Completed a hands-on Web Development internship with real-world
+              project training
+            </li>
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--violet); margin-top: 2px">▸</span>Built
+              responsive applications including a Food Ordering, Doctor Booking
+              system and Netflix clone
+            </li>
+            <li class="flex gap-3 text-sm font-body">
+              <span style="color: var(--violet); margin-top: 2px">▸</span
+              >Strengthened frontend fundamentals and practical development
+              workflows
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="py-24 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-16 reveal">
-                <h2 class="section-heading font-display font-extrabold uppercase tracking-tighter">
-                    Selected<span style="color:var(--violet)">_Works</span>
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                <article class="project-card reveal">
-                    <div style="overflow:hidden;"><img src="Assets/images/phisgaurd.webp" alt="GameLand"
-                            class="project-img"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-display font-bold text-2xl uppercase">GameLand</h3>
-                            <a href="https://game-lands.netlify.app/" target="_blank"
-                                style="width:40px;height:40px;background:rgba(166, 204, 0, .1);border:1px solid rgba(166, 204, 0, .2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--acid);flex-shrink:0;transition:background .2s;"><i
-                                    class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                        <p class="font-body text-sm mb-4" style="color:#c0bfbf;line-height:1.6;">A visually stunning gaming
-                            portfolio website featuring 3D animations, interactive preloader, and dynamic music toggle.
-                            Built for immersive user experiences.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">GSAP</span>
-                            <span class="skill-tag">Vanilla JS</span>
-                            <span class="skill-tag">HTML5 & CSS3</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card reveal">
-                    <div style="overflow:hidden;"><img src="Assets/images/creative-portfolio.png" alt="Fizzi"
-                            class="project-img"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-display font-bold text-2xl uppercase">Fizzi</h3>
-                            <a href="https://fizzi-gilt-one.vercel.app/" target="_blank"
-                                style="width:40px;height:40px;background:rgba(155,109,255,.1);border:1px solid rgba(155,109,255,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--violet);flex-shrink:0;"><i
-                                    class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                        <p class="font-body text-sm mb-4" style="color:#c0bfbf;line-height:1.6;">Immersive 3D interactive
-                            website for FIZZI soda brand. Features WebGL experiences, floating 3D soda cans, fluid
-                            animations, and headless CMS integration.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">Next.js</span>
-                            <span class="skill-tag">React Three Fiber</span>
-                            <span class="skill-tag">Three.js</span>
-                            <span class="skill-tag">Prismic</span>
-                        </div>
-                    </div>
-                </article>
-
-                
-
-                
-
-                
-
-                <article class="project-card reveal">
-                    <div style="overflow:hidden;"><img src="Assets/images/verde.png" alt="Verde" class="project-img">
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-display font-bold text-2xl uppercase">Verde</h3>
-                            <a href="https://verde-ten-iota.vercel.app/" target="_blank"
-                                style="width:40px;height:40px;background:rgba(0,229,160,.1);border:1px solid rgba(0,229,160,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--mint);flex-shrink:0;"><i
-                                    class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                        <p class="font-body text-sm mb-4" style="color:#c0bfbf;line-height:1.6;">Premium eco-luxury
-                            e-commerce website showcasing outdoor living essentials, curated planters, greenery, and
-                            refined outdoor furniture.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">Tailwind CSS</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card reveal reveal-delay-1">
-                    <div style="overflow:hidden;"><img src="Assets/images/coffee.jpg" alt="Coffee Address"
-                            class="project-img"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-display font-bold text-2xl uppercase">Coffee Address</h3>
-                            <a href="https://coffeeaddress.vercel.app/" target="_blank"
-                                style="width:40px;height:40px;background:rgba(166, 204, 0, .1);border:1px solid rgba(166, 204, 0, .2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--acid);flex-shrink:0;"><i
-                                    class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                        <p class="font-body text-sm mb-4" style="color:#c0bfbf;line-height:1.6;">Modern coffeehouse brand
-                            website showcasing premium coffee experiences, brand storytelling, signature menu, branch
-                            locations, and expansion opportunities.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">Vite</span>
-                            <span class="skill-tag">Material-UI</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card reveal reveal-delay-1">
-                    <div style="overflow:hidden;"><img src="Assets/images/stoceasy.png" alt="Gloria"
-                            class="project-img"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-display font-bold text-2xl uppercase">Gloria</h3>
-                            <a href="https://gloriaa.netlify.app/" target="_blank"
-                                style="width:40px;height:40px;background:rgba(77,170,255,.1);border:1px solid rgba(77,170,255,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--sky);flex-shrink:0;"><i
-                                    class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                        <p class="font-body text-sm mb-4" style="color:#c0bfbf;line-height:1.6;">A sophisticated fashion
-                            e-commerce website featuring women's, men's, and kids' clothing collections with
-                            accessories, brand showcases, and seasonal sales.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">Vanilla JS</span>
-                            <span class="skill-tag">HTML5 & CSS3</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="project-card reveal reveal-delay-1">
-                    <div style="overflow:hidden;"><img src="Assets/images/habit-tracker.png" alt="Karyasthan"
-                            class="project-img"></div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-3">
-                            <h3 class="font-display font-bold text-2xl uppercase">Karyasthan</h3>
-                            <a href="https://kar-liard.vercel.app/" target="_blank"
-                                style="width:40px;height:40px;background:rgba(255,92,77,.1);border:1px solid rgba(255,92,77,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--coral);flex-shrink:0;"><i
-                                    class="ri-arrow-right-up-line"></i></a>
-                        </div>
-                        <p class="font-body text-sm mb-4" style="color:#c0bfbf;line-height:1.6;">Comprehensive event
-                            management platform with wedding planning, corporate events, admin dashboard, gallery
-                            management, and client booking capabilities.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Express.js</span>
-                            <span class="skill-tag">Multer</span>
-                            <span class="skill-tag">Nodemailer</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <div class="text-center mt-16 reveal">
-                <a href="https://github.com/shibin2002" target="_blank"
-                    style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:16px 36px;border-radius:100px;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.05em;text-transform:uppercase;transition:background .2s,border-color .2s;"
-                    class="text-cream hover:bg-white/10">
-                    <i class="ri-github-fill text-xl"></i> View All Repos on GitHub
-                </a>
-            </div>
+      <div class="max-w-6xl mx-auto">
+        <div class="mb-16 reveal">
+          <h2
+            class="section-heading font-display font-extrabold uppercase tracking-tighter"
+          >
+            Selected<span style="color: var(--violet)">_Works</span>
+          </h2>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article class="project-card reveal">
+            <div style="overflow: hidden">
+              <img
+                src="Assets/images/phisgaurd.webp"
+                alt="GameLand"
+                class="project-img"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-display font-bold text-2xl uppercase">
+                  GameLand
+                </h3>
+                <a
+                  href="https://game-lands.netlify.app/"
+                  target="_blank"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(166, 204, 0, 0.1);
+                    border: 1px solid rgba(166, 204, 0, 0.2);
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--acid);
+                    flex-shrink: 0;
+                    transition: background 0.2s;
+                  "
+                  ><i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+              <p
+                class="font-body text-sm mb-4"
+                style="color: #c0bfbf; line-height: 1.6"
+              >
+                A visually stunning gaming portfolio website featuring 3D
+                animations, interactive preloader, and dynamic music toggle.
+                Built for immersive user experiences.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">GSAP</span>
+                <span class="skill-tag">Vanilla JS</span>
+                <span class="skill-tag">HTML5 & CSS3</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div style="overflow: hidden">
+              <img
+                src="Assets/images/creative-portfolio.png"
+                alt="Fizzi"
+                class="project-img"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-display font-bold text-2xl uppercase">Fizzi</h3>
+                <a
+                  href="https://fizzi-gilt-one.vercel.app/"
+                  target="_blank"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(155, 109, 255, 0.1);
+                    border: 1px solid rgba(155, 109, 255, 0.2);
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--violet);
+                    flex-shrink: 0;
+                  "
+                  ><i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+              <p
+                class="font-body text-sm mb-4"
+                style="color: #c0bfbf; line-height: 1.6"
+              >
+                Immersive 3D interactive website for FIZZI soda brand. Features
+                WebGL experiences, floating 3D soda cans, fluid animations, and
+                headless CMS integration.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">Next.js</span>
+                <span class="skill-tag">React Three Fiber</span>
+                <span class="skill-tag">Three.js</span>
+                <span class="skill-tag">Prismic</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div style="overflow: hidden">
+              <img
+                src="Assets/images/verde.png"
+                alt="Verde"
+                class="project-img"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-display font-bold text-2xl uppercase">Verde</h3>
+                <a
+                  href="https://verde-ten-iota.vercel.app/"
+                  target="_blank"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(0, 229, 160, 0.1);
+                    border: 1px solid rgba(0, 229, 160, 0.2);
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--mint);
+                    flex-shrink: 0;
+                  "
+                  ><i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+              <p
+                class="font-body text-sm mb-4"
+                style="color: #c0bfbf; line-height: 1.6"
+              >
+                Premium eco-luxury e-commerce website showcasing outdoor living
+                essentials, curated planters, greenery, and refined outdoor
+                furniture.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Tailwind CSS</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal reveal-delay-1">
+            <div style="overflow: hidden">
+              <img
+                src="Assets/images/coffee.jpg"
+                alt="Coffee Address"
+                class="project-img"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-display font-bold text-2xl uppercase">
+                  Coffee Address
+                </h3>
+                <a
+                  href="https://coffeeaddress.vercel.app/"
+                  target="_blank"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(166, 204, 0, 0.1);
+                    border: 1px solid rgba(166, 204, 0, 0.2);
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--acid);
+                    flex-shrink: 0;
+                  "
+                  ><i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+              <p
+                class="font-body text-sm mb-4"
+                style="color: #c0bfbf; line-height: 1.6"
+              >
+                Modern coffeehouse brand website showcasing premium coffee
+                experiences, brand storytelling, signature menu, branch
+                locations, and expansion opportunities.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Vite</span>
+                <span class="skill-tag">Material-UI</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal reveal-delay-1">
+            <div style="overflow: hidden">
+              <img
+                src="Assets/images/stoceasy.png"
+                alt="Gloria"
+                class="project-img"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-display font-bold text-2xl uppercase">
+                  Gloria
+                </h3>
+                <a
+                  href="https://gloriaa.netlify.app/"
+                  target="_blank"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(77, 170, 255, 0.1);
+                    border: 1px solid rgba(77, 170, 255, 0.2);
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--sky);
+                    flex-shrink: 0;
+                  "
+                  ><i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+              <p
+                class="font-body text-sm mb-4"
+                style="color: #c0bfbf; line-height: 1.6"
+              >
+                A sophisticated fashion e-commerce website featuring women's,
+                men's, and kids' clothing collections with accessories, brand
+                showcases, and seasonal sales.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">Vanilla JS</span>
+                <span class="skill-tag">HTML5 & CSS3</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card reveal reveal-delay-1">
+            <div style="overflow: hidden">
+              <img
+                src="Assets/images/habit-tracker.png"
+                alt="Karyasthan"
+                class="project-img"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-display font-bold text-2xl uppercase">
+                  Karyasthan
+                </h3>
+                <a
+                  href="https://kar-liard.vercel.app/"
+                  target="_blank"
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(255, 92, 77, 0.1);
+                    border: 1px solid rgba(255, 92, 77, 0.2);
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--coral);
+                    flex-shrink: 0;
+                  "
+                  ><i class="ri-arrow-right-up-line"></i
+                ></a>
+              </div>
+              <p
+                class="font-body text-sm mb-4"
+                style="color: #c0bfbf; line-height: 1.6"
+              >
+                Comprehensive event management platform with wedding planning,
+                corporate events, admin dashboard, gallery management, and
+                client booking capabilities.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express.js</span>
+                <span class="skill-tag">Multer</span>
+                <span class="skill-tag">Nodemailer</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-16 reveal">
+          <a
+            href="https://github.com/shibin2002"
+            target="_blank"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 10px;
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              padding: 16px 36px;
+              border-radius: 100px;
+              font-family: &quot;DM Mono&quot;, monospace;
+              font-size: 13px;
+              letter-spacing: 0.05em;
+              text-transform: uppercase;
+              transition:
+                background 0.2s,
+                border-color 0.2s;
+            "
+            class="text-cream hover:bg-white/10"
+          >
+            <i class="ri-github-fill text-xl"></i> View All Repos on GitHub
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- TESTIMONIALS -->
-    <section id="reports"
-        style="background:var(--graphite);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);"
-        class="py-24 overflow-hidden">
-        <div class="max-w-6xl mx-auto px-4 mb-12 reveal">
-            <h2 class="section-heading font-display font-extrabold uppercase tracking-tighter">
-                User_<span style="color:var(--sky)">Reports</span>
-            </h2>
-        </div>
-        <div class="marquee-wrap overflow-hidden">
-            <div class="marquee-track" style="gap:20px;padding:0 20px;">
-                <div class="testi-card" style="border-top:2px solid #00E5A0;">
-                    <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs"
-                            style="color:#00E5A0;">REPORT_001.log</span>
-                        <div class="flex gap-1" style="color:#c0bfbf;">★★★★★</div>
-                    </div>
-                    <p class="font-mono text-xs mb-3" style="color:#c0bfbf;">FROM: Abu Thahir @ MGM COLLEGE</p>
-                    <p class="font-body text-base leading-relaxed" style="color:#ccc;">"Shibin performs exceptionally
-                        well under pressure and always delivers high-quality results on time."</p>
-                </div>
-                <div class="testi-card" style="border-top:2px solid #4DAAFF;">
-                    <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs"
-                            style="color:#4DAAFF;">REPORT_002.log</span>
-                        <div class="flex gap-1" style="color:#c0bfbf;">★★★★★</div>
-                    </div>
-                    <p class="font-mono text-xs mb-3" style="color:#c0bfbf;">FROM: CEO @ Strokx</p>
-                    <p class="font-body text-base leading-relaxed" style="color:#ccc;">"Fast, reliable, and demonstrates
-                        exceptional design judgment — a rare and valuable combination."</p>
-                </div>
-                <div class="testi-card" style="border-top:2px solid #FF5C4D;">
-                    <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs"
-                            style="color:#FF5C4D;">REPORT_003.log</span>
-                        <div class="flex gap-1" style="color:#c0bfbf;">★★★★★</div>
-                    </div>
-                    <p class="font-mono text-xs mb-3" style="color:#c0bfbf;">FROM: Dev @ Larklabs</p>
-                    <p class="font-body text-base leading-relaxed" style="color:#ccc;">"Writes exceptionally clean,
-                        maintainable code and handles complex state management with confidence."</p>
-                </div>
-                <div class="testi-card" style="border-top:2px solid #9B6DFF;">
-                    <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs"
-                            style="color:#9B6DFF;">REPORT_004.log</span>
-                        <div class="flex gap-1" style="color:#c0bfbf;">★★★★★</div>
-                    </div>
-                    <p class="font-mono text-xs mb-3" style="color:#c0bfbf;">FROM: Dev @ Rearway Technologies</p>
-                    <p class="font-body text-base leading-relaxed" style="color:#ccc;">"Transformed ideas into a clean,
-                        modern UI with strong usability and visual impact."</p>
-                </div>
-                <div class="testi-card" style="border-top:2px solid #A6CC00;">
-                    <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs"
-                            style="color:#A6CC00;">REPORT_005.log</span>
-                        <div class="flex gap-1" style="color:#c0bfbf;">★★★★★</div>
-                    </div>
-                    <p class="font-mono text-xs mb-3" style="color:#c0bfbf;">FROM: UX Designer @ Larklabs</p>
-                    <p class="font-body text-base leading-relaxed" style="color:#ccc;">"Designed an intuitive user
-                        experience and anticipated needs before we even recognized them."</p>
-                </div>
-                <!-- Duplicates for loop -->
-                <div class="testi-card" style="border-top:2px solid #00E5A0;">
-                    <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs"
-                            style="color:#00E5A0;">REPORT_001.log</span>
-                        <div class="flex gap-1" style="color:#c0bfbf;">★★★★★</div>
-                    </div>
-                    <p class="font-mono text-xs mb-3" style="color:#c0bfbf;">FROM: Abu Thahir @ MGM COLLEGE</p>
-                    <p class="font-body text-base leading-relaxed" style="color:#ccc;">"Shibin performs exceptionally
-                        well under pressure and always delivers high-quality results on time."</p>
-                </div>
-                <div class="testi-card" style="border-top:2px solid #4DAAFF;">
-                    <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs"
-                            style="color:#4DAAFF;">REPORT_002.log</span>
-                        <div class="flex gap-1" style="color:#c0bfbf;">★★★★★</div>
-                    </div>
-                    <p class="font-mono text-xs mb-3" style="color:#c0bfbf;">FROM: CEO @ Strokx</p>
-                    <p class="font-body text-base leading-relaxed" style="color:#ccc;">"Fast, reliable, and demonstrates
-                        exceptional design judgment — a rare and valuable combination."</p>
-                </div>
-                <div class="testi-card" style="border-top:2px solid #FF5C4D;">
-                    <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs"
-                            style="color:#FF5C4D;">REPORT_003.log</span>
-                        <div class="flex gap-1" style="color:#c0bfbf;">★★★★★</div>
-                    </div>
-                    <p class="font-mono text-xs mb-3" style="color:#c0bfbf;">FROM: Dev @ Larklabs</p>
-                    <p class="font-body text-base leading-relaxed" style="color:#ccc;">"Writes exceptionally clean,
-                        maintainable code and handles complex state management with confidence."</p>
-                </div>
-                <div class="testi-card" style="border-top:2px solid #9B6DFF;">
-                    <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs"
-                            style="color:#9B6DFF;">REPORT_004.log</span>
-                        <div class="flex gap-1" style="color:#c0bfbf;">★★★★★</div>
-                    </div>
-                    <p class="font-mono text-xs mb-3" style="color:#c0bfbf;">FROM: Dev @ Rearway Technologies</p>
-                    <p class="font-body text-base leading-relaxed" style="color:#ccc;">"Transformed ideas into a clean,
-                        modern UI with strong usability and visual impact."</p>
-                </div>
-                <div class="testi-card" style="border-top:2px solid #A6CC00;">
-                    <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs"
-                            style="color:#A6CC00;">REPORT_005.log</span>
-                        <div class="flex gap-1" style="color:#c0bfbf;">★★★★★</div>
-                    </div>
-                    <p class="font-mono text-xs mb-3" style="color:#c0bfbf;">FROM: UX Designer @ Larklabs</p>
-                    <p class="font-body text-base leading-relaxed" style="color:#ccc;">"Designed an intuitive user
-                        experience and anticipated needs before we even recognized them."</p>
-                </div>
+    <section
+      id="reports"
+      style="
+        background: var(--graphite);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      "
+      class="py-24 overflow-hidden"
+    >
+      <div class="max-w-6xl mx-auto px-4 mb-12 reveal">
+        <h2
+          class="section-heading font-display font-extrabold uppercase tracking-tighter"
+        >
+          User_<span style="color: var(--sky)">Reports</span>
+        </h2>
+      </div>
+      <div class="marquee-wrap overflow-hidden">
+        <div class="marquee-track" style="gap: 20px; padding: 0 20px">
+          <div class="testi-card" style="border-top: 2px solid #00e5a0">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-mono text-xs" style="color: #00e5a0"
+                >REPORT_001.log</span
+              >
+              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
             </div>
+            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
+              FROM: Abu Thahir @ MGM COLLEGE
+            </p>
+            <p class="font-body text-base leading-relaxed" style="color: #ccc">
+              "Shibin performs exceptionally well under pressure and always
+              delivers high-quality results on time."
+            </p>
+          </div>
+          <div class="testi-card" style="border-top: 2px solid #4daaff">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-mono text-xs" style="color: #4daaff"
+                >REPORT_002.log</span
+              >
+              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+            </div>
+            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
+              FROM: CEO @ Strokx
+            </p>
+            <p class="font-body text-base leading-relaxed" style="color: #ccc">
+              "Fast, reliable, and demonstrates exceptional design judgment — a
+              rare and valuable combination."
+            </p>
+          </div>
+          <div class="testi-card" style="border-top: 2px solid #ff5c4d">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-mono text-xs" style="color: #ff5c4d"
+                >REPORT_003.log</span
+              >
+              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+            </div>
+            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
+              FROM: Dev @ Larklabs
+            </p>
+            <p class="font-body text-base leading-relaxed" style="color: #ccc">
+              "Writes exceptionally clean, maintainable code and handles complex
+              state management with confidence."
+            </p>
+          </div>
+          <div class="testi-card" style="border-top: 2px solid #9b6dff">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-mono text-xs" style="color: #9b6dff"
+                >REPORT_004.log</span
+              >
+              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+            </div>
+            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
+              FROM: Dev @ Rearway Technologies
+            </p>
+            <p class="font-body text-base leading-relaxed" style="color: #ccc">
+              "Transformed ideas into a clean, modern UI with strong usability
+              and visual impact."
+            </p>
+          </div>
+          <div class="testi-card" style="border-top: 2px solid #a6cc00">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-mono text-xs" style="color: #a6cc00"
+                >REPORT_005.log</span
+              >
+              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+            </div>
+            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
+              FROM: UX Designer @ Larklabs
+            </p>
+            <p class="font-body text-base leading-relaxed" style="color: #ccc">
+              "Designed an intuitive user experience and anticipated needs
+              before we even recognized them."
+            </p>
+          </div>
+          <!-- Duplicates for loop -->
+          <div class="testi-card" style="border-top: 2px solid #00e5a0">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-mono text-xs" style="color: #00e5a0"
+                >REPORT_001.log</span
+              >
+              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+            </div>
+            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
+              FROM: Abu Thahir @ MGM COLLEGE
+            </p>
+            <p class="font-body text-base leading-relaxed" style="color: #ccc">
+              "Shibin performs exceptionally well under pressure and always
+              delivers high-quality results on time."
+            </p>
+          </div>
+          <div class="testi-card" style="border-top: 2px solid #4daaff">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-mono text-xs" style="color: #4daaff"
+                >REPORT_002.log</span
+              >
+              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+            </div>
+            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
+              FROM: CEO @ Strokx
+            </p>
+            <p class="font-body text-base leading-relaxed" style="color: #ccc">
+              "Fast, reliable, and demonstrates exceptional design judgment — a
+              rare and valuable combination."
+            </p>
+          </div>
+          <div class="testi-card" style="border-top: 2px solid #ff5c4d">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-mono text-xs" style="color: #ff5c4d"
+                >REPORT_003.log</span
+              >
+              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+            </div>
+            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
+              FROM: Dev @ Larklabs
+            </p>
+            <p class="font-body text-base leading-relaxed" style="color: #ccc">
+              "Writes exceptionally clean, maintainable code and handles complex
+              state management with confidence."
+            </p>
+          </div>
+          <div class="testi-card" style="border-top: 2px solid #9b6dff">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-mono text-xs" style="color: #9b6dff"
+                >REPORT_004.log</span
+              >
+              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+            </div>
+            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
+              FROM: Dev @ Rearway Technologies
+            </p>
+            <p class="font-body text-base leading-relaxed" style="color: #ccc">
+              "Transformed ideas into a clean, modern UI with strong usability
+              and visual impact."
+            </p>
+          </div>
+          <div class="testi-card" style="border-top: 2px solid #a6cc00">
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-mono text-xs" style="color: #a6cc00"
+                >REPORT_005.log</span
+              >
+              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+            </div>
+            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
+              FROM: UX Designer @ Larklabs
+            </p>
+            <p class="font-body text-base leading-relaxed" style="color: #ccc">
+              "Designed an intuitive user experience and anticipated needs
+              before we even recognized them."
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="py-32 px-4 max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
-            <div class="reveal">
-                <h2 class="contact-heading font-display font-extrabold uppercase tracking-tighter leading-[.88] mb-6">
-                    Let's<br>Talk<br><span style="color:var(--acid)">Code.</span>
-                </h2>
-                <div class="flex items-center gap-3 mb-5">
-                    <span class="w-2 h-2 rounded-full bg-mint animate-pulse"></span>
-                    <span class="font-mono text-xs uppercase tracking-widest" style="color:#c0bfbf;">Available for
-                        Freelance &amp; Full-time</span>
-                </div>
-                <p class="font-body text-base leading-relaxed max-w-sm" style="color:#c0bfbf;">
-                    I build fast, accessible, and memorable web experiences. Got a project or role in mind? Let's make
-                    it happen.
-                </p>
-            </div>
-
-            <div class="space-y-4 reveal reveal-delay-1">
-                <a href="mailto:shibinshoukath0@gmail.com" class="contact-link">
-                    <div
-                        style="width:44px;height:44px;background:rgba(77,170,255,.1);border:1px solid rgba(77,170,255,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <i class="ri-mail-send-line" style="color:var(--sky);font-size:18px;"></i>
-                    </div>
-                    <div>
-                        <div class="font-mono text-xs mb-1 uppercase tracking-widest" style="color:#c0bfbf;">Email</div>
-                        <div class="font-body font-medium text-sm">shibinshoukath0@gmail.com</div>
-                    </div>
-                    <i class="ri-arrow-right-up-line ml-auto" style="color:#c0bfbf;"></i>
-                </a>
-                <a href="tel:+919526353831" class="contact-link">
-                    <div
-                        style="width:44px;height:44px;background:rgba(255,92,77,.1);border:1px solid rgba(255,92,77,.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <i class="ri-phone-line" style="color:var(--coral);font-size:18px;"></i>
-                    </div>
-                    <div>
-                        <div class="font-mono text-xs mb-1 uppercase tracking-widest" style="color:#c0bfbf;">Phone</div>
-                        <div class="font-body font-medium text-sm">+91 9526353831</div>
-                    </div>
-                    <i class="ri-arrow-right-up-line ml-auto" style="color:#c0bfbf;"></i>
-                </a>
-                <div class="contact-link" style="cursor:default;">
-                    <div
-                        style="width:44px;height:44px;background:rgba(166, 204, 0, .08);border:1px solid rgba(166, 204, 0, .15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <i class="ri-map-pin-2-line" style="color:var(--acid);font-size:18px;"></i>
-                    </div>
-                    <div>
-                        <div class="font-mono text-xs mb-1 uppercase tracking-widest" style="color:#c0bfbf;">Location</div>
-                        <div class="font-body font-medium text-sm">Remote / India 🇮🇳</div>
-                    </div>
-                </div>
-                <a href="mailto:shibinshoukath0@gmail.com"
-                    style="display:flex;align-items:center;gap:10px;background:var(--acid);color:var(--ink);padding:16px 28px;border-radius:12px;font-family:'Outfit',sans-serif;font-weight:600;font-size:14px;transition:opacity .2s,transform .2s;margin-top:8px;"
-                    class="hover:opacity-85 hover:scale-95">
-                    <i class="ri-send-plane-2-line"></i> Send a Message
-                </a>
-            </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
+        <div class="reveal">
+          <h2
+            class="contact-heading font-display font-extrabold uppercase tracking-tighter leading-[.88] mb-6"
+          >
+            Let's<br />Talk<br /><span style="color: var(--acid)">Code.</span>
+          </h2>
+          <div class="flex items-center gap-3 mb-5">
+            <span class="w-2 h-2 rounded-full bg-mint animate-pulse"></span>
+            <span
+              class="font-mono text-xs uppercase tracking-widest"
+              style="color: #c0bfbf"
+              >Available for Freelance &amp; Full-time</span
+            >
+          </div>
+          <p
+            class="font-body text-base leading-relaxed max-w-sm"
+            style="color: #c0bfbf"
+          >
+            I build fast, accessible, and memorable web experiences. Got a
+            project or role in mind? Let's make it happen.
+          </p>
         </div>
+
+        <div class="space-y-4 reveal reveal-delay-1">
+          <a href="mailto:shibinshoukath0@gmail.com" class="contact-link">
+            <div
+              style="
+                width: 44px;
+                height: 44px;
+                background: rgba(77, 170, 255, 0.1);
+                border: 1px solid rgba(77, 170, 255, 0.15);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+            >
+              <i
+                class="ri-mail-send-line"
+                style="color: var(--sky); font-size: 18px"
+              ></i>
+            </div>
+            <div>
+              <div
+                class="font-mono text-xs mb-1 uppercase tracking-widest"
+                style="color: #c0bfbf"
+              >
+                Email
+              </div>
+              <div class="font-body font-medium text-sm">
+                shibinshoukath0@gmail.com
+              </div>
+            </div>
+            <i
+              class="ri-arrow-right-up-line ml-auto"
+              style="color: #c0bfbf"
+            ></i>
+          </a>
+          <a href="tel:+919526353831" class="contact-link">
+            <div
+              style="
+                width: 44px;
+                height: 44px;
+                background: rgba(255, 92, 77, 0.1);
+                border: 1px solid rgba(255, 92, 77, 0.15);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+            >
+              <i
+                class="ri-phone-line"
+                style="color: var(--coral); font-size: 18px"
+              ></i>
+            </div>
+            <div>
+              <div
+                class="font-mono text-xs mb-1 uppercase tracking-widest"
+                style="color: #c0bfbf"
+              >
+                Phone
+              </div>
+              <div class="font-body font-medium text-sm">+91 9526353831</div>
+            </div>
+            <i
+              class="ri-arrow-right-up-line ml-auto"
+              style="color: #c0bfbf"
+            ></i>
+          </a>
+          <div class="contact-link" style="cursor: default">
+            <div
+              style="
+                width: 44px;
+                height: 44px;
+                background: rgba(166, 204, 0, 0.08);
+                border: 1px solid rgba(166, 204, 0, 0.15);
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+              "
+            >
+              <i
+                class="ri-map-pin-2-line"
+                style="color: var(--acid); font-size: 18px"
+              ></i>
+            </div>
+            <div>
+              <div
+                class="font-mono text-xs mb-1 uppercase tracking-widest"
+                style="color: #c0bfbf"
+              >
+                Location
+              </div>
+              <div class="font-body font-medium text-sm">Remote / India 🇮🇳</div>
+            </div>
+          </div>
+          <a
+            href="mailto:shibinshoukath0@gmail.com"
+            style="
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              background: var(--acid);
+              color: var(--ink);
+              padding: 16px 28px;
+              border-radius: 12px;
+              font-family: &quot;Outfit&quot;, sans-serif;
+              font-weight: 600;
+              font-size: 14px;
+              transition:
+                opacity 0.2s,
+                transform 0.2s;
+              margin-top: 8px;
+            "
+            class="hover:opacity-85 hover:scale-95"
+          >
+            <i class="ri-send-plane-2-line"></i> Send a Message
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- FOOTER -->
-    <footer style="background:var(--graphite);border-top:1px solid rgba(255,255,255,.06);" class="py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <h2 class="font-display font-bold text-3xl mb-4" style="letter-spacing:-.02em;">Shibin<span
-                            style="color:var(--acid)">.</span></h2>
-                    <p class="font-body text-sm leading-relaxed max-w-sm" style="color:#c0bfbf;">
-                        Designing scalable digital experiences with the raw discipline of the past and the innovation of
-                        the future. Clean architecture, thoughtful design, reliable code.
-                    </p>
-                </div>
-                <div>
-                    <h3 class="font-mono text-xs uppercase tracking-widest mb-5" style="color:var(--acid);">Sitemap</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="font-body text-sm" style="color:#c0bfbf;">Home</a></li>
-                        <li><a href="#projects" class="font-body text-sm" style="color:#c0bfbf;">Works</a></li>
-                        <li><a href="#about" class="font-body text-sm" style="color:#c0bfbf;">About</a></li>
-                        <li><a href="#contact" class="font-body text-sm" style="color:#c0bfbf;">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-mono text-xs uppercase tracking-widest mb-5" style="color:var(--acid);">Socials</h3>
-                    <div class="flex gap-4">
-                        <a href="https://www.facebook.com/shibin.shoukath/"
-                            style="width:40px;height:40px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .2s,border-color .2s;"
-                            class="hover:bg-white/10"><i class="ri-facebook-fill" style="color:#c0bfbf;"></i></a>
-                        <a href="https://www.instagram.com/_shibin02"
-                            style="width:40px;height:40px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .2s;"
-                            class="hover:bg-white/10"><i class="ri-instagram-fill" style="color:#c0bfbf;"></i></a>
-                        <a href="https://github.com/shibin2002"
-                            style="width:40px;height:40px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .2s;"
-                            class="hover:bg-white/10"><i class="ri-github-fill" style="color:#c0bfbf;"></i></a>
-                        <a href="https://www.linkedin.com/in/shibin2002"
-                            style="width:40px;height:40px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .2s;"
-                            class="hover:bg-white/10"><i class="ri-linkedin-fill" style="color:#c0bfbf;"></i></a>
-                    </div>
-                </div>
+    <footer
+      style="
+        background: var(--graphite);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      "
+      class="py-16 px-4"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div class="col-span-1 md:col-span-2">
+            <h2
+              class="font-display font-bold text-3xl mb-4"
+              style="letter-spacing: -0.02em"
+            >
+              Shibin<span style="color: var(--acid)">.</span>
+            </h2>
+            <p
+              class="font-body text-sm leading-relaxed max-w-sm"
+              style="color: #c0bfbf"
+            >
+              Designing scalable digital experiences with the raw discipline of
+              the past and the innovation of the future. Clean architecture,
+              thoughtful design, reliable code.
+            </p>
+          </div>
+          <div>
+            <h3
+              class="font-mono text-xs uppercase tracking-widest mb-5"
+              style="color: var(--acid)"
+            >
+              Sitemap
+            </h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="#" class="font-body text-sm" style="color: #c0bfbf"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  class="font-body text-sm"
+                  style="color: #c0bfbf"
+                  >Works</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="font-body text-sm"
+                  style="color: #c0bfbf"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="font-body text-sm"
+                  style="color: #c0bfbf"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="font-mono text-xs uppercase tracking-widest mb-5"
+              style="color: var(--acid)"
+            >
+              Socials
+            </h3>
+            <div class="flex gap-4">
+              <a
+                href="https://www.facebook.com/shibin.shoukath/"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  background: rgba(255, 255, 255, 0.04);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 18px;
+                  transition:
+                    background 0.2s,
+                    border-color 0.2s;
+                "
+                class="hover:bg-white/10"
+                ><i class="ri-facebook-fill" style="color: #c0bfbf"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/_shibin02"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  background: rgba(255, 255, 255, 0.04);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 18px;
+                  transition: background 0.2s;
+                "
+                class="hover:bg-white/10"
+                ><i class="ri-instagram-fill" style="color: #c0bfbf"></i
+              ></a>
+              <a
+                href="https://github.com/shibin2002"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  background: rgba(255, 255, 255, 0.04);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 18px;
+                  transition: background 0.2s;
+                "
+                class="hover:bg-white/10"
+                ><i class="ri-github-fill" style="color: #c0bfbf"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/shibin2002"
+                style="
+                  width: 40px;
+                  height: 40px;
+                  background: rgba(255, 255, 255, 0.04);
+                  border: 1px solid rgba(255, 255, 255, 0.08);
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 18px;
+                  transition: background 0.2s;
+                "
+                class="hover:bg-white/10"
+                ><i class="ri-linkedin-fill" style="color: #c0bfbf"></i
+              ></a>
             </div>
-            <hr class="divider">
-            <p class="font-mono text-xs text-center mt-8" style="color:#c0bfbf;">© 2025 Shibin — Built with craft &amp;
-                obsession.</p>
+          </div>
         </div>
+        <hr class="divider" />
+        <p class="font-mono text-xs text-center mt-8" style="color: #c0bfbf">
+          © 2025 Shibin — Built with craft &amp; obsession.
+        </p>
+      </div>
     </footer>
 
     <!-- GSAP & Plugins -->
@@ -1392,295 +2057,343 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 
     <script>
-        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+      gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-        // --- UTILITY: SPLIT TEXT ---
-        function splitText(selector) {
-            const elements = document.querySelectorAll(selector);
-            elements.forEach(el => {
-                const text = el.innerText;
-                const words = text.split(" ");
-                el.innerHTML = words.map((word, wordIdx) => {
-                    const chars = word.split("");
-                    return `<span class="split-word inline-block" style="white-space:pre;">${chars.map(char => `<span class="split-char inline-block">${char}</span>`).join("")}${wordIdx < words.length - 1 ? '<span class="split-char inline-block"> </span>' : ""}</span>`;
-                }).join("");
-            });
-        }
+      // --- UTILITY: SPLIT TEXT ---
+      function splitText(selector) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach((el) => {
+          const text = el.innerText;
+          const words = text.split(" ");
+          el.innerHTML = words
+            .map((word, wordIdx) => {
+              const chars = word.split("");
+              return `<span class="split-word inline-block" style="white-space:pre;">${chars.map((char) => `<span class="split-char inline-block">${char}</span>`).join("")}${wordIdx < words.length - 1 ? '<span class="split-char inline-block"> </span>' : ""}</span>`;
+            })
+            .join("");
+        });
+      }
 
-        // Apply splitting
-        splitText('.section-heading');
-        splitText('.hero-sub');
+      // Apply splitting
+      splitText(".section-heading");
+      splitText(".hero-sub");
 
-        // --- CUSTOM CURSOR ---
-        const cursor = document.getElementById('cursor');
-        const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-        const mouse = { x: pos.x, y: pos.y };
-        const speed = 0.40;
+      // --- CUSTOM CURSOR ---
+      const cursor = document.getElementById("cursor");
+      const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+      const mouse = { x: pos.x, y: pos.y };
+      const speed = 0.4;
 
-        const xSet = gsap.quickSetter(cursor, "x", "px");
-        const ySet = gsap.quickSetter(cursor, "y", "px");
+      const xSet = gsap.quickSetter(cursor, "x", "px");
+      const ySet = gsap.quickSetter(cursor, "y", "px");
 
-        window.addEventListener("mousemove", e => {
-            mouse.x = e.clientX;
-            mouse.y = e.clientY;
+      window.addEventListener("mousemove", (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+      });
+
+      gsap.ticker.add(() => {
+        const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
+        pos.x += (mouse.x - pos.x) * dt;
+        pos.y += (mouse.y - pos.y) * dt;
+        xSet(pos.x);
+        ySet(pos.y);
+      });
+
+      // Cursor scaling
+      const interactiveElements =
+        "a, button, .skill-cell, .project-card, .exp-card, #menuToggle";
+      document.querySelectorAll(interactiveElements).forEach((el) => {
+        el.addEventListener("mouseenter", () =>
+          gsap.to(cursor, { scale: 2.8, duration: 0.3 }),
+        );
+        el.addEventListener("mouseleave", () =>
+          gsap.to(cursor, { scale: 1, duration: 0.3 }),
+        );
+      });
+
+      // --- HERO INTERACTIVITY (MOUSE PARALLAX & TILT) ---
+      const heroSection = document.querySelector(".hero-section");
+      const heroHeading = document.querySelector(".hero-heading");
+      const orbs = document.querySelectorAll(".hero-orb, .tech-shape");
+
+      heroSection.addEventListener("mousemove", (e) => {
+        const { clientX, clientY } = e;
+        const { width, height, left, top } =
+          heroSection.getBoundingClientRect();
+
+        // Normalize mouse position (-1 to 1)
+        const x = (clientX - left) / width - 0.5;
+        const y = (clientY - top) / height - 0.5;
+
+        // Tilt Heading
+        gsap.to(heroHeading, {
+          rotateY: x * 15,
+          rotateX: -y * 15,
+          x: x * 20,
+          y: y * 20,
+          duration: 0.8,
+          ease: "power2.out",
         });
 
-        gsap.ticker.add(() => {
-            const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
-            pos.x += (mouse.x - pos.x) * dt;
-            pos.y += (mouse.y - pos.y) * dt;
-            xSet(pos.x);
-            ySet(pos.y);
+        // Parallax Orbs & Shapes
+        orbs.forEach((orb) => {
+          const speed = orb.getAttribute("data-speed") || 0.05;
+          gsap.to(orb, {
+            x: x * (width * speed),
+            y: y * (height * speed),
+            duration: 1.2,
+            ease: "power2.out",
+          });
+        });
+      });
+
+      // Reset on mouse leave
+      heroSection.addEventListener("mouseleave", () => {
+        gsap.to(heroHeading, {
+          rotateX: 0,
+          rotateY: 0,
+          x: 0,
+          y: 0,
+          duration: 1.5,
+          ease: "elastic.out(1, 0.3)",
+        });
+        orbs.forEach((orb) =>
+          gsap.to(orb, { x: 0, y: 0, duration: 1.5, ease: "power2.out" }),
+        );
+      });
+
+      // --- HERO ENTRANCE (FIZZI STYLE) ---
+      const heroTl = gsap.timeline({ defaults: { ease: "expo.out" } });
+
+      heroTl
+        .to("body", { opacity: 1, duration: 0.1 })
+        .fromTo(
+          ".hero-word span",
+          {
+            scale: 3,
+            opacity: 0,
+            y: 0,
+          },
+          {
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power4.out",
+            delay: 0.3,
+          },
+        )
+        .from(
+          ".hero-badge",
+          {
+            y: 20,
+            opacity: 0,
+            duration: 1,
+          },
+          "-=0.6",
+        )
+        .from(
+          ".hero-sub .split-char",
+          {
+            opacity: 0,
+            y: 10,
+            stagger: 0.02,
+            duration: 0.5,
+          },
+          "-=0.8",
+        )
+        .from(
+          ".hero-btns",
+          {
+            y: 20,
+            opacity: 0,
+            duration: 1,
+          },
+          "-=0.8",
+        )
+        .from(
+          "nav",
+          {
+            y: -20,
+            opacity: 0,
+            duration: 1,
+          },
+          "-=1",
+        );
+
+      // --- SCROLL REVEALS (CHARACTER LEVEL) ---
+      document.querySelectorAll(".section-heading").forEach((heading) => {
+        gsap.from(heading.querySelectorAll(".split-word"), {
+          scrollTrigger: {
+            trigger: heading,
+            start: "top 92%",
+            toggleActions: "play none none none",
+          },
+          scale: 1.3,
+          y: 40,
+          rotate: -5,
+          opacity: 0,
+          stagger: 0.05,
+          ease: "back.out(3)",
+          duration: 0.8,
+        });
+      });
+
+      // Standard reveals for cards
+      document
+        .querySelectorAll(
+          ".project-card, .exp-card, .reveal:not(.section-heading)",
+        )
+        .forEach((el) => {
+          const delay = el.classList.contains("reveal-delay-1")
+            ? 0.1
+            : el.classList.contains("reveal-delay-2")
+              ? 0.2
+              : el.classList.contains("reveal-delay-3")
+                ? 0.3
+                : 0;
+
+          gsap.to(el, {
+            scrollTrigger: {
+              trigger: el,
+              start: "top 92%",
+              toggleActions: "play none none none",
+            },
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            delay: delay,
+            ease: "power2.out",
+          });
         });
 
-        // Cursor scaling
-        const interactiveElements = 'a, button, .skill-cell, .project-card, .exp-card, #menuToggle';
-        document.querySelectorAll(interactiveElements).forEach(el => {
-            el.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 2.8, duration: 0.3 }));
-            el.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, duration: 0.3 }));
+      // --- MAGNETIC BUTTONS ---
+      document.querySelectorAll(".nav-cta, .hero-btns a").forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          gsap.to(btn, {
+            x: x * 0.3,
+            y: y * 0.3,
+            duration: 0.3,
+            ease: "power2.out",
+          });
         });
 
-        // --- HERO INTERACTIVITY (MOUSE PARALLAX & TILT) ---
-        const heroSection = document.querySelector('.hero-section');
-        const heroHeading = document.querySelector('.hero-heading');
-        const orbs = document.querySelectorAll('.hero-orb, .tech-shape');
-
-        heroSection.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e;
-            const { width, height, left, top } = heroSection.getBoundingClientRect();
-
-            // Normalize mouse position (-1 to 1)
-            const x = (clientX - left) / width - 0.5;
-            const y = (clientY - top) / height - 0.5;
-
-            // Tilt Heading
-            gsap.to(heroHeading, {
-                rotateY: x * 15,
-                rotateX: -y * 15,
-                x: x * 20,
-                y: y * 20,
-                duration: 0.8,
-                ease: "power2.out"
-            });
-
-            // Parallax Orbs & Shapes
-            orbs.forEach(orb => {
-                const speed = orb.getAttribute('data-speed') || 0.05;
-                gsap.to(orb, {
-                    x: x * (width * speed),
-                    y: y * (height * speed),
-                    duration: 1.2,
-                    ease: "power2.out"
-                });
-            });
+        btn.addEventListener("mouseleave", () => {
+          gsap.to(btn, {
+            x: 0,
+            y: 0,
+            duration: 0.5,
+            ease: "elastic.out(1, 0.3)",
+          });
         });
+      });
 
-        // Reset on mouse leave
-        heroSection.addEventListener('mouseleave', () => {
-            gsap.to(heroHeading, { rotateX: 0, rotateY: 0, x: 0, y: 0, duration: 1.5, ease: "elastic.out(1, 0.3)" });
-            orbs.forEach(orb => gsap.to(orb, { x: 0, y: 0, duration: 1.5, ease: "power2.out" }));
-        });
+      // --- PROGRESS BAR & BACKGROUND SHIFT ---
+      gsap.to("#progressBar", {
+        width: "100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: "body",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 0.3,
+        },
+      });
 
-        // --- HERO ENTRANCE (FIZZI STYLE) ---
-        const heroTl = gsap.timeline({ defaults: { ease: "expo.out" } });
+      // Sublte background shift on scroll
+      gsap.to("body", {
+        backgroundColor: "#12121e",
+        scrollTrigger: {
+          trigger: "#skills",
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      });
 
-        heroTl.to("body", { opacity: 1, duration: 0.1 })
-            .fromTo(".hero-word span",
-                {
-                    scale: 3,
-                    opacity: 0,
-                    y: 0,
-                },
-                {
-                    scale: 1,
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.2,
-                    stagger: 0.2,
-                    ease: "power4.out",
-                    delay: 0.3
-                }
-            )
-            .from(".hero-badge", {
-                y: 20,
-                opacity: 0,
-                duration: 1
-            }, "-=0.6")
-            .from(".hero-sub .split-char", {
-                opacity: 0,
-                y: 10,
-                stagger: 0.02,
-                duration: 0.5
-            }, "-=0.8")
-            .from(".hero-btns", {
-                y: 20,
-                opacity: 0,
-                duration: 1
-            }, "-=0.8")
-            .from("nav", {
-                y: -20,
-                opacity: 0,
-                duration: 1
-            }, "-=1");
-
-        // --- SCROLL REVEALS (CHARACTER LEVEL) ---
-        document.querySelectorAll('.section-heading').forEach((heading) => {
-    gsap.from(heading.querySelectorAll('.split-word'), {
-                scrollTrigger: {
-                    trigger: heading,
-                    start: "top 92%",
-                    toggleActions: "play none none none"
-                },
-                scale: 1.3,
-                y: 40,
-                rotate: -5,
-                opacity: 0,
-                stagger: 0.05,
-                ease: "back.out(3)",
-                duration: 0.8
-            });
-        });
-
-        // Standard reveals for cards
-        document.querySelectorAll('.project-card, .exp-card, .reveal:not(.section-heading)').forEach((el) => {
-            const delay = el.classList.contains('reveal-delay-1') ? 0.1 :
-                el.classList.contains('reveal-delay-2') ? 0.2 :
-                    el.classList.contains('reveal-delay-3') ? 0.3 : 0;
-
-            gsap.to(el, {
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 92%",
-                    toggleActions: "play none none none"
-                },
-                y: 0,
-                opacity: 1,
-                duration: 0.8,
-                delay: delay,
-                ease: "power2.out"
-            });
-        });
-
-        // --- MAGNETIC BUTTONS ---
-        document.querySelectorAll('.nav-cta, .hero-btns a').forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-
-                gsap.to(btn, {
-                    x: x * 0.3,
-                    y: y * 0.3,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
-            });
-
-            btn.addEventListener('mouseleave', () => {
-                gsap.to(btn, {
-                    x: 0,
-                    y: 0,
-                    duration: 0.5,
-                    ease: "elastic.out(1, 0.3)"
-                });
-            });
-        });
-
-        // --- PROGRESS BAR & BACKGROUND SHIFT ---
-        gsap.to("#progressBar", {
-            width: "100%",
+      // --- PARALLAX IMAGES ---
+      document.querySelectorAll(".project-img").forEach((img) => {
+        gsap.fromTo(
+          img,
+          { yPercent: -10 },
+          {
+            yPercent: 10,
             ease: "none",
             scrollTrigger: {
-                trigger: "body",
-                start: "top top",
-                end: "bottom bottom",
-                scrub: 0.3
-            }
-        });
+              trigger: img.parentElement,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          },
+        );
+      });
 
-        // Sublte background shift on scroll
-        gsap.to("body", {
-            backgroundColor: "#12121e",
-            scrollTrigger: {
-                trigger: "#skills",
-                start: "top center",
-                end: "bottom center",
-                scrub: true
-            }
-        });
+      // --- MOBILE MENU LOGIC ---
+      const menuToggle = document.getElementById("menuToggle");
+      const closeMenu = document.getElementById("closeMenu");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
 
-        // --- PARALLAX IMAGES ---
-        document.querySelectorAll('.project-img').forEach(img => {
-            gsap.fromTo(img,
-                { yPercent: -10 },
-                {
-                    yPercent: 10,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: img.parentElement,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true
-                    }
-                }
-            );
-        });
-
-        // --- MOBILE MENU LOGIC ---
-        const menuToggle = document.getElementById('menuToggle');
-        const closeMenu = document.getElementById('closeMenu');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        const menuTl = gsap.timeline({ paused: true });
-        menuTl.to(mobileMenu, {
-            y: 0,
-            duration: 0.8,
-            ease: "expo.inOut"
+      const menuTl = gsap.timeline({ paused: true });
+      menuTl
+        .to(mobileMenu, {
+          y: 0,
+          duration: 0.8,
+          ease: "expo.inOut",
         })
-            .from(".mobile-link", {
-                y: 30,
-                opacity: 0,
-                stagger: 0.1,
-                duration: 0.6,
-                ease: "power3.out"
-            }, "-=0.4");
+        .from(
+          ".mobile-link",
+          {
+            y: 30,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "-=0.4",
+        );
 
-        menuToggle.addEventListener('click', () => {
-            menuTl.play();
-            document.body.style.overflow = 'hidden';
+      menuToggle.addEventListener("click", () => {
+        menuTl.play();
+        document.body.style.overflow = "hidden";
+      });
+
+      closeMenu.addEventListener("click", () => {
+        menuTl.reverse();
+        document.body.style.overflow = "";
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuTl.reverse();
+          document.body.style.overflow = "";
         });
+      });
 
-        closeMenu.addEventListener('click', () => {
-            menuTl.reverse();
-            document.body.style.overflow = '';
+      // --- SMOOTH ANCHOR SCROLLING ---
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = this.getAttribute("href");
+          if (target === "#") return;
+
+          gsap.to(window, {
+            duration: 1,
+            scrollTo: {
+              y: target,
+              offsetY: 20,
+            },
+            ease: "power3.inOut",
+          });
         });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuTl.reverse();
-                document.body.style.overflow = '';
-            });
-        });
-
-        // --- SMOOTH ANCHOR SCROLLING ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = this.getAttribute('href');
-                if (target === '#') return;
-
-                gsap.to(window, {
-                    duration: 1,
-                    scrollTo: {
-                        y: target,
-                        offsetY: 20
-                    },
-                    ease: "power3.inOut"
-                });
-            });
-        });
+      });
     </script>
-</body>
-
+  </body>
 </html>
