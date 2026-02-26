@@ -1,927 +1,900 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Shibin | Professional Full Stack Developer specializing in high-performance web experiences."
-    />
-    <title>Shibin | Full Stack Developer</title>
-    <meta name="theme-color" content="#0A0A0F" />
 
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-TLNG322R");
-    </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Shibin | Professional Full Stack Developer specializing in high-performance web experiences." />
+  <title>Shibin | Full Stack Developer</title>
+  <meta name="theme-color" content="#0A0A0F" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-TLNG322R");
+  </script>
 
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              acid: "#A6CC00",
-              coral: "#FF5C4D",
-              sky: "#4DAAFF",
-              violet: "#9B6DFF",
-              mint: "#00E5A0",
-              cream: "#F5F0E8",
-              ink: "#0A0A0F",
-              graphite: "#1A1A24",
-              slate: "#2A2A38",
-              muted: "#6B6B80",
-            },
-            fontFamily: {
-              display: ["Syne", "sans-serif"],
-              mono: ["DM Mono", "monospace"],
-              body: ["Outfit", "sans-serif"],
-            },
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            acid: "#A6CC00",
+            coral: "#FF5C4D",
+            sky: "#4DAAFF",
+            violet: "#9B6DFF",
+            mint: "#00E5A0",
+            cream: "#F5F0E8",
+            ink: "#0A0A0F",
+            graphite: "#1A1A24",
+            slate: "#2A2A38",
+            muted: "#6B6B80",
+          },
+          fontFamily: {
+            display: ["Syne", "sans-serif"],
+            mono: ["DM Mono", "monospace"],
+            body: ["Outfit", "sans-serif"],
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <style>
-      :root {
-        --acid: #a6cc00;
-        --coral: #ff5c4d;
-        --sky: #4daaff;
-        --violet: #9b6dff;
-        --mint: #00e5a0;
-        --cream: #f5f0e8;
-        --ink: #0a0a0f;
+  <style>
+    :root {
+      --acid: #a6cc00;
+      --coral: #ff5c4d;
+      --sky: #4daaff;
+      --violet: #9b6dff;
+      --mint: #00e5a0;
+      --cream: #f5f0e8;
+      --ink: #0a0a0f;
+    }
+
+    * { box-sizing: border-box; }
+    html { overflow-x: hidden; }
+
+    body {
+      cursor: none;
+      background-color: var(--ink);
+      color: var(--cream);
+      font-family: "Outfit", sans-serif;
+      overflow-x: hidden;
+    }
+
+    #cursor {
+      pointer-events: none;
+      position: fixed;
+      z-index: 9999;
+      width: 20px;
+      height: 20px;
+      background: var(--acid);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.25s, height 0.25s, opacity 0.2s;
+      mix-blend-mode: exclusion;
+      top: 0;
+      left: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.5;
+    }
+
+    .nav-pill {
+      background: rgba(26, 26, 36, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 100px;
+    }
+
+    .nav-link {
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      padding: 8px 16px;
+      border-radius: 100px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav-link:hover { color: var(--cream); background: rgba(255, 255, 255, 0.07); }
+
+    .nav-cta {
+      background: #979893;
+      color: var(--ink);
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-weight: 500;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .nav-cta:hover { opacity: 0.85; transform: scale(0.97); }
+
+    #menuToggle {
+      display: none;
+      color: var(--cream);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    @media (max-width: 768px) {
+      #cursor { display: none; }
+      body { cursor: auto; }
+      .nav-link { display: none; }
+      #menuToggle { display: block; }
+      .nav-pill { width: 95%; justify-content: space-between; padding: 8px 16px; }
+      .nav-cta { display: none; }
+    }
+
+    #mobileMenu {
+      position: fixed;
+      inset: 0;
+      background: var(--ink);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 40px;
+      transform: translateY(-100%);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #mobileMenu.active { transform: translateY(0); }
+
+    .mobile-link {
+      font-family: "Syne", sans-serif;
+      font-size: 42px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+      transition: color 0.3s;
+    }
+
+    .mobile-link:hover { color: var(--acid); }
+    .mobile-link span { font-family: "DM Mono", monospace; font-size: 14px; color: var(--acid); margin-right: 12px; vertical-align: middle; }
+
+    #closeMenu { position: absolute; top: 30px; right: 30px; color: var(--cream); font-size: 32px; cursor: pointer; }
+
+    .hero-word {
+      display: block;
+      overflow: clip;
+      overflow-clip-margin: 4px;
+      line-height: 1.05;
+      padding-bottom: 0.05em;
+    }
+
+    .hero-word span { display: inline-block; opacity: 0; transform: translateY(100%); }
+
+    .hero-badge {
+      background: rgba(166, 204, 0, 0.1);
+      border: 1px solid rgba(166, 204, 0, 0.3);
+      color: var(--acid);
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      padding: 6px 14px;
+      border-radius: 100px;
+      animation: fadeIn 1s ease 1.4s both;
+    }
+
+    .hero-section { overflow: hidden; }
+
+    .marquee-track { display: flex; animation: marquee 35s linear infinite; width: max-content; }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+
+    .reveal { opacity: 0; transform: translateY(30px); will-change: transform, opacity; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    .card {
+      background: var(--graphite);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .card:hover { border-color: rgba(255, 255, 255, 0.15); transform: translateY(-4px); }
+
+    .skill-tag {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 100px;
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      padding: 6px 14px;
+      color: #bbb;
+      transition: all 0.2s;
+    }
+    .skill-tag:hover { background: rgba(166, 204, 0, 0.08); border-color: rgba(166, 204, 0, 0.3); color: var(--acid); }
+
+    .skill-cell {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    .skill-cell:hover { background: rgba(166, 204, 0, 0.05); border-color: rgba(166, 204, 0, 0.2); }
+    .skill-cell .label { font-family: "Outfit", sans-serif; font-size: 11px; letter-spacing: 0.05em; color: var(--acid); opacity: 0.8; font-weight: 400; text-transform: uppercase; }
+    .skill-cell .name { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; color: var(--cream); }
+
+    .exp-card {
+      background: var(--graphite);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 32px;
+      transition: border-color 0.3s;
+    }
+    .exp-card:hover { border-color: rgba(200, 255, 0, 0.2); }
+
+    @media (max-width: 640px) {
+      .exp-card { padding: 20px 16px; }
+    }
+
+    /* ============================================
+       FULLSCREEN PROJECT PANELS
+       ============================================ */
+
+    #projects-container {
+      position: relative;
+    }
+
+    .project-panel {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Each panel has a unique bg tint */
+    .project-panel:nth-child(1) { --panel-accent: #a6cc00; }
+    .project-panel:nth-child(2) { --panel-accent: #9b6dff; }
+    .project-panel:nth-child(3) { --panel-accent: #00e5a0; }
+    .project-panel:nth-child(4) { --panel-accent: #a6cc00; }
+    .project-panel:nth-child(5) { --panel-accent: #4daaff; }
+    .project-panel:nth-child(6) { --panel-accent: #ff5c4d; }
+
+    .panel-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform-origin: center;
+      filter: brightness(0.18) saturate(0.4);
+      transition: filter 0.6s;
+    }
+
+    .project-panel:hover .panel-bg-img {
+      filter: brightness(0.22) saturate(0.6);
+    }
+
+    /* Gradient overlay */
+    .panel-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(10,10,15,0.97) 0%,
+        rgba(10,10,15,0.80) 60%,
+        rgba(10,10,15,0.5) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Accent glow blob */
+    .panel-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.07;
+      right: -100px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--panel-accent);
+      z-index: 1;
+      pointer-events: none;
+      transition: opacity 0.5s;
+    }
+    .project-panel:hover .panel-glow { opacity: 0.13; }
+
+    .panel-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .panel-number {
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--panel-accent);
+      opacity: 0.7;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .panel-number::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--panel-accent);
+      opacity: 0.4;
+    }
+
+    .panel-title {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+
+    .panel-desc {
+      font-family: "Outfit", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(240, 235, 220, 0.6);
+      max-width: 420px;
+      margin-bottom: 32px;
+    }
+
+    .panel-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .panel-tag {
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .panel-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--panel-accent);
+      color: var(--ink);
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      padding: 14px 28px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s, gap 0.3s;
+    }
+    .panel-cta:hover { opacity: 0.85; transform: scale(0.97); gap: 16px; }
+
+    .panel-img-col {
+      position: relative;
+    }
+
+    .panel-mockup {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow:
+        0 40px 80px rgba(0,0,0,0.6),
+        0 0 0 1px rgba(255,255,255,0.04);
+      aspect-ratio: 16/10;
+      transform: perspective(1000px) rotateY(-6deg) rotateX(2deg);
+      transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .project-panel:hover .panel-mockup {
+      transform: perspective(1000px) rotateY(-2deg) rotateX(1deg);
+    }
+
+    .panel-mockup img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Mockup accent corner */
+    .panel-mockup::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--panel-accent);
+      z-index: 2;
+    }
+
+    /* Scroll indicator dots */
+    #projects-progress {
+      position: fixed;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    #projects-progress.visible { opacity: 1; }
+
+    .progress-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .progress-dot.active {
+      background: var(--acid);
+      transform: scale(1.6);
+    }
+
+    /* Section header for projects */
+    .projects-header {
+      position: relative;
+      z-index: 2;
+      padding: 120px 48px 64px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Divider line between panels */
+    .project-panel::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 48px;
+      right: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+      z-index: 3;
+    }
+
+    /* GitHub CTA after panels */
+    .projects-footer {
+      padding: 80px 48px;
+      text-align: center;
+      background: var(--ink);
+    }
+
+    /* ============================================
+       MOBILE PROJECT PANELS
+       ============================================ */
+    @media (max-width: 768px) {
+      .projects-header {
+        padding: 80px 20px 32px;
       }
 
-      * {
-        box-sizing: border-box;
+      .project-panel {
+        height: auto;
+        min-height: 100svh;
+        align-items: flex-start;
+        padding-top: 80px;
+        padding-bottom: 40px;
       }
 
-      html {
-        overflow-x: hidden;
+      .panel-content {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 28px;
+        align-items: flex-start;
       }
 
-      body {
-        cursor: none;
-        background-color: var(--ink);
-        color: var(--cream);
-        font-family: "Outfit", sans-serif;
-        overflow-x: hidden;
-      }
-
-      /* CURSOR */
-      #cursor {
-        pointer-events: none;
-        position: fixed;
-        z-index: 9999;
-        width: 20px;
-        height: 20px;
-        background: var(--acid);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        transition:
-          width 0.25s,
-          height 0.25s,
-          opacity 0.2s;
-        mix-blend-mode: exclusion;
-        top: 0;
-        left: 0;
-      }
-
-      #cursor.big {
-        width: 56px;
-        height: 56px;
-      }
-
-      /* GRAIN */
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-        pointer-events: none;
-        z-index: 100;
-        opacity: 0.5;
-      }
-
-      /* NAV */
-      .nav-pill {
-        background: rgba(26, 26, 36, 0.85);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 100px;
-      }
-
-      .nav-link {
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: #888;
-        padding: 8px 16px;
-        border-radius: 100px;
-        transition:
-          color 0.2s,
-          background 0.2s;
-      }
-
-      .nav-link:hover {
-        color: var(--cream);
-        background: rgba(255, 255, 255, 0.07);
-      }
-
-      .nav-cta {
-        background: #979893;
-        color: var(--ink);
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        padding: 8px 18px;
-        border-radius: 100px;
-        font-weight: 500;
-        transition:
-          opacity 0.2s,
-          transform 0.2s;
-      }
-
-      .nav-cta:hover {
-        opacity: 0.85;
-        transform: scale(0.97);
-      }
-
-      /* MOBILE MENU toggle */
-      #menuToggle {
-        display: none;
-        color: var(--cream);
-        font-size: 24px;
-        cursor: pointer;
-        padding: 4px;
-      }
-
-      @media (max-width: 768px) {
-        #cursor {
-          display: none;
-        }
-
-        body {
-          cursor: auto;
-        }
-
-        .nav-link {
-          display: none;
-        }
-
-        #menuToggle {
-          display: block;
-        }
-
-        .nav-pill {
-          width: 95%;
-          justify-content: space-between;
-          padding: 8px 16px;
-        }
-
-        .nav-cta {
-          display: none;
-        }
-      }
-
-      /* MOBILE OVERLAY */
-      #mobileMenu {
-        position: fixed;
-        inset: 0;
-        background: var(--ink);
-        z-index: 100;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 24px;
-        padding: 40px;
-        transform: translateY(-100%);
-        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      #mobileMenu.active {
-        transform: translateY(0);
-      }
-
-      .mobile-link {
-        font-family: "Syne", sans-serif;
-        font-size: 42px;
-        font-weight: 800;
-        text-transform: uppercase;
-        color: var(--cream);
-        letter-spacing: -0.02em;
-        transition: color 0.3s;
-      }
-
-      .mobile-link:hover {
-        color: var(--acid);
-      }
-
-      .mobile-link span {
-        font-family: "DM Mono", monospace;
-        font-size: 14px;
-        color: var(--acid);
-        margin-right: 12px;
-        vertical-align: middle;
-      }
-
-      #closeMenu {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        color: var(--cream);
-        font-size: 32px;
-        cursor: pointer;
-      }
-
-      /* HERO */
-      .hero-word {
+      /* Show mockup on mobile — stacked below text */
+      .panel-img-col {
         display: block;
-        /* block so each word is on its own line and never clips */
-        overflow: clip;
-        overflow-clip-margin: 4px;
-        /* small breathing room so descenders never clip */
-        line-height: 1.05;
-        padding-bottom: 0.05em;
-        /* prevents bottom descender clipping */
       }
 
-      .hero-word span {
-        display: inline-block;
-        opacity: 0;
-        transform: translateY(100%);
-      }
-
-      .hero-badge {
-        background: rgba(166, 204, 0, 0.1);
-        border: 1px solid rgba(166, 204, 0, 0.3);
-        color: var(--acid);
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.1em;
-        padding: 6px 14px;
-        border-radius: 100px;
-        animation: fadeIn 1s ease 1.4s both;
-      }
-
-      /* =============================================
-           FIX 1: Hero heading — fluid from 320px to 1440px
-           Replaces old clamp(3rem,14vw,8rem)
-        ============================================= */
-
-      /* =============================================
-           FIX 2: Ensure hero section clips properly
-        ============================================= */
-      .hero-section {
-        overflow: hidden;
-      }
-
-      /* MARQUEE */
-      .marquee-track {
-        display: flex;
-        animation: marquee 35s linear infinite;
-        width: max-content;
-      }
-
-      @keyframes marquee {
-        from {
-          transform: translateX(0);
-        }
-
-        to {
-          transform: translateX(-50%);
-        }
-      }
-
-      .marquee-wrap:hover .marquee-track {
-        animation-play-state: paused;
-      }
-
-      /* REVEAL */
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        will-change: transform, opacity;
-      }
-
-      .reveal-delay-1 {
-        transition-delay: 0.1s;
-      }
-
-      .reveal-delay-2 {
-        transition-delay: 0.2s;
-      }
-
-      .reveal-delay-3 {
-        transition-delay: 0.3s;
-      }
-
-      /* CARDS */
-      .card {
-        background: var(--graphite);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 20px;
-        transition:
-          border-color 0.3s,
-          transform 0.3s;
-      }
-
-      .card:hover {
-        border-color: rgba(255, 255, 255, 0.15);
-        transform: translateY(-4px);
-      }
-
-      /* SKILL TAGS */
-      .skill-tag {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 100px;
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.05em;
-        padding: 6px 14px;
-        color: #bbb;
-        transition: all 0.2s;
-      }
-
-      .skill-tag:hover {
-        background: rgba(166, 204, 0, 0.08);
-        border-color: rgba(166, 204, 0, 0.3);
-        color: var(--acid);
-      }
-
-      /* SKILL GRID */
-      .skill-cell {
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 22px 18px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        transition: all 0.3s ease;
-        cursor: default;
-      }
-
-      .skill-cell:hover {
-        background: rgba(166, 204, 0, 0.05);
-        border-color: rgba(166, 204, 0, 0.2);
-      }
-
-      .skill-cell .label {
-        font-family: "Outfit", sans-serif;
-        font-size: 11px;
-        letter-spacing: 0.05em;
-        color: var(--acid);
-        opacity: 0.8;
-        font-weight: 400;
-        text-transform: uppercase;
-      }
-
-      .skill-cell .name {
-        font-family: "Outfit", sans-serif;
-        font-weight: 700;
-        font-size: 20px;
-        text-transform: uppercase;
-        color: var(--cream);
-      }
-
-      /* EXPERIENCE */
-      .exp-card {
-        background: var(--graphite);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 16px;
-        padding: 32px;
-        transition: border-color 0.3s;
-      }
-
-      .exp-card:hover {
-        border-color: rgba(200, 255, 0, 0.2);
-      }
-
-      /* FIX 3: Exp card padding on mobile */
-      @media (max-width: 640px) {
-        .exp-card {
-          padding: 20px 16px;
-        }
-      }
-
-      .exp-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        border: 2px solid var(--ink);
-        flex-shrink: 0;
-      }
-
-      /* PROJECTS */
-      .project-card {
-        background: var(--graphite);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 20px;
-        overflow: hidden;
-        transition:
-          transform 0.3s,
-          border-color 0.3s;
-      }
-
-      .project-card:hover {
-        transform: translateY(-6px);
-        border-color: rgba(255, 255, 255, 0.14);
-      }
-
-      .project-img {
-        width: 100%;
+      .panel-mockup {
+        transform: none !important;
+        border-radius: 12px;
         aspect-ratio: 16/9;
-        object-fit: cover;
-        display: block;
-        transition: scale 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
       }
 
-      .project-card:hover .project-img {
-        scale: 1.03;
+      .panel-title {
+        font-size: clamp(2.2rem, 11vw, 3.5rem);
+        margin-bottom: 16px;
       }
 
-      /* TESTIMONIALS */
-      .testi-card {
-        width: 380px;
-        flex-shrink: 0;
-        background: var(--graphite);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 20px;
-        padding: 32px;
-      }
-
-      @media (max-width: 640px) {
-        .testi-card {
-          width: 300px;
-          padding: 24px;
-        }
-
-        .big-stat {
-          font-size: 3rem;
-        }
-
-        section {
-          padding-top: 4rem;
-          padding-bottom: 4rem;
-        }
-      }
-
-      /* CONTACT */
-      .contact-link {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        background: var(--graphite);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 14px;
-        padding: 18px 22px;
-        transition:
-          border-color 0.2s,
-          transform 0.2s;
-        color: var(--cream);
-        text-decoration: none;
-      }
-
-      .contact-link:hover {
-        border-color: rgba(166, 204, 0, 0.25);
-        transform: translateX(4px);
-      }
-
-      /* PROGRESS BAR */
-      #progressBar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 2px;
-        background: var(--acid);
-        z-index: 200;
-        transition: width 0.1s;
-      }
-
-      /* SECTION LABEL */
-      .section-label {
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--acid);
-        opacity: 0.7;
-      }
-
-      /* GLOW */
-      .glow-acid {
-        text-shadow: 0 0 40px rgba(166, 204, 0, 0.3);
-      }
-
-      .glow-coral {
-        text-shadow: 0 0 40px rgba(255, 92, 77, 0.3);
-      }
-
-      /* PILL BADGE */
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 100px;
-        padding: 4px 12px;
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        color: #888;
-      }
-
-      /* DIVIDER */
-      .divider {
-        border: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        margin: 0;
-      }
-
-      /* BIG NUM */
-      .big-stat {
-        font-family: "Syne", sans-serif;
-        font-weight: 800;
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        color: var(--acid);
-        line-height: 1;
-      }
-
-      /* FOOTER */
-      footer a {
-        color: #666;
-        transition: color 0.2s;
-      }
-
-      footer a:hover {
-        color: var(--cream);
-      }
-
-      /* ABOUT PHOTO */
-      .about-photo {
-        border-radius: 24px;
-        overflow: hidden;
-        aspect-ratio: 3/4;
-        position: relative;
-      }
-
-      .about-photo::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to bottom,
-          transparent 40%,
-          rgba(10, 10, 15, 0.8)
-        );
-      }
-
-      .about-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      /* FIX 4: About photo — full width on mobile */
-      @media (max-width: 768px) {
-        .about-photo {
-          max-width: 100% !important;
-          aspect-ratio: 4/3;
-        }
-      }
-
-      /* ANIMATED RING */
-      @keyframes spin-slow {
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      .spin-slow {
-        animation: spin-slow 20s linear infinite;
-      }
-
-      /* HERO BG */
-      .hero-orb {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(80px);
-        pointer-events: none;
-      }
-
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 4px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: var(--ink);
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: rgba(166, 204, 0, 0.3);
-        border-radius: 2px;
-      }
-
-      /* FIX 5: Hero badge font size on very small screens */
-      @media (max-width: 400px) {
-        .hero-badge {
-          font-size: 9px;
-          padding: 5px 10px;
-        }
-      }
-
-      /* Prevent horizontal scroll on all sections */
-      section {
-        overflow-x: hidden;
-      }
-
-      /* ── HERO HEADING ──────────────────────────────
-           Fluid scale: 32px @ 320px → 80px @ 800px+
-           overflow:visible so slideUp animation isn't clipped
-        ────────────────────────────────────────────── */
-      .hero-heading {
-        font-size: clamp(2rem, 10vw, 5rem);
-        line-height: 1.05;
-        overflow: visible;
-        word-break: break-word;
-        overflow-wrap: break-word;
-      }
-
-      /* ── SECTION HEADINGS (TECH_STACK, Experience_Log, etc.) ──
-           Fluid scale: 28px @ 320px → 64px @ 1200px+
-           white-space:normal + word-break = wraps to next line, never crops
-        ────────────────────────────────────────────── */
-      .section-heading {
-        font-size: clamp(1.5rem, 3vw, 4rem);
-        line-height: 1.1;
-        white-space: normal;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        overflow: visible;
-        padding: 0 8px;
+      .panel-desc {
+        font-size: 14px;
+        margin-bottom: 20px;
         max-width: 100%;
-        box-sizing: border-box;
       }
 
-      /* Mobile-specific fix for section headings */
-      @media (max-width: 768px) {
-        .section-heading {
-          font-size: clamp(1.1rem, 5.5vw, 2.2rem) !important;
-          letter-spacing: -0.01em !important;
-          word-break: break-word;
-          overflow-wrap: break-word;
-          white-space: normal !important;
-          overflow: visible;
-        }
-        .section-heading .split-word {
-          display: inline !important;
-          white-space: normal !important;
-        }
-        .section-heading .split-char {
-          display: inline !important;
-        }
+      .panel-tags {
+        margin-bottom: 24px;
+        gap: 6px;
       }
 
-      /* ── CONTACT HEADING (Let's Talk Code.) ───────
-           Bigger fluid scale since it's the hero of the section
-        ────────────────────────────────────────────── */
-      .contact-heading {
-        font-size: clamp(2rem, 9vw, 4.5rem);
-        line-height: 1;
-        white-space: normal;
+      .panel-number {
+        margin-bottom: 14px;
+      }
+
+      .panel-cta {
+        padding: 12px 22px;
+        font-size: 10px;
+      }
+
+      .panel-glow {
+        width: 300px;
+        height: 300px;
+        right: -60px;
+        top: 30%;
+      }
+
+      /* Thinner divider line on mobile */
+      .project-panel::after {
+        left: 20px;
+        right: 20px;
+      }
+
+      .projects-footer {
+        padding: 60px 20px;
+      }
+
+      /* Progress dots — smaller, closer to edge */
+      #projects-progress {
+        right: 10px;
+        gap: 8px;
+      }
+
+      .progress-dot {
+        width: 5px;
+        height: 5px;
+      }
+    }
+
+    /* Very small phones */
+    @media (max-width: 380px) {
+      .panel-title {
+        font-size: 2rem;
+      }
+
+      .panel-desc {
+        font-size: 13px;
+      }
+    }
+
+    .testi-card {
+      width: 380px;
+      flex-shrink: 0;
+      background: var(--graphite);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 32px;
+    }
+
+    @media (max-width: 640px) {
+      .testi-card { width: 300px; padding: 24px; }
+      .big-stat { font-size: 3rem; }
+      section { padding-top: 4rem; padding-bottom: 4rem; }
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--graphite);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 18px 22px;
+      transition: border-color 0.2s, transform 0.2s;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .contact-link:hover { border-color: rgba(166, 204, 0, 0.25); transform: translateX(4px); }
+
+    #progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: var(--acid);
+      z-index: 200;
+      transition: width 0.1s;
+    }
+
+    .section-label {
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--acid);
+      opacity: 0.7;
+    }
+
+    .glow-acid { text-shadow: 0 0 40px rgba(166, 204, 0, 0.3); }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      color: #888;
+    }
+
+    .divider { border: none; border-top: 1px solid rgba(255, 255, 255, 0.06); margin: 0; }
+
+    .big-stat {
+      font-family: "Syne", sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--acid);
+      line-height: 1;
+    }
+
+    footer a { color: #666; transition: color 0.2s; }
+    footer a:hover { color: var(--cream); }
+
+    .about-photo {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      position: relative;
+    }
+    .about-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(10, 10, 15, 0.8));
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    @media (max-width: 768px) {
+      .about-photo { max-width: 100% !important; aspect-ratio: 4/3; }
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--ink); }
+    ::-webkit-scrollbar-thumb { background: rgba(166, 204, 0, 0.3); border-radius: 2px; }
+
+    @media (max-width: 400px) {
+      .hero-badge { font-size: 9px; padding: 5px 10px; }
+    }
+
+    section { overflow-x: hidden; }
+
+    .hero-heading {
+      font-size: clamp(2rem, 10vw, 5rem);
+      line-height: 1.05;
+      overflow: visible;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .section-heading {
+      font-size: clamp(1.5rem, 3vw, 4rem);
+      line-height: 1.1;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      overflow: visible;
+      padding: 0 8px;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+      .section-heading {
+        font-size: clamp(1.1rem, 5.5vw, 2.2rem) !important;
+        letter-spacing: -0.01em !important;
         word-break: break-word;
         overflow-wrap: break-word;
+        white-space: normal !important;
         overflow: visible;
       }
+      .section-heading .split-word { display: inline !important; white-space: normal !important; }
+      .section-heading .split-char { display: inline !important; }
+    }
 
-      /* ── ABOUT HEADING (Who am I?) ─────────────── */
-      .about-heading {
-        font-size: clamp(1.75rem, 7vw, 3.75rem);
-        line-height: 1.05;
-        white-space: normal;
-        word-break: break-word;
-        overflow-wrap: break-word;
-        overflow: visible;
-      }
+    .contact-heading {
+      font-size: clamp(2rem, 9vw, 4.5rem);
+      line-height: 1;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      overflow: visible;
+    }
 
-      /* Skills grid — 3 cols on very small screens */
-      @media (max-width: 400px) {
-        .skill-grid {
-          grid-template-columns: repeat(3, 1fr) !important;
-        }
-      }
-    </style>
-  </head>
+    .about-heading {
+      font-size: clamp(1.75rem, 7vw, 3.75rem);
+      line-height: 1.05;
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      overflow: visible;
+    }
 
-  <body>
-    <!-- GTM noscript -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-TLNG322R"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
+    @media (max-width: 400px) {
+      .skill-grid { grid-template-columns: repeat(3, 1fr) !important; }
+    }
+  </style>
+</head>
 
-    <div id="cursor"></div>
-    <div id="progressBar"></div>
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLNG322R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- NAV -->
-    <nav
-      class="fixed top-0 left-0 right-0 z-[60] flex justify-center pt-5 px-4"
-    >
-      <div
-        class="nav-pill flex items-center gap-1 px-2 py-2 w-auto transition-all duration-300"
-      >
-        <a
-          href="#"
-          class="font-display font-bold text-sm text-cream px-4 mr-2"
-          style="letter-spacing: -0.02em"
-          >Shibin<span style="color: var(--acid)">.</span></a
-        >
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Logs</a>
-        <a href="#projects" class="nav-link">Work</a>
-        <a href="#contact" class="nav-cta">Hire Me</a>
-        <div id="menuToggle"><i class="ri-menu-4-line"></i></div>
+  <div id="cursor"></div>
+  <div id="progressBar"></div>
+
+  <!-- PROJECT PROGRESS DOTS -->
+  <div id="projects-progress">
+    <div class="progress-dot" data-index="0"></div>
+    <div class="progress-dot" data-index="1"></div>
+    <div class="progress-dot" data-index="2"></div>
+    <div class="progress-dot" data-index="3"></div>
+    <div class="progress-dot" data-index="4"></div>
+    <div class="progress-dot" data-index="5"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-[60] flex justify-center pt-5 px-4">
+    <div class="nav-pill flex items-center gap-1 px-2 py-2 w-auto transition-all duration-300">
+      <a href="#" class="font-display font-bold text-sm text-cream px-4 mr-2" style="letter-spacing:-0.02em">Shibin<span style="color:var(--acid)">.</span></a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Logs</a>
+      <a href="#projects" class="nav-link">Work</a>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+      <div id="menuToggle"><i class="ri-menu-4-line"></i></div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="mobileMenu">
+    <div id="closeMenu"><i class="ri-close-line"></i></div>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#experience" class="mobile-link">Logs</a>
+    <a href="#projects" class="mobile-link">Work</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <div class="mt-8 flex gap-6">
+      <a href="https://github.com/shibin2002" target="_blank" class="text-2xl text-muted hover:text-acid"><i class="ri-github-fill"></i></a>
+      <a href="https://linkedin.com/in/shibin2002" target="_blank" class="text-2xl text-muted hover:text-acid"><i class="ri-linkedin-fill"></i></a>
+      <a href="https://instagram.com/_shibin02" target="_blank" class="text-2xl text-muted hover:text-acid"><i class="ri-instagram-fill"></i></a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero-section relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24">
+    <div class="hero-orb w-96 h-96 bg-violet opacity-10 top-20 -left-32" data-speed="0.05"></div>
+    <div class="hero-orb w-80 h-80 bg-acid opacity-[0.07] bottom-40 -right-20" data-speed="-0.08"></div>
+    <div class="hero-orb w-64 h-64 bg-coral opacity-10 top-1/2 left-1/4" data-speed="0.03"></div>
+
+    <div class="relative z-10 w-full max-w-5xl">
+      <div class="hero-badge inline-flex items-center gap-2 mb-8">
+        <span class="w-1.5 h-1.5 rounded-full bg-acid animate-pulse"></span>
+        Available for Freelance &amp; Full-time
       </div>
-    </nav>
 
-    <!-- MOBILE MENU OVERLAY -->
-    <div id="mobileMenu">
-      <div id="closeMenu"><i class="ri-close-line"></i></div>
-      <a href="#about" class="mobile-link">About</a>
-      <a href="#skills" class="mobile-link">Skills</a>
-      <a href="#experience" class="mobile-link">Logs</a>
-      <a href="#projects" class="mobile-link">Work</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-      <div class="mt-8 flex gap-6">
-        <a
-          href="https://github.com/shibin2002"
-          target="_blank"
-          class="text-2xl text-muted hover:text-acid"
-          ><i class="ri-github-fill"></i
-        ></a>
-        <a
-          href="https://linkedin.com/in/shibin2002"
-          target="_blank"
-          class="text-2xl text-muted hover:text-acid"
-          ><i class="ri-linkedin-fill"></i
-        ></a>
-        <a
-          href="https://instagram.com/_shibin02"
-          target="_blank"
-          class="text-2xl text-muted hover:text-acid"
-          ><i class="ri-instagram-fill"></i
-        ></a>
+      <h1 class="hero-heading font-display font-extrabold uppercase mb-8 tracking-tighter">
+        <div class="hero-word"><span style="animation-delay:0.2s">Full</span></div>
+        <div class="hero-word"><span style="color:var(--acid);animation-delay:0.35s" class="glow-acid">Stack</span></div>
+        <div class="hero-word"><span style="animation-delay:0.5s">Developer</span></div>
+      </h1>
+
+      <p class="hero-sub font-body text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed" style="color:#9999aa">
+        Full Stack Developer with 1.8+ years building ERP systems, scalable APIs, and AI-integrated web applications.
+      </p>
+
+      <div class="hero-btns flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#projects" style="background:var(--acid);color:var(--ink)" class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide transition-all hover:opacity-85 hover:scale-95">
+          View My Work
+        </a>
+        <a href="https://white-merridie-96.tiiny.site/" target="_blank" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);" class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide text-cream transition-all hover:bg-white/10 flex items-center justify-center gap-2">
+          <i class="ri-eye-line"></i> View CV
+        </a>
       </div>
     </div>
+  </section>
 
-    <!-- HERO -->
-    <!-- FIX: Added hero-section class for overflow:hidden, px-6 for side padding on mobile -->
-    <section
-      class="hero-section relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-24"
-    >
-      <!-- Orbs -->
-      <div
-        class="hero-orb w-96 h-96 bg-violet opacity-10 top-20 -left-32"
-        data-speed="0.05"
-      ></div>
-      <div
-        class="hero-orb w-80 h-80 bg-acid opacity-[0.07] bottom-40 -right-20"
-        data-speed="-0.08"
-      ></div>
-      <div
-        class="hero-orb w-64 h-64 bg-coral opacity-10 top-1/2 left-1/4"
-        data-speed="0.03"
-      ></div>
-
-      <div class="relative z-10 w-full max-w-5xl">
-        <div class="hero-badge inline-flex items-center gap-2 mb-8">
-          <span class="w-1.5 h-1.5 rounded-full bg-acid animate-pulse"></span>
-          Available for Freelance &amp; Full-time
-        </div>
-
-        <!-- FIX: Replaced inline font-size style with hero-heading class using corrected clamp -->
-        <h1
-          class="hero-heading font-display font-extrabold uppercase mb-8 tracking-tighter"
-        >
-          <div class="hero-word">
-            <span style="animation-delay: 0.2s">Full</span>
-          </div>
-          <div class="hero-word">
-            <span
-              style="color: var(--acid); animation-delay: 0.35s"
-              class="glow-acid"
-              >Stack</span
-            >
-          </div>
-          <div class="hero-word">
-            <span style="animation-delay: 0.5s">Developer</span>
-          </div>
-        </h1>
-
-        <p
-          class="hero-sub font-body text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed"
-          style="color: #9999aa"
-        >
-          Full Stack Developer with 1.8+ years building ERP systems, scalable
-          APIs, and AI-integrated web applications.
-        </p>
-
-        <div class="hero-btns flex flex-col sm:flex-row justify-center gap-4">
-          <a
-            href="#projects"
-            style="background: var(--acid); color: var(--ink)"
-            class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide transition-all hover:opacity-85 hover:scale-95"
-          >
-            View My Work
-          </a>
-          <a
-            href="https://white-merridie-96.tiiny.site/"
-            target="_blank"
-            style="
-              background: rgba(255, 255, 255, 0.05);
-              border: 1px solid rgba(255, 255, 255, 0.1);
-            "
-            class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide text-cream transition-all hover:bg-white/10 flex items-center justify-center gap-2"
-          >
-            <i class="ri-eye-line"></i> View CV
-          </a>
-        </div>
-      </div>
-    </section>
+  <!-- MAIN CONTENT -->
+  <div id="main-content" class="relative z-10 bg-[#0a0a0f]">
 
     <!-- MARQUEE -->
-    <div
-      style="
-        background: rgba(255, 255, 255, 0.03);
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      "
-      class="py-4 overflow-hidden marquee-wrap"
-    >
-      <div
-        class="marquee-track font-mono text-sm"
-        style="color: #e5e3e3; gap: 0"
-      >
-        <span style="padding: 0 24px">AVAILABLE FOR HIRE</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">FULL STACK ENGINEER</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">REACT · NODE · TYPESCRIPT</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">POSTGRESQL · MONGODB</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">PERFORMANCE DRIVEN</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">CLEAN · MAINTAINABLE CODE</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">STARTUP READY</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">AVAILABLE FOR HIRE</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">FULL STACK ENGINEER</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">REACT · NODE · TYPESCRIPT</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">POSTGRESQL · MONGODB</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">PERFORMANCE DRIVEN</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">CLEAN · MAINTAINABLE CODE</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
-        <span style="padding: 0 24px">STARTUP READY</span>
-        <span style="padding: 0 24px; color: var(--acid)">◆</span>
+    <div style="background:rgba(255,255,255,0.03);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);" class="py-4 overflow-hidden marquee-wrap">
+      <div class="marquee-track font-mono text-sm" style="color:#e5e3e3;gap:0">
+        <span style="padding:0 24px">AVAILABLE FOR HIRE</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">FULL STACK ENGINEER</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">REACT · NODE · TYPESCRIPT</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">POSTGRESQL · MONGODB</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">PERFORMANCE DRIVEN</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">CLEAN · MAINTAINABLE CODE</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">STARTUP READY</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">AVAILABLE FOR HIRE</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">FULL STACK ENGINEER</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">REACT · NODE · TYPESCRIPT</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">POSTGRESQL · MONGODB</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">PERFORMANCE DRIVEN</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">CLEAN · MAINTAINABLE CODE</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">STARTUP READY</span><span style="padding:0 24px;color:var(--acid)">◆</span>
       </div>
     </div>
 
@@ -929,57 +902,27 @@
     <section id="about" class="py-32 px-4 max-w-6xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
         <div class="md:col-span-5 reveal">
-          <!-- FIX: Removed inline max-width so it inherits full width on mobile -->
           <div class="about-photo">
             <img src="Assets/images/img.png" alt="Shibin" />
           </div>
         </div>
         <div class="md:col-span-7 reveal reveal-delay-1">
-          <h2
-            class="about-heading font-display font-extrabold uppercase mb-6 tracking-tighter leading-[.9]"
-          >
-            Who am I?
-          </h2>
-          <p class="font-body text-lg leading-relaxed mb-6" style="color: #aaa">
-            I'm <span style="color: var(--cream)">Shibin</span> — a developer
-            who treats interfaces like
-            <span style="color: var(--acid)">experiences</span>, not just
-            screens. I design with intent and build with obsession.
+          <h2 class="about-heading font-display font-extrabold uppercase mb-6 tracking-tighter leading-[.9]">Who am I?</h2>
+          <p class="font-body text-lg leading-relaxed mb-6" style="color:#aaa">
+            I'm <span style="color:var(--cream)">Shibin</span> — a developer who treats interfaces like <span style="color:var(--acid)">experiences</span>, not just screens. I design with intent and build with obsession.
           </p>
-          <div
-            style="
-              border-left: 2px solid rgba(166, 204, 0, 0.25);
-              padding-left: 20px;
-              margin-bottom: 32px;
-            "
-          >
-            <p class="font-mono text-sm leading-relaxed" style="color: #c0bfbf">
-              <span style="color: var(--acid)">&gt;_</span> Designing interfaces
-              people actually enjoy using.<br />
-              <span style="color: var(--acid)">&gt;_</span> Building with React,
-              Tailwind, and whatever the job demands.<br />
-              <span style="color: var(--acid)">&gt;_</span> 1.8+ years of
-              turning ideas into shipped products.<br />
-              <span style="color: var(--acid)">&gt;_</span> Currently: deep in
-              AI integrations and loving it.
+          <div style="border-left:2px solid rgba(166,204,0,0.25);padding-left:20px;margin-bottom:32px;">
+            <p class="font-mono text-sm leading-relaxed" style="color:#c0bfbf">
+              <span style="color:var(--acid)">&gt;_</span> Designing interfaces people actually enjoy using.<br/>
+              <span style="color:var(--acid)">&gt;_</span> Building with React, Tailwind, and whatever the job demands.<br/>
+              <span style="color:var(--acid)">&gt;_</span> 1.8+ years of turning ideas into shipped products.<br/>
+              <span style="color:var(--acid)">&gt;_</span> Currently: deep in AI integrations and loving it.
             </p>
           </div>
           <div class="flex flex-wrap gap-3">
-            <div class="pill" style="color: #c0bfbf">
-              <i class="ri-map-pin-2-line" style="color: var(--acid)"></i>
-              Remote / India
-            </div>
-            <div class="pill" style="color: #c0bfbf">
-              <i
-                class="ri-circle-fill"
-                style="color: var(--mint); font-size: 8px"
-              ></i>
-              Available Now
-            </div>
-            <div class="pill" style="color: #c0bfbf">
-              <i class="ri-code-s-slash-line" style="color: var(--sky)"></i>
-              1.8+ Years Exp
-            </div>
+            <div class="pill" style="color:#c0bfbf"><i class="ri-map-pin-2-line" style="color:var(--acid)"></i> Remote / India</div>
+            <div class="pill" style="color:#c0bfbf"><i class="ri-circle-fill" style="color:var(--mint);font-size:8px"></i> Available Now</div>
+            <div class="pill" style="color:#c0bfbf"><i class="ri-code-s-slash-line" style="color:var(--sky)"></i> 1.8+ Years Exp</div>
           </div>
         </div>
       </div>
@@ -988,75 +931,30 @@
     <!-- SKILLS -->
     <section id="skills" class="py-8 px-4">
       <div class="max-w-6xl mx-auto">
-        <div
-          class="flex flex-col md:flex-row justify-between items-end mb-8 reveal"
-        >
+        <div class="flex flex-col md:flex-row justify-between items-end mb-8 reveal">
           <div class="w-full text-center md:text-left">
-            <h2
-              class="section-heading font-display font-extrabold uppercase tracking-tighter"
-            >
-              TECH_<span style="color: var(--acid)">STACK</span>
+            <h2 class="section-heading font-display font-extrabold uppercase tracking-tighter">
+              TECH_<span style="color:var(--acid)">STACK</span>
             </h2>
           </div>
         </div>
-
-        <!-- FIX: Added skill-grid class and adjusted grid columns for xs screens -->
-        <div
-          class="skill-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 reveal reveal-delay-1"
-          style="
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            overflow: hidden;
-          "
-        >
-          <div class="skill-cell">
-            <span class="label">Core</span><span class="name">HTML5</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">Core</span><span class="name">CSS</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">Lang</span><span class="name">JS</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">Lang</span><span class="name">Python</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">Lang</span><span class="name">C++</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">Lib</span><span class="name">React</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">FW</span><span class="name">Next.js</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">FW</span><span class="name">Express</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">FW</span><span class="name">Django</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">BE</span><span class="name">Node.js</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">Style</span><span class="name">Tailwind</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">Data</span><span class="name">MySQL</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">Data</span><span class="name">MongoDB</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">VCS</span><span class="name">Git</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">Tools</span><span class="name">Postman</span>
-          </div>
-          <div class="skill-cell">
-            <span class="label">3D</span><span class="name">Three.js</span>
-          </div>
+        <div class="skill-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 reveal reveal-delay-1" style="border:1px solid rgba(255,255,255,0.05);border-radius:16px;overflow:hidden;">
+          <div class="skill-cell"><span class="label">Core</span><span class="name">HTML5</span></div>
+          <div class="skill-cell"><span class="label">Core</span><span class="name">CSS</span></div>
+          <div class="skill-cell"><span class="label">Lang</span><span class="name">JS</span></div>
+          <div class="skill-cell"><span class="label">Lang</span><span class="name">Python</span></div>
+          <div class="skill-cell"><span class="label">Lang</span><span class="name">C++</span></div>
+          <div class="skill-cell"><span class="label">Lib</span><span class="name">React</span></div>
+          <div class="skill-cell"><span class="label">FW</span><span class="name">Next.js</span></div>
+          <div class="skill-cell"><span class="label">FW</span><span class="name">Express</span></div>
+          <div class="skill-cell"><span class="label">FW</span><span class="name">Django</span></div>
+          <div class="skill-cell"><span class="label">BE</span><span class="name">Node.js</span></div>
+          <div class="skill-cell"><span class="label">Style</span><span class="name">Tailwind</span></div>
+          <div class="skill-cell"><span class="label">Data</span><span class="name">MySQL</span></div>
+          <div class="skill-cell"><span class="label">Data</span><span class="name">MongoDB</span></div>
+          <div class="skill-cell"><span class="label">VCS</span><span class="name">Git</span></div>
+          <div class="skill-cell"><span class="label">Tools</span><span class="name">Postman</span></div>
+          <div class="skill-cell"><span class="label">3D</span><span class="name">Three.js</span></div>
         </div>
       </div>
     </section>
@@ -1064,685 +962,347 @@
     <!-- EXPERIENCE -->
     <section id="experience" class="py-24 px-4 max-w-6xl mx-auto">
       <div class="mb-16 reveal">
-        <h2
-          class="section-heading font-display font-extrabold uppercase tracking-tighter"
-        >
-          Experience<span style="color: var(--coral)">_Log</span>
+        <h2 class="section-heading font-display font-extrabold uppercase tracking-tighter">
+          Experience<span style="color:var(--coral)">_Log</span>
+        </h2>
+      </div>
+      <div class="space-y-4">
+        <div class="exp-card reveal" style="border-left:3px solid #a6cc00">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+            <div>
+              <h3 class="font-display font-bold text-2xl uppercase mb-1">Associate Software Developer</h3>
+              <p class="font-mono text-sm" style="color:#a6cc00">@ Larklabs</p>
+            </div>
+            <span class="pill whitespace-nowrap" style="color:#c0bfbf">May 2025 – Present</span>
+          </div>
+          <ul class="space-y-2" style="color:#c0bfbf">
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--acid);margin-top:2px">▸</span>Working on an ERP system, focusing on frontend development, UI consistency, validation, and workflow logic</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--acid);margin-top:2px">▸</span>Collaborating with backend and product teams to deliver scalable business modules</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--acid);margin-top:2px">▸</span>Improving system usability, performance, and maintainability</li>
+          </ul>
+        </div>
+        <div class="exp-card reveal reveal-delay-1" style="border-left:3px solid #ff5c4d">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+            <div>
+              <h3 class="font-display font-bold text-2xl uppercase mb-1">Software Developer Intern</h3>
+              <p class="font-mono text-sm" style="color:#ff5c4d">@ Rearway Technologies</p>
+            </div>
+            <span class="pill whitespace-nowrap" style="color:#c0bfbf">Apr 2025 – May 2025</span>
+          </div>
+          <ul class="space-y-2" style="color:#c0bfbf">
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--coral);margin-top:2px">▸</span>Worked on a bidding application</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--coral);margin-top:2px">▸</span>Implemented UI components and assisted in business logic integration</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--coral);margin-top:2px">▸</span>Participated in requirement analysis and testing</li>
+          </ul>
+        </div>
+        <div class="exp-card reveal reveal-delay-2" style="border-left:3px solid #00e5a0">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+            <div>
+              <h3 class="font-display font-bold text-2xl uppercase mb-1">Software Developer Intern</h3>
+              <p class="font-mono text-sm" style="color:#00e5a0">@ Strokx</p>
+            </div>
+            <span class="pill whitespace-nowrap" style="color:#c0bfbf">Feb 2025 – Apr 2025</span>
+          </div>
+          <ul class="space-y-2" style="color:#c0bfbf">
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--mint);margin-top:2px">▸</span>Managing multiple client projects from initiation to completion</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--mint);margin-top:2px">▸</span>Coordinating with development teams and ensuring project milestones</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--mint);margin-top:2px">▸</span>Maintaining client relationships and handling project communications</li>
+          </ul>
+        </div>
+        <div class="exp-card reveal reveal-delay-1" style="border-left:3px solid #4daaff">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+            <div>
+              <h3 class="font-display font-bold text-2xl uppercase mb-1">Web Developer Trainee</h3>
+              <p class="font-mono text-sm" style="color:#4daaff">@ Kerala Digital Park</p>
+            </div>
+            <span class="pill whitespace-nowrap" style="color:#c0bfbf">Jan 2025 – Feb 2025</span>
+          </div>
+          <ul class="space-y-2" style="color:#c0bfbf">
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--sky);margin-top:2px">▸</span>Created an Event Management Website</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--sky);margin-top:2px">▸</span>Focused on responsive UI, forms, and user interaction</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--sky);margin-top:2px">▸</span>Gained real-world exposure to project structure and deployment flow</li>
+          </ul>
+        </div>
+        <div class="exp-card reveal reveal-delay-2" style="border-left:3px solid #9b6dff">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
+            <div>
+              <h3 class="font-display font-bold text-2xl uppercase mb-1">Web Developer Trainee</h3>
+              <p class="font-mono text-sm" style="color:#9b6dff">@ Techmaghi</p>
+            </div>
+            <span class="pill whitespace-nowrap" style="color:#c0bfbf">Aug 2024 – Jan 2025</span>
+          </div>
+          <ul class="space-y-2" style="color:#c0bfbf">
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--violet);margin-top:2px">▸</span>Completed a hands-on Web Development internship with real-world project training</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--violet);margin-top:2px">▸</span>Built responsive applications including a Food Ordering, Doctor Booking system and Netflix clone</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--violet);margin-top:2px">▸</span>Strengthened frontend fundamentals and practical development workflows</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS — FULLSCREEN PINNED SCROLL PANELS
+         ============================================================ -->
+    <div id="projects">
+      <!-- Section Label Header -->
+      <div class="projects-header reveal">
+        <h2 class="section-heading font-display font-extrabold uppercase tracking-tighter">
+          Selected_Works
+
         </h2>
       </div>
 
-      <div class="space-y-4">
-        <!-- Larklabs -->
-        <div class="exp-card reveal" style="border-left: 3px solid #a6cc00">
-          <div
-            class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4"
-          >
-            <div>
-              <h3 class="font-display font-bold text-2xl uppercase mb-1">
-                Associate Software Developer
-              </h3>
-              <p class="font-mono text-sm" style="color: #a6cc00">@ Larklabs</p>
+      <!-- Panels Container -->
+      <div id="projects-container">
+
+        <!-- PROJECT 1: GameLand -->
+        <div class="project-panel" data-panel="0">
+          <img src="Assets/images/phisgaurd.webp" alt="GameLand" class="panel-bg-img" />
+          <div class="panel-overlay"></div>
+          <div class="panel-glow"></div>
+          <div class="panel-content">
+            <div class="panel-text-col">
+              <div class="panel-number">01 / 06</div>
+              <h3 class="panel-title">Game<br/>Land</h3>
+              <p class="panel-desc">A visually stunning gaming portfolio website featuring 3D animations, interactive preloader, and dynamic music toggle. Built for immersive user experiences.</p>
+              <div class="panel-tags">
+                <span class="panel-tag">GSAP</span>
+                <span class="panel-tag">Vanilla JS</span>
+                <span class="panel-tag">HTML5 & CSS3</span>
+              </div>
+              <a href="https://game-lands.netlify.app/" target="_blank" class="panel-cta">
+                View Project <i class="ri-arrow-right-up-line"></i>
+              </a>
             </div>
-            <span class="pill whitespace-nowrap" style="color: #c0bfbf"
-              >May 2025 – Present</span
-            >
+            <div class="panel-img-col">
+              <div class="panel-mockup">
+                <img src="Assets/images/phisgaurd.webp" alt="GameLand Preview" />
+              </div>
+            </div>
           </div>
-          <ul class="space-y-2" style="color: #c0bfbf">
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--acid); margin-top: 2px">▸</span>Working
-              on an ERP system, focusing on frontend development, UI
-              consistency, validation, and workflow logic
-            </li>
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--acid); margin-top: 2px">▸</span
-              >Collaborating with backend and product teams to deliver scalable
-              business modules
-            </li>
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--acid); margin-top: 2px">▸</span
-              >Improving system usability, performance, and maintainability
-            </li>
-          </ul>
         </div>
 
-        <!-- Rearway -->
-        <div
-          class="exp-card reveal reveal-delay-1"
-          style="border-left: 3px solid #ff5c4d"
-        >
-          <div
-            class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4"
-          >
-            <div>
-              <h3 class="font-display font-bold text-2xl uppercase mb-1">
-                Software Developer Intern
-              </h3>
-              <p class="font-mono text-sm" style="color: #ff5c4d">
-                @ Rearway Technologies
-              </p>
+        <!-- PROJECT 2: Fizzi -->
+        <div class="project-panel" data-panel="1">
+          <img src="Assets/images/creative-portfolio.png" alt="Fizzi" class="panel-bg-img" />
+          <div class="panel-overlay"></div>
+          <div class="panel-glow"></div>
+          <div class="panel-content">
+            <div class="panel-text-col">
+              <div class="panel-number">02 / 06</div>
+              <h3 class="panel-title">Fizzi</h3>
+              <p class="panel-desc">Immersive 3D interactive website for FIZZI soda brand. Features WebGL experiences, floating 3D soda cans, fluid animations, and headless CMS integration.</p>
+              <div class="panel-tags">
+                <span class="panel-tag">Next.js</span>
+                <span class="panel-tag">React Three Fiber</span>
+                <span class="panel-tag">Three.js</span>
+                <span class="panel-tag">Prismic</span>
+              </div>
+              <a href="https://fizzi-gilt-one.vercel.app/" target="_blank" class="panel-cta">
+                View Project <i class="ri-arrow-right-up-line"></i>
+              </a>
             </div>
-            <span class="pill whitespace-nowrap" style="color: #c0bfbf"
-              >Apr 2025 – May 2025</span
-            >
+            <div class="panel-img-col">
+              <div class="panel-mockup">
+                <img src="Assets/images/creative-portfolio.png" alt="Fizzi Preview" />
+              </div>
+            </div>
           </div>
-          <ul class="space-y-2" style="color: #c0bfbf">
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--coral); margin-top: 2px">▸</span>Worked
-              on a bidding application
-            </li>
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--coral); margin-top: 2px">▸</span
-              >Implemented UI components and assisted in business logic
-              integration
-            </li>
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--coral); margin-top: 2px">▸</span
-              >Participated in requirement analysis and testing
-            </li>
-          </ul>
         </div>
 
-        <!-- Strokx -->
-        <div
-          class="exp-card reveal reveal-delay-2"
-          style="border-left: 3px solid #00e5a0"
-        >
-          <div
-            class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4"
-          >
-            <div>
-              <h3 class="font-display font-bold text-2xl uppercase mb-1">
-                Software Developer Intern
-              </h3>
-              <p class="font-mono text-sm" style="color: #00e5a0">@ Strokx</p>
+        <!-- PROJECT 3: Verde -->
+        <div class="project-panel" data-panel="2">
+          <img src="Assets/images/verde.png" alt="Verde" class="panel-bg-img" />
+          <div class="panel-overlay"></div>
+          <div class="panel-glow"></div>
+          <div class="panel-content">
+            <div class="panel-text-col">
+              <div class="panel-number">03 / 06</div>
+              <h3 class="panel-title">Verde</h3>
+              <p class="panel-desc">Premium eco-luxury e-commerce website showcasing outdoor living essentials, curated planters, greenery, and refined outdoor furniture.</p>
+              <div class="panel-tags">
+                <span class="panel-tag">React</span>
+                <span class="panel-tag">TypeScript</span>
+                <span class="panel-tag">Tailwind CSS</span>
+              </div>
+              <a href="https://verde-ten-iota.vercel.app/" target="_blank" class="panel-cta">
+                View Project <i class="ri-arrow-right-up-line"></i>
+              </a>
             </div>
-            <span class="pill whitespace-nowrap" style="color: #c0bfbf"
-              >Feb 2025 – Apr 2025</span
-            >
+            <div class="panel-img-col">
+              <div class="panel-mockup">
+                <img src="Assets/images/verde.png" alt="Verde Preview" />
+              </div>
+            </div>
           </div>
-          <ul class="space-y-2" style="color: #c0bfbf">
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--mint); margin-top: 2px">▸</span>Managing
-              multiple client projects from initiation to completion
-            </li>
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--mint); margin-top: 2px">▸</span
-              >Coordinating with development teams and ensuring project
-              milestones
-            </li>
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--mint); margin-top: 2px">▸</span
-              >Maintaining client relationships and handling project
-              communications
-            </li>
-          </ul>
         </div>
 
-        <!-- Kerala Digital Park -->
-        <div
-          class="exp-card reveal reveal-delay-1"
-          style="border-left: 3px solid #4daaff"
-        >
-          <div
-            class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4"
-          >
-            <div>
-              <h3 class="font-display font-bold text-2xl uppercase mb-1">
-                Web Developer Trainee
-              </h3>
-              <p class="font-mono text-sm" style="color: #4daaff">
-                @ Kerala Digital Park
-              </p>
+        <!-- PROJECT 4: Coffee Address -->
+        <div class="project-panel" data-panel="3">
+          <img src="Assets/images/coffee.jpg" alt="Coffee Address" class="panel-bg-img" />
+          <div class="panel-overlay"></div>
+          <div class="panel-glow"></div>
+          <div class="panel-content">
+            <div class="panel-text-col">
+              <div class="panel-number">04 / 06</div>
+              <h3 class="panel-title">Coffee<br/>Address</h3>
+              <p class="panel-desc">Modern coffeehouse brand website showcasing premium coffee experiences, brand storytelling, signature menu, branch locations, and expansion opportunities.</p>
+              <div class="panel-tags">
+                <span class="panel-tag">React</span>
+                <span class="panel-tag">TypeScript</span>
+                <span class="panel-tag">Vite</span>
+                <span class="panel-tag">Material-UI</span>
+              </div>
+              <a href="https://coffeeaddress.vercel.app/" target="_blank" class="panel-cta">
+                View Project <i class="ri-arrow-right-up-line"></i>
+              </a>
             </div>
-            <span class="pill whitespace-nowrap" style="color: #c0bfbf"
-              >Jan 2025 – Feb 2025</span
-            >
+            <div class="panel-img-col">
+              <div class="panel-mockup">
+                <img src="Assets/images/coffee.jpg" alt="Coffee Address Preview" />
+              </div>
+            </div>
           </div>
-          <ul class="space-y-2" style="color: #c0bfbf">
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--sky); margin-top: 2px">▸</span>Created
-              an Event Management Website
-            </li>
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--sky); margin-top: 2px">▸</span>Focused
-              on responsive UI, forms, and user interaction
-            </li>
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--sky); margin-top: 2px">▸</span>Gained
-              real-world exposure to project structure and deployment flow
-            </li>
-          </ul>
         </div>
 
-        <!-- Techmaghi -->
-        <div
-          class="exp-card reveal reveal-delay-2"
-          style="border-left: 3px solid #9b6dff"
-        >
-          <div
-            class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4"
-          >
-            <div>
-              <h3 class="font-display font-bold text-2xl uppercase mb-1">
-                Web Developer Trainee
-              </h3>
-              <p class="font-mono text-sm" style="color: #9b6dff">
-                @ Techmaghi
-              </p>
+        <!-- PROJECT 5: Gloria -->
+        <div class="project-panel" data-panel="4">
+          <img src="Assets/images/stoceasy.png" alt="Gloria" class="panel-bg-img" />
+          <div class="panel-overlay"></div>
+          <div class="panel-glow"></div>
+          <div class="panel-content">
+            <div class="panel-text-col">
+              <div class="panel-number">05 / 06</div>
+              <h3 class="panel-title">Gloria</h3>
+              <p class="panel-desc">A sophisticated fashion e-commerce website featuring women's, men's, and kids' clothing collections with accessories, brand showcases, and seasonal sales.</p>
+              <div class="panel-tags">
+                <span class="panel-tag">Vanilla JS</span>
+                <span class="panel-tag">HTML5 & CSS3</span>
+              </div>
+              <a href="https://gloriaa.netlify.app/" target="_blank" class="panel-cta">
+                View Project <i class="ri-arrow-right-up-line"></i>
+              </a>
             </div>
-            <span class="pill whitespace-nowrap" style="color: #c0bfbf"
-              >Aug 2024 – Jan 2025</span
-            >
+            <div class="panel-img-col">
+              <div class="panel-mockup">
+                <img src="Assets/images/stoceasy.png" alt="Gloria Preview" />
+              </div>
+            </div>
           </div>
-          <ul class="space-y-2" style="color: #c0bfbf">
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--violet); margin-top: 2px">▸</span
-              >Completed a hands-on Web Development internship with real-world
-              project training
-            </li>
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--violet); margin-top: 2px">▸</span>Built
-              responsive applications including a Food Ordering, Doctor Booking
-              system and Netflix clone
-            </li>
-            <li class="flex gap-3 text-sm font-body">
-              <span style="color: var(--violet); margin-top: 2px">▸</span
-              >Strengthened frontend fundamentals and practical development
-              workflows
-            </li>
-          </ul>
         </div>
+
+        <!-- PROJECT 6: Karyasthan -->
+        <div class="project-panel" data-panel="5">
+          <img src="Assets/images/habit-tracker.png" alt="Karyasthan" class="panel-bg-img" />
+          <div class="panel-overlay"></div>
+          <div class="panel-glow"></div>
+          <div class="panel-content">
+            <div class="panel-text-col">
+              <div class="panel-number">06 / 06</div>
+              <h3 class="panel-title">Karya<br/>sthan</h3>
+              <p class="panel-desc">Comprehensive event management platform with wedding planning, corporate events, admin dashboard, gallery management, and client booking capabilities.</p>
+              <div class="panel-tags">
+                <span class="panel-tag">Node.js</span>
+                <span class="panel-tag">Express.js</span>
+                <span class="panel-tag">Multer</span>
+                <span class="panel-tag">Nodemailer</span>
+              </div>
+              <a href="https://kar-liard.vercel.app/" target="_blank" class="panel-cta">
+                View Project <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+            <div class="panel-img-col">
+              <div class="panel-mockup">
+                <img src="Assets/images/habit-tracker.png" alt="Karyasthan Preview" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /projects-container -->
+
+      <!-- GitHub CTA -->
+      <div class="projects-footer">
+        <a href="https://github.com/shibin2002" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:16px 36px;border-radius:100px;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;transition:background 0.2s,border-color 0.2s;" class="text-cream hover:bg-white/10">
+          <i class="ri-github-fill text-xl"></i> View All Repos on GitHub
+        </a>
       </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="py-24 px-4">
-      <div class="max-w-6xl mx-auto">
-        <div class="mb-16 reveal">
-          <h2
-            class="section-heading font-display font-extrabold uppercase tracking-tighter"
-          >
-            Selected<span style="color: var(--violet)">_Works</span>
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article class="project-card reveal">
-            <div style="overflow: hidden">
-              <img
-                src="Assets/images/phisgaurd.webp"
-                alt="GameLand"
-                class="project-img"
-              />
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-3">
-                <h3 class="font-display font-bold text-2xl uppercase">
-                  GameLand
-                </h3>
-                <a
-                  href="https://game-lands.netlify.app/"
-                  target="_blank"
-                  style="
-                    width: 40px;
-                    height: 40px;
-                    background: rgba(166, 204, 0, 0.1);
-                    border: 1px solid rgba(166, 204, 0, 0.2);
-                    border-radius: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: var(--acid);
-                    flex-shrink: 0;
-                    transition: background 0.2s;
-                  "
-                  ><i class="ri-arrow-right-up-line"></i
-                ></a>
-              </div>
-              <p
-                class="font-body text-sm mb-4"
-                style="color: #c0bfbf; line-height: 1.6"
-              >
-                A visually stunning gaming portfolio website featuring 3D
-                animations, interactive preloader, and dynamic music toggle.
-                Built for immersive user experiences.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-tag">GSAP</span>
-                <span class="skill-tag">Vanilla JS</span>
-                <span class="skill-tag">HTML5 & CSS3</span>
-              </div>
-            </div>
-          </article>
-          <article class="project-card reveal">
-            <div style="overflow: hidden">
-              <img
-                src="Assets/images/creative-portfolio.png"
-                alt="Fizzi"
-                class="project-img"
-              />
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-3">
-                <h3 class="font-display font-bold text-2xl uppercase">Fizzi</h3>
-                <a
-                  href="https://fizzi-gilt-one.vercel.app/"
-                  target="_blank"
-                  style="
-                    width: 40px;
-                    height: 40px;
-                    background: rgba(155, 109, 255, 0.1);
-                    border: 1px solid rgba(155, 109, 255, 0.2);
-                    border-radius: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: var(--violet);
-                    flex-shrink: 0;
-                  "
-                  ><i class="ri-arrow-right-up-line"></i
-                ></a>
-              </div>
-              <p
-                class="font-body text-sm mb-4"
-                style="color: #c0bfbf; line-height: 1.6"
-              >
-                Immersive 3D interactive website for FIZZI soda brand. Features
-                WebGL experiences, floating 3D soda cans, fluid animations, and
-                headless CMS integration.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-tag">Next.js</span>
-                <span class="skill-tag">React Three Fiber</span>
-                <span class="skill-tag">Three.js</span>
-                <span class="skill-tag">Prismic</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal">
-            <div style="overflow: hidden">
-              <img
-                src="Assets/images/verde.png"
-                alt="Verde"
-                class="project-img"
-              />
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-3">
-                <h3 class="font-display font-bold text-2xl uppercase">Verde</h3>
-                <a
-                  href="https://verde-ten-iota.vercel.app/"
-                  target="_blank"
-                  style="
-                    width: 40px;
-                    height: 40px;
-                    background: rgba(0, 229, 160, 0.1);
-                    border: 1px solid rgba(0, 229, 160, 0.2);
-                    border-radius: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: var(--mint);
-                    flex-shrink: 0;
-                  "
-                  ><i class="ri-arrow-right-up-line"></i
-                ></a>
-              </div>
-              <p
-                class="font-body text-sm mb-4"
-                style="color: #c0bfbf; line-height: 1.6"
-              >
-                Premium eco-luxury e-commerce website showcasing outdoor living
-                essentials, curated planters, greenery, and refined outdoor
-                furniture.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">Tailwind CSS</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal reveal-delay-1">
-            <div style="overflow: hidden">
-              <img
-                src="Assets/images/coffee.jpg"
-                alt="Coffee Address"
-                class="project-img"
-              />
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-3">
-                <h3 class="font-display font-bold text-2xl uppercase">
-                  Coffee Address
-                </h3>
-                <a
-                  href="https://coffeeaddress.vercel.app/"
-                  target="_blank"
-                  style="
-                    width: 40px;
-                    height: 40px;
-                    background: rgba(166, 204, 0, 0.1);
-                    border: 1px solid rgba(166, 204, 0, 0.2);
-                    border-radius: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: var(--acid);
-                    flex-shrink: 0;
-                  "
-                  ><i class="ri-arrow-right-up-line"></i
-                ></a>
-              </div>
-              <p
-                class="font-body text-sm mb-4"
-                style="color: #c0bfbf; line-height: 1.6"
-              >
-                Modern coffeehouse brand website showcasing premium coffee
-                experiences, brand storytelling, signature menu, branch
-                locations, and expansion opportunities.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">TypeScript</span>
-                <span class="skill-tag">Vite</span>
-                <span class="skill-tag">Material-UI</span>
-              </div>
-            </div>
-          </article>
-          <article class="project-card reveal reveal-delay-1">
-            <div style="overflow: hidden">
-              <img
-                src="Assets/images/stoceasy.png"
-                alt="Gloria"
-                class="project-img"
-              />
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-3">
-                <h3 class="font-display font-bold text-2xl uppercase">
-                  Gloria
-                </h3>
-                <a
-                  href="https://gloriaa.netlify.app/"
-                  target="_blank"
-                  style="
-                    width: 40px;
-                    height: 40px;
-                    background: rgba(77, 170, 255, 0.1);
-                    border: 1px solid rgba(77, 170, 255, 0.2);
-                    border-radius: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: var(--sky);
-                    flex-shrink: 0;
-                  "
-                  ><i class="ri-arrow-right-up-line"></i
-                ></a>
-              </div>
-              <p
-                class="font-body text-sm mb-4"
-                style="color: #c0bfbf; line-height: 1.6"
-              >
-                A sophisticated fashion e-commerce website featuring women's,
-                men's, and kids' clothing collections with accessories, brand
-                showcases, and seasonal sales.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-tag">Vanilla JS</span>
-                <span class="skill-tag">HTML5 & CSS3</span>
-              </div>
-            </div>
-          </article>
-          <article class="project-card reveal reveal-delay-1">
-            <div style="overflow: hidden">
-              <img
-                src="Assets/images/habit-tracker.png"
-                alt="Karyasthan"
-                class="project-img"
-              />
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start mb-3">
-                <h3 class="font-display font-bold text-2xl uppercase">
-                  Karyasthan
-                </h3>
-                <a
-                  href="https://kar-liard.vercel.app/"
-                  target="_blank"
-                  style="
-                    width: 40px;
-                    height: 40px;
-                    background: rgba(255, 92, 77, 0.1);
-                    border: 1px solid rgba(255, 92, 77, 0.2);
-                    border-radius: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: var(--coral);
-                    flex-shrink: 0;
-                  "
-                  ><i class="ri-arrow-right-up-line"></i
-                ></a>
-              </div>
-              <p
-                class="font-body text-sm mb-4"
-                style="color: #c0bfbf; line-height: 1.6"
-              >
-                Comprehensive event management platform with wedding planning,
-                corporate events, admin dashboard, gallery management, and
-                client booking capabilities.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Express.js</span>
-                <span class="skill-tag">Multer</span>
-                <span class="skill-tag">Nodemailer</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="text-center mt-16 reveal">
-          <a
-            href="https://github.com/shibin2002"
-            target="_blank"
-            style="
-              display: inline-flex;
-              align-items: center;
-              gap: 10px;
-              background: rgba(255, 255, 255, 0.05);
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              padding: 16px 36px;
-              border-radius: 100px;
-              font-family: &quot;DM Mono&quot;, monospace;
-              font-size: 13px;
-              letter-spacing: 0.05em;
-              text-transform: uppercase;
-              transition:
-                background 0.2s,
-                border-color 0.2s;
-            "
-            class="text-cream hover:bg-white/10"
-          >
-            <i class="ri-github-fill text-xl"></i> View All Repos on GitHub
-          </a>
-        </div>
-      </div>
-    </section>
+    </div><!-- /projects -->
 
     <!-- TESTIMONIALS -->
-    <section
-      id="reports"
-      style="
-        background: var(--graphite);
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      "
-      class="py-24 overflow-hidden"
-    >
+    <section id="reports" style="background:var(--graphite);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);" class="py-24 overflow-hidden">
       <div class="max-w-6xl mx-auto px-4 mb-12 reveal">
-        <h2
-          class="section-heading font-display font-extrabold uppercase tracking-tighter"
-        >
-          User_<span style="color: var(--sky)">Reports</span>
+        <h2 class="section-heading font-display font-extrabold uppercase tracking-tighter">
+          User_<span style="color:var(--sky)">Reports</span>
         </h2>
       </div>
       <div class="marquee-wrap overflow-hidden">
-        <div class="marquee-track" style="gap: 20px; padding: 0 20px">
-          <div class="testi-card" style="border-top: 2px solid #00e5a0">
+        <div class="marquee-track" style="gap:20px;padding:0 20px">
+          <div class="testi-card" style="border-top:2px solid #00e5a0">
             <div class="flex justify-between items-center mb-4">
-              <span class="font-mono text-xs" style="color: #00e5a0"
-                >REPORT_001.log</span
-              >
-              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+              <span class="font-mono text-xs" style="color:#00e5a0">REPORT_001.log</span>
+              <div class="flex gap-1" style="color:#c0bfbf">★★★★★</div>
             </div>
-            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
-              FROM: Abu Thahir @ MGM COLLEGE
-            </p>
-            <p class="font-body text-base leading-relaxed" style="color: #ccc">
-              "Shibin performs exceptionally well under pressure and always
-              delivers high-quality results on time."
-            </p>
+            <p class="font-mono text-xs mb-3" style="color:#c0bfbf">FROM: Abu Thahir @ MGM COLLEGE</p>
+            <p class="font-body text-base leading-relaxed" style="color:#ccc">"Shibin performs exceptionally well under pressure and always delivers high-quality results on time."</p>
           </div>
-          <div class="testi-card" style="border-top: 2px solid #4daaff">
+          <div class="testi-card" style="border-top:2px solid #4daaff">
             <div class="flex justify-between items-center mb-4">
-              <span class="font-mono text-xs" style="color: #4daaff"
-                >REPORT_002.log</span
-              >
-              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+              <span class="font-mono text-xs" style="color:#4daaff">REPORT_002.log</span>
+              <div class="flex gap-1" style="color:#c0bfbf">★★★★★</div>
             </div>
-            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
-              FROM: CEO @ Strokx
-            </p>
-            <p class="font-body text-base leading-relaxed" style="color: #ccc">
-              "Fast, reliable, and demonstrates exceptional design judgment — a
-              rare and valuable combination."
-            </p>
+            <p class="font-mono text-xs mb-3" style="color:#c0bfbf">FROM: CEO @ Strokx</p>
+            <p class="font-body text-base leading-relaxed" style="color:#ccc">"Fast, reliable, and demonstrates exceptional design judgment — a rare and valuable combination."</p>
           </div>
-          <div class="testi-card" style="border-top: 2px solid #ff5c4d">
+          <div class="testi-card" style="border-top:2px solid #ff5c4d">
             <div class="flex justify-between items-center mb-4">
-              <span class="font-mono text-xs" style="color: #ff5c4d"
-                >REPORT_003.log</span
-              >
-              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+              <span class="font-mono text-xs" style="color:#ff5c4d">REPORT_003.log</span>
+              <div class="flex gap-1" style="color:#c0bfbf">★★★★★</div>
             </div>
-            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
-              FROM: Dev @ Larklabs
-            </p>
-            <p class="font-body text-base leading-relaxed" style="color: #ccc">
-              "Writes exceptionally clean, maintainable code and handles complex
-              state management with confidence."
-            </p>
+            <p class="font-mono text-xs mb-3" style="color:#c0bfbf">FROM: Dev @ Larklabs</p>
+            <p class="font-body text-base leading-relaxed" style="color:#ccc">"Writes exceptionally clean, maintainable code and handles complex state management with confidence."</p>
           </div>
-          <div class="testi-card" style="border-top: 2px solid #9b6dff">
+          <div class="testi-card" style="border-top:2px solid #9b6dff">
             <div class="flex justify-between items-center mb-4">
-              <span class="font-mono text-xs" style="color: #9b6dff"
-                >REPORT_004.log</span
-              >
-              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+              <span class="font-mono text-xs" style="color:#9b6dff">REPORT_004.log</span>
+              <div class="flex gap-1" style="color:#c0bfbf">★★★★★</div>
             </div>
-            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
-              FROM: Dev @ Rearway Technologies
-            </p>
-            <p class="font-body text-base leading-relaxed" style="color: #ccc">
-              "Transformed ideas into a clean, modern UI with strong usability
-              and visual impact."
-            </p>
+            <p class="font-mono text-xs mb-3" style="color:#c0bfbf">FROM: Dev @ Rearway Technologies</p>
+            <p class="font-body text-base leading-relaxed" style="color:#ccc">"Transformed ideas into a clean, modern UI with strong usability and visual impact."</p>
           </div>
-          <div class="testi-card" style="border-top: 2px solid #a6cc00">
+          <div class="testi-card" style="border-top:2px solid #a6cc00">
             <div class="flex justify-between items-center mb-4">
-              <span class="font-mono text-xs" style="color: #a6cc00"
-                >REPORT_005.log</span
-              >
-              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
+              <span class="font-mono text-xs" style="color:#a6cc00">REPORT_005.log</span>
+              <div class="flex gap-1" style="color:#c0bfbf">★★★★★</div>
             </div>
-            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
-              FROM: UX Designer @ Larklabs
-            </p>
-            <p class="font-body text-base leading-relaxed" style="color: #ccc">
-              "Designed an intuitive user experience and anticipated needs
-              before we even recognized them."
-            </p>
+            <p class="font-mono text-xs mb-3" style="color:#c0bfbf">FROM: UX Designer @ Larklabs</p>
+            <p class="font-body text-base leading-relaxed" style="color:#ccc">"Designed an intuitive user experience and anticipated needs before we even recognized them."</p>
           </div>
-          <!-- Duplicates for loop -->
-          <div class="testi-card" style="border-top: 2px solid #00e5a0">
-            <div class="flex justify-between items-center mb-4">
-              <span class="font-mono text-xs" style="color: #00e5a0"
-                >REPORT_001.log</span
-              >
-              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
-            </div>
-            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
-              FROM: Abu Thahir @ MGM COLLEGE
-            </p>
-            <p class="font-body text-base leading-relaxed" style="color: #ccc">
-              "Shibin performs exceptionally well under pressure and always
-              delivers high-quality results on time."
-            </p>
+          <!-- Duplicate for loop -->
+          <div class="testi-card" style="border-top:2px solid #00e5a0">
+            <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs" style="color:#00e5a0">REPORT_001.log</span><div class="flex gap-1" style="color:#c0bfbf">★★★★★</div></div>
+            <p class="font-mono text-xs mb-3" style="color:#c0bfbf">FROM: Abu Thahir @ MGM COLLEGE</p>
+            <p class="font-body text-base leading-relaxed" style="color:#ccc">"Shibin performs exceptionally well under pressure and always delivers high-quality results on time."</p>
           </div>
-          <div class="testi-card" style="border-top: 2px solid #4daaff">
-            <div class="flex justify-between items-center mb-4">
-              <span class="font-mono text-xs" style="color: #4daaff"
-                >REPORT_002.log</span
-              >
-              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
-            </div>
-            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
-              FROM: CEO @ Strokx
-            </p>
-            <p class="font-body text-base leading-relaxed" style="color: #ccc">
-              "Fast, reliable, and demonstrates exceptional design judgment — a
-              rare and valuable combination."
-            </p>
+          <div class="testi-card" style="border-top:2px solid #4daaff">
+            <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs" style="color:#4daaff">REPORT_002.log</span><div class="flex gap-1" style="color:#c0bfbf">★★★★★</div></div>
+            <p class="font-mono text-xs mb-3" style="color:#c0bfbf">FROM: CEO @ Strokx</p>
+            <p class="font-body text-base leading-relaxed" style="color:#ccc">"Fast, reliable, and demonstrates exceptional design judgment — a rare and valuable combination."</p>
           </div>
-          <div class="testi-card" style="border-top: 2px solid #ff5c4d">
-            <div class="flex justify-between items-center mb-4">
-              <span class="font-mono text-xs" style="color: #ff5c4d"
-                >REPORT_003.log</span
-              >
-              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
-            </div>
-            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
-              FROM: Dev @ Larklabs
-            </p>
-            <p class="font-body text-base leading-relaxed" style="color: #ccc">
-              "Writes exceptionally clean, maintainable code and handles complex
-              state management with confidence."
-            </p>
+          <div class="testi-card" style="border-top:2px solid #ff5c4d">
+            <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs" style="color:#ff5c4d">REPORT_003.log</span><div class="flex gap-1" style="color:#c0bfbf">★★★★★</div></div>
+            <p class="font-mono text-xs mb-3" style="color:#c0bfbf">FROM: Dev @ Larklabs</p>
+            <p class="font-body text-base leading-relaxed" style="color:#ccc">"Writes exceptionally clean, maintainable code and handles complex state management with confidence."</p>
           </div>
-          <div class="testi-card" style="border-top: 2px solid #9b6dff">
-            <div class="flex justify-between items-center mb-4">
-              <span class="font-mono text-xs" style="color: #9b6dff"
-                >REPORT_004.log</span
-              >
-              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
-            </div>
-            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
-              FROM: Dev @ Rearway Technologies
-            </p>
-            <p class="font-body text-base leading-relaxed" style="color: #ccc">
-              "Transformed ideas into a clean, modern UI with strong usability
-              and visual impact."
-            </p>
+          <div class="testi-card" style="border-top:2px solid #9b6dff">
+            <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs" style="color:#9b6dff">REPORT_004.log</span><div class="flex gap-1" style="color:#c0bfbf">★★★★★</div></div>
+            <p class="font-mono text-xs mb-3" style="color:#c0bfbf">FROM: Dev @ Rearway Technologies</p>
+            <p class="font-body text-base leading-relaxed" style="color:#ccc">"Transformed ideas into a clean, modern UI with strong usability and visual impact."</p>
           </div>
-          <div class="testi-card" style="border-top: 2px solid #a6cc00">
-            <div class="flex justify-between items-center mb-4">
-              <span class="font-mono text-xs" style="color: #a6cc00"
-                >REPORT_005.log</span
-              >
-              <div class="flex gap-1" style="color: #c0bfbf">★★★★★</div>
-            </div>
-            <p class="font-mono text-xs mb-3" style="color: #c0bfbf">
-              FROM: UX Designer @ Larklabs
-            </p>
-            <p class="font-body text-base leading-relaxed" style="color: #ccc">
-              "Designed an intuitive user experience and anticipated needs
-              before we even recognized them."
-            </p>
+          <div class="testi-card" style="border-top:2px solid #a6cc00">
+            <div class="flex justify-between items-center mb-4"><span class="font-mono text-xs" style="color:#a6cc00">REPORT_005.log</span><div class="flex gap-1" style="color:#c0bfbf">★★★★★</div></div>
+            <p class="font-mono text-xs mb-3" style="color:#c0bfbf">FROM: UX Designer @ Larklabs</p>
+            <p class="font-body text-base leading-relaxed" style="color:#ccc">"Designed an intuitive user experience and anticipated needs before we even recognized them."</p>
           </div>
         </div>
       </div>
@@ -1752,648 +1312,302 @@
     <section id="contact" class="py-32 px-4 max-w-6xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
         <div class="reveal">
-          <h2
-            class="contact-heading font-display font-extrabold uppercase tracking-tighter leading-[.88] mb-6"
-          >
-            Let's<br />Talk<br /><span style="color: var(--acid)">Code.</span>
+          <h2 class="contact-heading font-display font-extrabold uppercase tracking-tighter leading-[.88] mb-6">
+            Let's<br/>Talk<br/><span style="color:var(--acid)">Code.</span>
           </h2>
           <div class="flex items-center gap-3 mb-5">
             <span class="w-2 h-2 rounded-full bg-mint animate-pulse"></span>
-            <span
-              class="font-mono text-xs uppercase tracking-widest"
-              style="color: #c0bfbf"
-              >Available for Freelance &amp; Full-time</span
-            >
+            <span class="font-mono text-xs uppercase tracking-widest" style="color:#c0bfbf">Available for Freelance &amp; Full-time</span>
           </div>
-          <p
-            class="font-body text-base leading-relaxed max-w-sm"
-            style="color: #c0bfbf"
-          >
-            I build fast, accessible, and memorable web experiences. Got a
-            project or role in mind? Let's make it happen.
-          </p>
+          <p class="font-body text-base leading-relaxed max-w-sm" style="color:#c0bfbf">I build fast, accessible, and memorable web experiences. Got a project or role in mind? Let's make it happen.</p>
         </div>
-
         <div class="space-y-4 reveal reveal-delay-1">
           <a href="mailto:shibinshoukath0@gmail.com" class="contact-link">
-            <div
-              style="
-                width: 44px;
-                height: 44px;
-                background: rgba(77, 170, 255, 0.1);
-                border: 1px solid rgba(77, 170, 255, 0.15);
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-              "
-            >
-              <i
-                class="ri-mail-send-line"
-                style="color: var(--sky); font-size: 18px"
-              ></i>
+            <div style="width:44px;height:44px;background:rgba(77,170,255,0.1);border:1px solid rgba(77,170,255,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="ri-mail-send-line" style="color:var(--sky);font-size:18px"></i>
             </div>
             <div>
-              <div
-                class="font-mono text-xs mb-1 uppercase tracking-widest"
-                style="color: #c0bfbf"
-              >
-                Email
-              </div>
-              <div class="font-body font-medium text-sm">
-                shibinshoukath0@gmail.com
-              </div>
+              <div class="font-mono text-xs mb-1 uppercase tracking-widest" style="color:#c0bfbf">Email</div>
+              <div class="font-body font-medium text-sm">shibinshoukath0@gmail.com</div>
             </div>
-            <i
-              class="ri-arrow-right-up-line ml-auto"
-              style="color: #c0bfbf"
-            ></i>
+            <i class="ri-arrow-right-up-line ml-auto" style="color:#c0bfbf"></i>
           </a>
           <a href="tel:+919526353831" class="contact-link">
-            <div
-              style="
-                width: 44px;
-                height: 44px;
-                background: rgba(255, 92, 77, 0.1);
-                border: 1px solid rgba(255, 92, 77, 0.15);
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-              "
-            >
-              <i
-                class="ri-phone-line"
-                style="color: var(--coral); font-size: 18px"
-              ></i>
+            <div style="width:44px;height:44px;background:rgba(255,92,77,0.1);border:1px solid rgba(255,92,77,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="ri-phone-line" style="color:var(--coral);font-size:18px"></i>
             </div>
             <div>
-              <div
-                class="font-mono text-xs mb-1 uppercase tracking-widest"
-                style="color: #c0bfbf"
-              >
-                Phone
-              </div>
+              <div class="font-mono text-xs mb-1 uppercase tracking-widest" style="color:#c0bfbf">Phone</div>
               <div class="font-body font-medium text-sm">+91 9526353831</div>
             </div>
-            <i
-              class="ri-arrow-right-up-line ml-auto"
-              style="color: #c0bfbf"
-            ></i>
+            <i class="ri-arrow-right-up-line ml-auto" style="color:#c0bfbf"></i>
           </a>
-          <div class="contact-link" style="cursor: default">
-            <div
-              style="
-                width: 44px;
-                height: 44px;
-                background: rgba(166, 204, 0, 0.08);
-                border: 1px solid rgba(166, 204, 0, 0.15);
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-              "
-            >
-              <i
-                class="ri-map-pin-2-line"
-                style="color: var(--acid); font-size: 18px"
-              ></i>
+          <div class="contact-link" style="cursor:default">
+            <div style="width:44px;height:44px;background:rgba(166,204,0,0.08);border:1px solid rgba(166,204,0,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <i class="ri-map-pin-2-line" style="color:var(--acid);font-size:18px"></i>
             </div>
             <div>
-              <div
-                class="font-mono text-xs mb-1 uppercase tracking-widest"
-                style="color: #c0bfbf"
-              >
-                Location
-              </div>
+              <div class="font-mono text-xs mb-1 uppercase tracking-widest" style="color:#c0bfbf">Location</div>
               <div class="font-body font-medium text-sm">Remote / India 🇮🇳</div>
             </div>
           </div>
-          <a
-            href="mailto:shibinshoukath0@gmail.com"
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              background: var(--acid);
-              color: var(--ink);
-              padding: 16px 28px;
-              border-radius: 12px;
-              font-family: &quot;Outfit&quot;, sans-serif;
-              font-weight: 600;
-              font-size: 14px;
-              transition:
-                opacity 0.2s,
-                transform 0.2s;
-              margin-top: 8px;
-            "
-            class="hover:opacity-85 hover:scale-95"
-          >
+          <a href="mailto:shibinshoukath0@gmail.com" style="display:flex;align-items:center;gap:10px;background:var(--acid);color:var(--ink);padding:16px 28px;border-radius:12px;font-family:'Outfit',sans-serif;font-weight:600;font-size:14px;transition:opacity 0.2s,transform 0.2s;margin-top:8px;" class="hover:opacity-85 hover:scale-95">
             <i class="ri-send-plane-2-line"></i> Send a Message
           </a>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer
-      style="
-        background: var(--graphite);
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-      "
-      class="py-16 px-4"
-    >
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div class="col-span-1 md:col-span-2">
-            <h2
-              class="font-display font-bold text-3xl mb-4"
-              style="letter-spacing: -0.02em"
-            >
-              Shibin<span style="color: var(--acid)">.</span>
-            </h2>
-            <p
-              class="font-body text-sm leading-relaxed max-w-sm"
-              style="color: #c0bfbf"
-            >
-              Designing scalable digital experiences with the raw discipline of
-              the past and the innovation of the future. Clean architecture,
-              thoughtful design, reliable code.
-            </p>
-          </div>
-          <div>
-            <h3
-              class="font-mono text-xs uppercase tracking-widest mb-5"
-              style="color: var(--acid)"
-            >
-              Sitemap
-            </h3>
-            <ul class="space-y-3">
-              <li>
-                <a href="#" class="font-body text-sm" style="color: #c0bfbf"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#projects"
-                  class="font-body text-sm"
-                  style="color: #c0bfbf"
-                  >Works</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#about"
-                  class="font-body text-sm"
-                  style="color: #c0bfbf"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#contact"
-                  class="font-body text-sm"
-                  style="color: #c0bfbf"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3
-              class="font-mono text-xs uppercase tracking-widest mb-5"
-              style="color: var(--acid)"
-            >
-              Socials
-            </h3>
-            <div class="flex gap-4">
-              <a
-                href="https://www.facebook.com/shibin.shoukath/"
-                style="
-                  width: 40px;
-                  height: 40px;
-                  background: rgba(255, 255, 255, 0.04);
-                  border: 1px solid rgba(255, 255, 255, 0.08);
-                  border-radius: 10px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 18px;
-                  transition:
-                    background 0.2s,
-                    border-color 0.2s;
-                "
-                class="hover:bg-white/10"
-                ><i class="ri-facebook-fill" style="color: #c0bfbf"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/_shibin02"
-                style="
-                  width: 40px;
-                  height: 40px;
-                  background: rgba(255, 255, 255, 0.04);
-                  border: 1px solid rgba(255, 255, 255, 0.08);
-                  border-radius: 10px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 18px;
-                  transition: background 0.2s;
-                "
-                class="hover:bg-white/10"
-                ><i class="ri-instagram-fill" style="color: #c0bfbf"></i
-              ></a>
-              <a
-                href="https://github.com/shibin2002"
-                style="
-                  width: 40px;
-                  height: 40px;
-                  background: rgba(255, 255, 255, 0.04);
-                  border: 1px solid rgba(255, 255, 255, 0.08);
-                  border-radius: 10px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 18px;
-                  transition: background 0.2s;
-                "
-                class="hover:bg-white/10"
-                ><i class="ri-github-fill" style="color: #c0bfbf"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/in/shibin2002"
-                style="
-                  width: 40px;
-                  height: 40px;
-                  background: rgba(255, 255, 255, 0.04);
-                  border: 1px solid rgba(255, 255, 255, 0.08);
-                  border-radius: 10px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  font-size: 18px;
-                  transition: background 0.2s;
-                "
-                class="hover:bg-white/10"
-                ><i class="ri-linkedin-fill" style="color: #c0bfbf"></i
-              ></a>
-            </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--muted);border-top:1px solid rgba(255,255,255,0.06);" class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div class="col-span-1 md:col-span-2">
+          <h2 class="font-display font-bold text-3xl mb-4" style="letter-spacing:-0.02em">Shibin<span style="color:var(--acid)">.</span></h2>
+          <p class="font-body text-sm leading-relaxed max-w-sm" style="color:#c0bfbf">Designing scalable digital experiences with the raw discipline of the past and the innovation of the future. Clean architecture, thoughtful design, reliable code.</p>
+        </div>
+        <div>
+          <h3 class="font-mono text-xs uppercase tracking-widest mb-5" style="color:var(--acid)">Sitemap</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="font-body text-sm" style="color:#c0bfbf">Home</a></li>
+            <li><a href="#projects" class="font-body text-sm" style="color:#c0bfbf">Works</a></li>
+            <li><a href="#about" class="font-body text-sm" style="color:#c0bfbf">About</a></li>
+            <li><a href="#contact" class="font-body text-sm" style="color:#c0bfbf">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-mono text-xs uppercase tracking-widest mb-5" style="color:var(--acid)">Socials</h3>
+          <div class="flex gap-4">
+            <a href="https://www.facebook.com/shibin.shoukath/" style="width:40px;height:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background 0.2s;" class="hover:bg-white/10"><i class="ri-facebook-fill" style="color:#c0bfbf"></i></a>
+            <a href="https://www.instagram.com/_shibin02" style="width:40px;height:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background 0.2s;" class="hover:bg-white/10"><i class="ri-instagram-fill" style="color:#c0bfbf"></i></a>
+            <a href="https://github.com/shibin2002" style="width:40px;height:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background 0.2s;" class="hover:bg-white/10"><i class="ri-github-fill" style="color:#c0bfbf"></i></a>
+            <a href="https://www.linkedin.com/in/shibin2002" style="width:40px;height:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;transition:background 0.2s;" class="hover:bg-white/10"><i class="ri-linkedin-fill" style="color:#c0bfbf"></i></a>
           </div>
         </div>
-        <hr class="divider" />
-        <p class="font-mono text-xs text-center mt-8" style="color: #c0bfbf">
-          © 2025 Shibin — Built with craft &amp; obsession.
-        </p>
       </div>
-    </footer>
+      <hr class="divider"/>
+      <p class="font-mono text-xs text-center mt-8" style="color:#c0bfbf">© 2025 Shibin — Built with craft &amp; obsession.</p>
+    </div>
+  </footer>
 
-    <!-- GSAP & Plugins -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 
-    <script>
-      gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  <script>
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-      // --- UTILITY: SPLIT TEXT ---
-      function splitText(selector) {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach((el) => {
-          const text = el.innerText;
-          const words = text.split(" ");
-          el.innerHTML = words
-            .map((word, wordIdx) => {
-              const chars = word.split("");
-              return `<span class="split-word inline-block" style="white-space:pre;">${chars.map((char) => `<span class="split-char inline-block">${char}</span>`).join("")}${wordIdx < words.length - 1 ? '<span class="split-char inline-block"> </span>' : ""}</span>`;
-            })
-            .join("");
-        });
-      }
+    // --- HERO PIN ---
+    ScrollTrigger.create({
+      trigger: ".hero-section",
+      start: "top top",
+      end: "bottom top",
+      pin: true,
+      pinSpacing: false,
+      zIndex: 1,
+    });
 
-      // Apply splitting
-      splitText(".section-heading");
-      splitText(".hero-sub");
+    // --- PROJECT PANELS ---
+    const panels = document.querySelectorAll('.project-panel');
+    const progressDots = document.querySelectorAll('.progress-dot');
+    const projectsProgress = document.getElementById('projects-progress');
+    const isMobile = window.innerWidth <= 768;
 
-      // --- CUSTOM CURSOR ---
-      const cursor = document.getElementById("cursor");
-      const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-      const mouse = { x: pos.x, y: pos.y };
-      const speed = 0.4;
+    function updateActiveDot(index) {
+      progressDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
 
-      const xSet = gsap.quickSetter(cursor, "x", "px");
-      const ySet = gsap.quickSetter(cursor, "y", "px");
-
-      window.addEventListener("mousemove", (e) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
+    panels.forEach((panel, i) => {
+      // PIN: on desktop pin for full scroll height; on mobile pin for 120% (slightly longer dwell)
+      ScrollTrigger.create({
+        trigger: panel,
+        start: "top top",
+        end: isMobile ? "+=80%" : "+=100%",
+        pin: true,
+        pinSpacing: true,
+        onEnter: () => updateActiveDot(i),
+        onEnterBack: () => updateActiveDot(i),
       });
 
-      gsap.ticker.add(() => {
-        const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
-        pos.x += (mouse.x - pos.x) * dt;
-        pos.y += (mouse.y - pos.y) * dt;
-        xSet(pos.x);
-        ySet(pos.y);
-      });
+      // Animate panel content on enter
+      const number = panel.querySelector('.panel-number');
+      const title = panel.querySelector('.panel-title');
+      const desc = panel.querySelector('.panel-desc');
+      const tags = panel.querySelector('.panel-tags');
+      const cta = panel.querySelector('.panel-cta');
+      const imgCol = panel.querySelector('.panel-img-col');
 
-      // Cursor scaling
-      const interactiveElements =
-        "a, button, .skill-cell, .project-card, .exp-card, #menuToggle";
-      document.querySelectorAll(interactiveElements).forEach((el) => {
-        el.addEventListener("mouseenter", () =>
-          gsap.to(cursor, { scale: 2.8, duration: 0.3 }),
-        );
-        el.addEventListener("mouseleave", () =>
-          gsap.to(cursor, { scale: 1, duration: 0.3 }),
-        );
-      });
+      // Set initial states
+      gsap.set([number, title, desc, tags, cta], { opacity: 0, y: isMobile ? 24 : 40 });
+      if (imgCol) gsap.set(imgCol, { opacity: 0, y: isMobile ? 30 : 0, x: isMobile ? 0 : 60 });
 
-      // --- HERO INTERACTIVITY (MOUSE PARALLAX & TILT) ---
-      const heroSection = document.querySelector(".hero-section");
-      const heroHeading = document.querySelector(".hero-heading");
-      const orbs = document.querySelectorAll(".hero-orb, .tech-shape");
-
-      heroSection.addEventListener("mousemove", (e) => {
-        const { clientX, clientY } = e;
-        const { width, height, left, top } =
-          heroSection.getBoundingClientRect();
-
-        // Normalize mouse position (-1 to 1)
-        const x = (clientX - left) / width - 0.5;
-        const y = (clientY - top) / height - 0.5;
-
-        // Tilt Heading
-        gsap.to(heroHeading, {
-          rotateY: x * 15,
-          rotateX: -y * 15,
-          x: x * 20,
-          y: y * 20,
-          duration: 0.8,
-          ease: "power2.out",
-        });
-
-        // Parallax Orbs & Shapes
-        orbs.forEach((orb) => {
-          const speed = orb.getAttribute("data-speed") || 0.05;
-          gsap.to(orb, {
-            x: x * (width * speed),
-            y: y * (height * speed),
-            duration: 1.2,
-            ease: "power2.out",
-          });
-        });
-      });
-
-      // Reset on mouse leave
-      heroSection.addEventListener("mouseleave", () => {
-        gsap.to(heroHeading, {
-          rotateX: 0,
-          rotateY: 0,
-          x: 0,
-          y: 0,
-          duration: 1.5,
-          ease: "elastic.out(1, 0.3)",
-        });
-        orbs.forEach((orb) =>
-          gsap.to(orb, { x: 0, y: 0, duration: 1.5, ease: "power2.out" }),
-        );
-      });
-
-      // --- HERO ENTRANCE (FIZZI STYLE) ---
-      const heroTl = gsap.timeline({ defaults: { ease: "expo.out" } });
-
-      heroTl
-        .to("body", { opacity: 1, duration: 0.1 })
-        .fromTo(
-          ".hero-word span",
-          {
-            scale: 3,
-            opacity: 0,
-            y: 0,
-          },
-          {
-            scale: 1,
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            stagger: 0.2,
-            ease: "power4.out",
-            delay: 0.3,
-          },
-        )
-        .from(
-          ".hero-badge",
-          {
-            y: 20,
-            opacity: 0,
-            duration: 1,
-          },
-          "-=0.6",
-        )
-        .from(
-          ".hero-sub .split-char",
-          {
-            opacity: 0,
-            y: 10,
-            stagger: 0.02,
-            duration: 0.5,
-          },
-          "-=0.8",
-        )
-        .from(
-          ".hero-btns",
-          {
-            y: 20,
-            opacity: 0,
-            duration: 1,
-          },
-          "-=0.8",
-        )
-        .from(
-          "nav",
-          {
-            y: -20,
-            opacity: 0,
-            duration: 1,
-          },
-          "-=1",
-        );
-
-      // --- SCROLL REVEALS (CHARACTER LEVEL) ---
-      document.querySelectorAll(".section-heading").forEach((heading) => {
-        gsap.from(heading.querySelectorAll(".split-word"), {
-          scrollTrigger: {
-            trigger: heading,
-            start: "top 92%",
-            toggleActions: "play none none none",
-          },
-          scale: 1.3,
-          y: 40,
-          rotate: -5,
-          opacity: 0,
-          stagger: 0.05,
-          ease: "back.out(3)",
-          duration: 0.8,
-        });
-      });
-
-      // Standard reveals for cards
-      document
-        .querySelectorAll(
-          ".project-card, .exp-card, .reveal:not(.section-heading)",
-        )
-        .forEach((el) => {
-          const delay = el.classList.contains("reveal-delay-1")
-            ? 0.1
-            : el.classList.contains("reveal-delay-2")
-              ? 0.2
-              : el.classList.contains("reveal-delay-3")
-                ? 0.3
-                : 0;
-
-          gsap.to(el, {
-            scrollTrigger: {
-              trigger: el,
-              start: "top 92%",
-              toggleActions: "play none none none",
-            },
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            delay: delay,
-            ease: "power2.out",
-          });
-        });
-
-      // --- MAGNETIC BUTTONS ---
-      document.querySelectorAll(".nav-cta, .hero-btns a").forEach((btn) => {
-        btn.addEventListener("mousemove", (e) => {
-          const rect = btn.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
-
-          gsap.to(btn, {
-            x: x * 0.3,
-            y: y * 0.3,
-            duration: 0.3,
-            ease: "power2.out",
-          });
-        });
-
-        btn.addEventListener("mouseleave", () => {
-          gsap.to(btn, {
-            x: 0,
-            y: 0,
-            duration: 0.5,
-            ease: "elastic.out(1, 0.3)",
-          });
-        });
-      });
-
-      // --- PROGRESS BAR & BACKGROUND SHIFT ---
-      gsap.to("#progressBar", {
-        width: "100%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: "body",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 0.3,
+      ScrollTrigger.create({
+        trigger: panel,
+        start: isMobile ? "top 90%" : "top 80%",
+        onEnter: () => {
+          gsap.to(number, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" });
+          gsap.to(title, { opacity: 1, y: 0, duration: 0.7, delay: 0.08, ease: "power3.out" });
+          gsap.to(desc, { opacity: 1, y: 0, duration: 0.55, delay: 0.16, ease: "power3.out" });
+          gsap.to(tags, { opacity: 1, y: 0, duration: 0.45, delay: 0.24, ease: "power3.out" });
+          gsap.to(cta, { opacity: 1, y: 0, duration: 0.45, delay: 0.32, ease: "back.out(1.5)" });
+          if (imgCol) gsap.to(imgCol, { opacity: 1, y: 0, x: 0, duration: 0.8, delay: isMobile ? 0.36 : 0.2, ease: "power3.out" });
         },
+        once: true,
       });
+    });
 
-      // Sublte background shift on scroll
-      gsap.to("body", {
-        backgroundColor: "#12121e",
-        scrollTrigger: {
-          trigger: "#skills",
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
-        },
+    // Show/hide progress dots when in project section
+    ScrollTrigger.create({
+      trigger: '#projects-container',
+      start: 'top 50%',
+      end: 'bottom 50%',
+      onEnter: () => projectsProgress.classList.add('visible'),
+      onLeave: () => projectsProgress.classList.remove('visible'),
+      onEnterBack: () => projectsProgress.classList.add('visible'),
+      onLeaveBack: () => projectsProgress.classList.remove('visible'),
+    });
+
+    // --- SPLIT TEXT ---
+    function splitText(selector) {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach((el) => {
+        const text = el.innerText;
+        const words = text.split(" ");
+        el.innerHTML = words.map((word, wordIdx) => {
+          const chars = word.split("");
+          return `<span class="split-word inline-block" style="white-space:pre;">${chars.map((char) => `<span class="split-char inline-block">${char}</span>`).join("")}${wordIdx < words.length - 1 ? '<span class="split-char inline-block"> </span>' : ""}</span>`;
+        }).join("");
       });
+    }
 
-      // --- PARALLAX IMAGES ---
-      document.querySelectorAll(".project-img").forEach((img) => {
-        gsap.fromTo(
-          img,
-          { yPercent: -10 },
-          {
-            yPercent: 10,
-            ease: "none",
-            scrollTrigger: {
-              trigger: img.parentElement,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-            },
-          },
-        );
+    splitText(".section-heading");
+    splitText(".hero-sub");
+
+    // --- CUSTOM CURSOR ---
+    const cursor = document.getElementById("cursor");
+    const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    const mouse = { x: pos.x, y: pos.y };
+    const speed = 0.4;
+    const xSet = gsap.quickSetter(cursor, "x", "px");
+    const ySet = gsap.quickSetter(cursor, "y", "px");
+
+    window.addEventListener("mousemove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+    gsap.ticker.add(() => {
+      const dt = 1.0 - Math.pow(1.0 - speed, gsap.ticker.deltaRatio());
+      pos.x += (mouse.x - pos.x) * dt;
+      pos.y += (mouse.y - pos.y) * dt;
+      xSet(pos.x);
+      ySet(pos.y);
+    });
+
+    document.querySelectorAll("a, button, .skill-cell, .project-panel, .exp-card, #menuToggle").forEach((el) => {
+      el.addEventListener("mouseenter", () => gsap.to(cursor, { scale: 2.8, duration: 0.3 }));
+      el.addEventListener("mouseleave", () => gsap.to(cursor, { scale: 1, duration: 0.3 }));
+    });
+
+    // --- HERO MOUSE PARALLAX ---
+    const heroSection = document.querySelector(".hero-section");
+    const heroHeading = document.querySelector(".hero-heading");
+    const orbs = document.querySelectorAll(".hero-orb");
+
+    heroSection.addEventListener("mousemove", (e) => {
+      const { clientX, clientY } = e;
+      const { width, height, left, top } = heroSection.getBoundingClientRect();
+      const x = (clientX - left) / width - 0.5;
+      const y = (clientY - top) / height - 0.5;
+
+      gsap.to(heroHeading, { rotateY: x * 15, rotateX: -y * 15, x: x * 20, y: y * 20, duration: 0.8, ease: "power2.out" });
+      orbs.forEach((orb) => {
+        const s = orb.getAttribute("data-speed") || 0.05;
+        gsap.to(orb, { x: x * (width * s), y: y * (height * s), duration: 1.2, ease: "power2.out" });
       });
+    });
 
-      // --- MOBILE MENU LOGIC ---
-      const menuToggle = document.getElementById("menuToggle");
-      const closeMenu = document.getElementById("closeMenu");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const mobileLinks = document.querySelectorAll(".mobile-link");
+    heroSection.addEventListener("mouseleave", () => {
+      gsap.to(heroHeading, { rotateX: 0, rotateY: 0, x: 0, y: 0, duration: 1.5, ease: "elastic.out(1, 0.3)" });
+      orbs.forEach((orb) => gsap.to(orb, { x: 0, y: 0, duration: 1.5, ease: "power2.out" }));
+    });
 
-      const menuTl = gsap.timeline({ paused: true });
-      menuTl
-        .to(mobileMenu, {
-          y: 0,
-          duration: 0.8,
-          ease: "expo.inOut",
-        })
-        .from(
-          ".mobile-link",
-          {
-            y: 30,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.6,
-            ease: "power3.out",
-          },
-          "-=0.4",
-        );
+    // --- HERO ENTRANCE ---
+    const heroTl = gsap.timeline({ defaults: { ease: "expo.out" } });
+    heroTl
+      .to("body", { opacity: 1, duration: 0.1 })
+      .fromTo(".hero-word span", { scale: 3, opacity: 0, y: 0 }, { scale: 1, opacity: 1, y: 0, duration: 1.2, stagger: 0.2, ease: "power4.out", delay: 0.3 })
+      .from(".hero-badge", { y: 20, opacity: 0, duration: 1 }, "-=0.6")
+      .from(".hero-sub .split-char", { opacity: 0, y: 10, stagger: 0.02, duration: 0.5 }, "-=0.8")
+      .from(".hero-btns", { y: 20, opacity: 0, duration: 1 }, "-=0.8")
+      .from("nav", { y: -20, opacity: 0, duration: 1 }, "-=1");
 
-      menuToggle.addEventListener("click", () => {
-        menuTl.play();
-        document.body.style.overflow = "hidden";
+    // --- SCROLL REVEALS ---
+    document.querySelectorAll(".section-heading").forEach((heading) => {
+      gsap.from(heading.querySelectorAll(".split-word"), {
+        scrollTrigger: { trigger: heading, start: "top 92%", toggleActions: "play none none none" },
+        scale: 1.3, y: 40, rotate: -5, opacity: 0, stagger: 0.05, ease: "back.out(3)", duration: 0.8,
       });
+    });
 
-      closeMenu.addEventListener("click", () => {
-        menuTl.reverse();
-        document.body.style.overflow = "";
+    document.querySelectorAll(".exp-card, .reveal:not(.section-heading)").forEach((el) => {
+      const delay = el.classList.contains("reveal-delay-1") ? 0.1 : el.classList.contains("reveal-delay-2") ? 0.2 : el.classList.contains("reveal-delay-3") ? 0.3 : 0;
+      gsap.to(el, {
+        scrollTrigger: { trigger: el, start: "top 92%", toggleActions: "play none none none" },
+        y: 0, opacity: 1, duration: 0.8, delay, ease: "power2.out",
       });
+    });
 
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          menuTl.reverse();
-          document.body.style.overflow = "";
-        });
+    // --- MAGNETIC BUTTONS ---
+    document.querySelectorAll(".nav-cta, .hero-btns a").forEach((btn) => {
+      btn.addEventListener("mousemove", (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.3, ease: "power2.out" });
       });
-
-      // --- SMOOTH ANCHOR SCROLLING ---
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = this.getAttribute("href");
-          if (target === "#") return;
-
-          gsap.to(window, {
-            duration: 1,
-            scrollTo: {
-              y: target,
-              offsetY: 20,
-            },
-            ease: "power3.inOut",
-          });
-        });
+      btn.addEventListener("mouseleave", () => {
+        gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: "elastic.out(1, 0.3)" });
       });
-    </script>
-  </body>
+    });
+
+    // --- PROGRESS BAR ---
+    gsap.to("#progressBar", {
+      width: "100%",
+      ease: "none",
+      scrollTrigger: { trigger: "body", start: "top top", end: "bottom bottom", scrub: 0.3 },
+    });
+
+    gsap.to("body", {
+      backgroundColor: "#12121e",
+      scrollTrigger: { trigger: "#skills", start: "top center", end: "bottom center", scrub: true },
+    });
+
+    // --- SMOOTH ANCHOR SCROLLING ---
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = this.getAttribute("href");
+        if (target === "#") return;
+        gsap.to(window, { duration: 1, scrollTo: { y: target, offsetY: 20 }, ease: "power3.inOut" });
+      });
+    });
+
+    // --- MOBILE MENU ---
+    const menuToggle = document.getElementById("menuToggle");
+    const closeMenu = document.getElementById("closeMenu");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-link");
+
+    const menuTl = gsap.timeline({ paused: true });
+    menuTl
+      .to(mobileMenu, { y: 0, duration: 0.8, ease: "expo.inOut" })
+      .from(".mobile-link", { y: 30, opacity: 0, stagger: 0.1, duration: 0.6, ease: "power3.out" }, "-=0.4");
+
+    menuToggle.addEventListener("click", () => { menuTl.play(); document.body.style.overflow = "hidden"; });
+    closeMenu.addEventListener("click", () => { menuTl.reverse(); document.body.style.overflow = ""; });
+    mobileLinks.forEach((link) => { link.addEventListener("click", () => { menuTl.reverse(); document.body.style.overflow = ""; }); });
+  </script>
+</body>
 </html>
