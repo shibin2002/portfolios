@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Shibin | Professional Full Stack Developer specializing in high-performance web experiences." />
+    content="Shibin | Full Stack Developer — React, React Native, Node, and .NET. ERP systems, freelance mobile apps, and high-performance web products." />
   <title>Shibin | Full Stack Developer</title>
   <meta name="theme-color" content="#0A0A0F" />
 
@@ -259,7 +259,7 @@
     }
     .skill-cell:hover { background: rgba(166, 204, 0, 0.05); border-color: rgba(166, 204, 0, 0.2); }
     .skill-cell .label { font-family: "Outfit", sans-serif; font-size: 11px; letter-spacing: 0.05em; color: var(--acid); opacity: 0.8; font-weight: 400; text-transform: uppercase; }
-    .skill-cell .name { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 20px; text-transform: uppercase; color: var(--cream); }
+    .skill-cell .name { font-family: "Outfit", sans-serif; font-weight: 700; font-size: 18px; text-transform: uppercase; color: var(--cream); text-align: center; line-height: 1.15; }
 
     .exp-card {
       background: var(--graphite);
@@ -300,6 +300,7 @@
     .project-panel:nth-child(4) { --panel-accent: #a6cc00; }
     .project-panel:nth-child(5) { --panel-accent: #4daaff; }
     .project-panel:nth-child(6) { --panel-accent: #ff5c4d; }
+    .project-panel:nth-child(7) { --panel-accent: #4daaff; }
 
     .panel-bg-img {
       position: absolute;
@@ -462,6 +463,18 @@
       display: block;
     }
 
+    .panel-mockup-store {
+      aspect-ratio: 1 / 1;
+      max-width: min(100%, 420px);
+      max-height: 52vh;
+      margin-inline: auto;
+      background: #0d0d12;
+    }
+    .panel-mockup-store img {
+      object-fit: contain;
+      padding: 20px;
+    }
+
     /* Mockup accent corner */
     .panel-mockup::before {
       content: '';
@@ -563,6 +576,15 @@
         border-radius: 12px;
         aspect-ratio: 16/9;
         box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      }
+
+      .panel-mockup-store {
+        aspect-ratio: 1 / 1;
+        max-width: 260px;
+        max-height: none;
+      }
+      .panel-mockup-store img {
+        padding: 14px;
       }
 
       .panel-title {
@@ -812,6 +834,7 @@
     <div class="progress-dot" data-index="3"></div>
     <div class="progress-dot" data-index="4"></div>
     <div class="progress-dot" data-index="5"></div>
+    <div class="progress-dot" data-index="6"></div>
   </div>
 
   <!-- NAV -->
@@ -861,14 +884,14 @@
       </h1>
 
       <p class="hero-sub font-body text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed" style="color:#9999aa">
-        Full Stack Developer with 2+ years building ERP systems, scalable APIs, and AI-integrated web applications.
+        Full Stack Developer with 2+ years shipping ERP modules, freelance React Native apps, scalable APIs, and AI-integrated web products.
       </p>
 
       <div class="hero-btns flex flex-col sm:flex-row justify-center gap-4">
         <a href="#projects" style="background:var(--acid);color:var(--ink)" class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide transition-all hover:opacity-85 hover:scale-95">
           View My Work
         </a>
-        <a href="https://white-merridie-96.tiiny.site/" target="_blank" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);" class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide text-cream transition-all hover:bg-white/10 flex items-center justify-center gap-2">
+        <a href="https://peach-beverly-73.tiiny.site" target="_blank" rel="noopener noreferrer" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);" class="font-body font-semibold px-8 py-4 rounded-full text-sm tracking-wide text-cream transition-all hover:bg-white/10 flex items-center justify-center gap-2">
           <i class="ri-eye-line"></i> View CV
         </a>
       </div>
@@ -883,14 +906,14 @@
       <div class="marquee-track font-mono text-sm" style="color:#e5e3e3;gap:0">
         <span style="padding:0 24px">AVAILABLE FOR HIRE</span><span style="padding:0 24px;color:var(--acid)">◆</span>
         <span style="padding:0 24px">FULL STACK ENGINEER</span><span style="padding:0 24px;color:var(--acid)">◆</span>
-        <span style="padding:0 24px">REACT · NODE · TYPESCRIPT</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">REACT · REACT NATIVE · .NET</span><span style="padding:0 24px;color:var(--acid)">◆</span>
         <span style="padding:0 24px">POSTGRESQL · MONGODB</span><span style="padding:0 24px;color:var(--acid)">◆</span>
         <span style="padding:0 24px">PERFORMANCE DRIVEN</span><span style="padding:0 24px;color:var(--acid)">◆</span>
         <span style="padding:0 24px">CLEAN · MAINTAINABLE CODE</span><span style="padding:0 24px;color:var(--acid)">◆</span>
         <span style="padding:0 24px">STARTUP READY</span><span style="padding:0 24px;color:var(--acid)">◆</span>
         <span style="padding:0 24px">AVAILABLE FOR HIRE</span><span style="padding:0 24px;color:var(--acid)">◆</span>
         <span style="padding:0 24px">FULL STACK ENGINEER</span><span style="padding:0 24px;color:var(--acid)">◆</span>
-        <span style="padding:0 24px">REACT · NODE · TYPESCRIPT</span><span style="padding:0 24px;color:var(--acid)">◆</span>
+        <span style="padding:0 24px">REACT · REACT NATIVE · .NET</span><span style="padding:0 24px;color:var(--acid)">◆</span>
         <span style="padding:0 24px">POSTGRESQL · MONGODB</span><span style="padding:0 24px;color:var(--acid)">◆</span>
         <span style="padding:0 24px">PERFORMANCE DRIVEN</span><span style="padding:0 24px;color:var(--acid)">◆</span>
         <span style="padding:0 24px">CLEAN · MAINTAINABLE CODE</span><span style="padding:0 24px;color:var(--acid)">◆</span>
@@ -909,14 +932,14 @@
         <div class="md:col-span-7 reveal reveal-delay-1">
           <h2 class="about-heading font-display font-extrabold uppercase mb-6 tracking-tighter leading-[.9]">Who am I?</h2>
           <p class="font-body text-lg leading-relaxed mb-6" style="color:#aaa">
-            I'm <span style="color:var(--cream)">Shibin</span> — a developer who treats interfaces like <span style="color:var(--acid)">experiences</span>, not just screens. I design with intent and build with obsession.
+            I'm <span style="color:var(--cream)">Shibin</span> — a B.Tech CSE graduate and full stack developer who treats interfaces like <span style="color:var(--acid)">experiences</span>, not just screens. I design with intent and ship production work across web, <span style="color:var(--cream)">React Native</span> mobile, and backend systems.
           </p>
           <div style="border-left:2px solid rgba(166,204,0,0.25);padding-left:20px;margin-bottom:32px;">
             <p class="font-mono text-sm leading-relaxed" style="color:#c0bfbf">
               <span style="color:var(--acid)">&gt;_</span> Designing interfaces people actually enjoy using.<br/>
-              <span style="color:var(--acid)">&gt;_</span> Building with React, Tailwind, and whatever the job demands.<br/>
-              <span style="color:var(--acid)">&gt;_</span> 2+ years of turning ideas into shipped products.<br/>
-              <span style="color:var(--acid)">&gt;_</span> Currently: deep in AI integrations and loving it.
+              <span style="color:var(--acid)">&gt;_</span> Building with React, React Native, Node, .NET, and whatever the job demands.<br/>
+              <span style="color:var(--acid)">&gt;_</span> 2+ years turning ideas into shipped products — ERP modules to freelance mobile apps.<br/>
+              <span style="color:var(--acid)">&gt;_</span> Currently: Associate Developer at Larklabs, plus freelance React Native work.
             </p>
           </div>
           <div class="flex flex-wrap gap-3">
@@ -936,25 +959,52 @@
             <h2 class="section-heading font-display font-extrabold uppercase tracking-tighter">
               TECH_<span style="color:var(--acid)">STACK</span>
             </h2>
+            <p class="font-mono text-sm mt-4 max-w-2xl mx-auto md:mx-0 leading-relaxed" style="color:#8a8a99">
+              Production stack across web, mobile, cloud, and AI — React Native, .NET, Node, and typed APIs used to ship ERP modules, freelance apps, and live products.
+            </p>
           </div>
         </div>
         <div class="skill-grid grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 reveal reveal-delay-1" style="border:1px solid rgba(255,255,255,0.05);border-radius:16px;overflow:hidden;">
           <div class="skill-cell"><span class="label">Core</span><span class="name">HTML5</span></div>
           <div class="skill-cell"><span class="label">Core</span><span class="name">CSS</span></div>
           <div class="skill-cell"><span class="label">Lang</span><span class="name">JS</span></div>
+          <div class="skill-cell"><span class="label">Lang</span><span class="name">TypeScript</span></div>
           <div class="skill-cell"><span class="label">Lang</span><span class="name">Python</span></div>
           <div class="skill-cell"><span class="label">Lang</span><span class="name">C++</span></div>
+          <div class="skill-cell"><span class="label">Lang</span><span class="name">C#</span></div>
           <div class="skill-cell"><span class="label">Lib</span><span class="name">React</span></div>
+          <div class="skill-cell"><span class="label">Mobile</span><span class="name">React Native</span></div>
+          <div class="skill-cell"><span class="label">Mobile</span><span class="name">Expo</span></div>
+          <div class="skill-cell"><span class="label">BE</span><span class="name">.NET</span></div>
+          <div class="skill-cell"><span class="label">BE</span><span class="name">Node.js</span></div>
           <div class="skill-cell"><span class="label">FW</span><span class="name">Next.js</span></div>
           <div class="skill-cell"><span class="label">FW</span><span class="name">Express</span></div>
           <div class="skill-cell"><span class="label">FW</span><span class="name">Django</span></div>
-          <div class="skill-cell"><span class="label">BE</span><span class="name">Node.js</span></div>
           <div class="skill-cell"><span class="label">Style</span><span class="name">Tailwind</span></div>
+          <div class="skill-cell"><span class="label">UI</span><span class="name">MUI</span></div>
           <div class="skill-cell"><span class="label">Data</span><span class="name">MySQL</span></div>
+          <div class="skill-cell"><span class="label">Data</span><span class="name">Postgres</span></div>
           <div class="skill-cell"><span class="label">Data</span><span class="name">MongoDB</span></div>
-          <div class="skill-cell"><span class="label">VCS</span><span class="name">Git</span></div>
-          <div class="skill-cell"><span class="label">Tools</span><span class="name">Postman</span></div>
+          <div class="skill-cell"><span class="label">ORM</span><span class="name">Prisma</span></div>
+          <div class="skill-cell"><span class="label">Live</span><span class="name">Socket.IO</span></div>
+          <div class="skill-cell"><span class="label">Auth</span><span class="name">JWT</span></div>
+          <div class="skill-cell"><span class="label">API</span><span class="name">REST</span></div>
+          <div class="skill-cell"><span class="label">Anim</span><span class="name">GSAP</span></div>
           <div class="skill-cell"><span class="label">3D</span><span class="name">Three.js</span></div>
+          <div class="skill-cell"><span class="label">Build</span><span class="name">Vite</span></div>
+          <div class="skill-cell"><span class="label">VCS</span><span class="name">Git</span></div>
+          <div class="skill-cell"><span class="label">VCS</span><span class="name">GitHub</span></div>
+          <div class="skill-cell"><span class="label">Tools</span><span class="name">Postman</span></div>
+          <div class="skill-cell"><span class="label">Tools</span><span class="name">NPM</span></div>
+          <div class="skill-cell"><span class="label">CMS</span><span class="name">WordPress</span></div>
+          <div class="skill-cell"><span class="label">Cloud</span><span class="name">AWS</span></div>
+          <div class="skill-cell"><span class="label">Cloud</span><span class="name">Azure</span></div>
+          <div class="skill-cell"><span class="label">Mobile</span><span class="name">Firebase</span></div>
+          <div class="skill-cell"><span class="label">Ops</span><span class="name">Docker</span></div>
+          <div class="skill-cell"><span class="label">Ops</span><span class="name">CI/CD</span></div>
+          <div class="skill-cell"><span class="label">Cache</span><span class="name">Redis</span></div>
+          <div class="skill-cell"><span class="label">API</span><span class="name">GraphQL</span></div>
+          <div class="skill-cell"><span class="label">AI</span><span class="name">OpenAI</span></div>
         </div>
       </div>
     </section>
@@ -976,9 +1026,9 @@
             <span class="pill whitespace-nowrap" style="color:#c0bfbf">May 2025 – Present</span>
           </div>
           <ul class="space-y-2" style="color:#c0bfbf">
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--acid);margin-top:2px">▸</span>Working on an ERP system, focusing on frontend development, UI consistency, validation, and workflow logic</li>
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--acid);margin-top:2px">▸</span>Collaborating with backend and product teams to deliver scalable business modules</li>
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--acid);margin-top:2px">▸</span>Improving system usability, performance, and maintainability</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--acid);margin-top:2px">▸</span>Building ERP web modules and React Native mobile flows — UI consistency, form validation, and workflow logic</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--acid);margin-top:2px">▸</span>Partnering with backend and product teams to ship scalable business features</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--acid);margin-top:2px">▸</span>Improving usability, performance, and maintainability across shared components</li>
           </ul>
         </div>
         <div class="exp-card reveal reveal-delay-1" style="border-left:3px solid #ff5c4d">
@@ -990,9 +1040,9 @@
             <span class="pill whitespace-nowrap" style="color:#c0bfbf">Apr 2025 – May 2025</span>
           </div>
           <ul class="space-y-2" style="color:#c0bfbf">
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--coral);margin-top:2px">▸</span>Worked on a bidding application</li>
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--coral);margin-top:2px">▸</span>Implemented UI components and assisted in business logic integration</li>
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--coral);margin-top:2px">▸</span>Participated in requirement analysis and testing</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--coral);margin-top:2px">▸</span>Built UI for a bidding application, including listing and bid-flow screens</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--coral);margin-top:2px">▸</span>Implemented reusable components and helped wire business logic to the frontend</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--coral);margin-top:2px">▸</span>Joined requirement analysis and testing to keep delivery aligned with the product</li>
           </ul>
         </div>
         <div class="exp-card reveal reveal-delay-2" style="border-left:3px solid #00e5a0">
@@ -1004,9 +1054,9 @@
             <span class="pill whitespace-nowrap" style="color:#c0bfbf">Feb 2025 – Apr 2025</span>
           </div>
           <ul class="space-y-2" style="color:#c0bfbf">
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--mint);margin-top:2px">▸</span>Managing multiple client projects from initiation to completion</li>
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--mint);margin-top:2px">▸</span>Coordinating with development teams and ensuring project milestones</li>
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--mint);margin-top:2px">▸</span>Maintaining client relationships and handling project communications</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--mint);margin-top:2px">▸</span>Managed multiple client projects from kickoff through delivery</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--mint);margin-top:2px">▸</span>Coordinated with development teams and kept milestones on track</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--mint);margin-top:2px">▸</span>Owned client communication and day-to-day project updates</li>
           </ul>
         </div>
         <div class="exp-card reveal reveal-delay-1" style="border-left:3px solid #4daaff">
@@ -1018,9 +1068,9 @@
             <span class="pill whitespace-nowrap" style="color:#c0bfbf">Jan 2025 – Feb 2025</span>
           </div>
           <ul class="space-y-2" style="color:#c0bfbf">
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--sky);margin-top:2px">▸</span>Created an Event Management Website</li>
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--sky);margin-top:2px">▸</span>Focused on responsive UI, forms, and user interaction</li>
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--sky);margin-top:2px">▸</span>Gained real-world exposure to project structure and deployment flow</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--sky);margin-top:2px">▸</span>Built Karyasthan, an event management website for weddings, corporate events, and bookings</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--sky);margin-top:2px">▸</span>Designed responsive UI, enquiry forms, and a service catalog</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--sky);margin-top:2px">▸</span>Worked through real project structure, from layout to deployment</li>
           </ul>
         </div>
         <div class="exp-card reveal reveal-delay-2" style="border-left:3px solid #9b6dff">
@@ -1032,9 +1082,9 @@
             <span class="pill whitespace-nowrap" style="color:#c0bfbf">Aug 2024 – Jan 2025</span>
           </div>
           <ul class="space-y-2" style="color:#c0bfbf">
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--violet);margin-top:2px">▸</span>Completed a hands-on Web Development internship with real-world project training</li>
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--violet);margin-top:2px">▸</span>Built responsive applications including a Food Ordering, Doctor Booking system and Netflix clone</li>
-            <li class="flex gap-3 text-sm font-body"><span style="color:var(--violet);margin-top:2px">▸</span>Strengthened frontend fundamentals and practical development workflows</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--violet);margin-top:2px">▸</span>Completed a hands-on MERN internship with production-style project training</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--violet);margin-top:2px">▸</span>Built a food ordering app, a doctor booking system, and a Netflix-style clone</li>
+            <li class="flex gap-3 text-sm font-body"><span style="color:var(--violet);margin-top:2px">▸</span>Strengthened React, Node, REST APIs, and practical Git workflows</li>
           </ul>
         </div>
       </div>
@@ -1055,16 +1105,49 @@
       <!-- Panels Container -->
       <div id="projects-container">
 
-        <!-- PROJECT 1: GameLand -->
+        <!-- PROJECT 1: My Store -->
         <div class="project-panel" data-panel="0">
+          <img src="Assets/images/store.png" alt="My Store" class="panel-bg-img" />
+          <div class="panel-overlay"></div>
+          <div class="panel-glow"></div>
+          <div class="panel-content">
+            <div class="panel-text-col">
+              <div class="panel-number">01 / 07</div>
+              <h3 class="panel-title">My<br/>Store</h3>
+              <p class="panel-desc">Freelance React Native app for service-center operations. Admin, Manager, and Staff get role-based workflows for customers, devices, jobs, payments, and enquiries — backed by JWT-secured REST APIs, Prisma, PostgreSQL, and live Socket.IO updates.</p>
+              <div class="panel-tags">
+                <span class="panel-tag">React Native</span>
+                <span class="panel-tag">Expo</span>
+                <span class="panel-tag">Node.js</span>
+                <span class="panel-tag">TypeScript</span>
+                <span class="panel-tag">Express</span>
+                <span class="panel-tag">PostgreSQL</span>
+                <span class="panel-tag">Prisma</span>
+                <span class="panel-tag">Socket.IO</span>
+                <span class="panel-tag">JWT</span>
+              </div>
+              <a href="https://expo.dev/accounts/shibin02/projects/servicecenter/builds/866c915a-ae3b-4836-a6ad-5437ebf5a577" target="_blank" rel="noopener noreferrer" class="panel-cta">
+                View App <i class="ri-arrow-right-up-line"></i>
+              </a>
+            </div>
+            <div class="panel-img-col">
+              <div class="panel-mockup panel-mockup-store">
+                <img src="Assets/images/store.png" alt="My Store Preview" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: GameLand -->
+        <div class="project-panel" data-panel="1">
           <img src="Assets/images/phisgaurd.webp" alt="GameLand" class="panel-bg-img" />
           <div class="panel-overlay"></div>
           <div class="panel-glow"></div>
           <div class="panel-content">
             <div class="panel-text-col">
-              <div class="panel-number">01 / 06</div>
+              <div class="panel-number">02 / 07</div>
               <h3 class="panel-title">Game<br/>Land</h3>
-              <p class="panel-desc">A visually stunning gaming portfolio website featuring 3D animations, interactive preloader, and dynamic music toggle. Built for immersive user experiences.</p>
+              <p class="panel-desc">Cinematic gaming landing page with GSAP scroll scenes, an interactive preloader, and a music toggle. Built as an immersive brand experience around trailers, story worlds, and the play economy.</p>
               <div class="panel-tags">
                 <span class="panel-tag">GSAP</span>
                 <span class="panel-tag">Vanilla JS</span>
@@ -1082,16 +1165,16 @@
           </div>
         </div>
 
-        <!-- PROJECT 2: Fizzi -->
-        <div class="project-panel" data-panel="1">
+        <!-- PROJECT 3: Fizzi -->
+        <div class="project-panel" data-panel="2">
           <img src="Assets/images/creative-portfolio.png" alt="Fizzi" class="panel-bg-img" />
           <div class="panel-overlay"></div>
           <div class="panel-glow"></div>
           <div class="panel-content">
             <div class="panel-text-col">
-              <div class="panel-number">02 / 06</div>
+              <div class="panel-number">03 / 07</div>
               <h3 class="panel-title">Fizzi</h3>
-              <p class="panel-desc">Immersive 3D interactive website for FIZZI soda brand. Features WebGL experiences, floating 3D soda cans, fluid animations, and headless CMS integration.</p>
+              <p class="panel-desc">3D brand site for FIZZI — a gut-friendly soda with five flavors. WebGL cans, fluid motion, and a Prismic-powered CMS on Next.js so product stories stay easy to update.</p>
               <div class="panel-tags">
                 <span class="panel-tag">Next.js</span>
                 <span class="panel-tag">React Three Fiber</span>
@@ -1110,16 +1193,16 @@
           </div>
         </div>
 
-        <!-- PROJECT 3: Verde -->
-        <div class="project-panel" data-panel="2">
+        <!-- PROJECT 4: Verde -->
+        <div class="project-panel" data-panel="3">
           <img src="Assets/images/verde.png" alt="Verde" class="panel-bg-img" />
           <div class="panel-overlay"></div>
           <div class="panel-glow"></div>
           <div class="panel-content">
             <div class="panel-text-col">
-              <div class="panel-number">03 / 06</div>
+              <div class="panel-number">04 / 07</div>
               <h3 class="panel-title">Verde</h3>
-              <p class="panel-desc">Premium eco-luxury e-commerce website showcasing outdoor living essentials, curated planters, greenery, and refined outdoor furniture.</p>
+              <p class="panel-desc">Eco-luxury storefront for outdoor living — planters, greenery, and refined furniture. A React and TypeScript catalog with clean Tailwind layouts built for browsing and conversion.</p>
               <div class="panel-tags">
                 <span class="panel-tag">React</span>
                 <span class="panel-tag">TypeScript</span>
@@ -1137,16 +1220,16 @@
           </div>
         </div>
 
-        <!-- PROJECT 4: Coffee Address -->
-        <div class="project-panel" data-panel="3">
+        <!-- PROJECT 5: Coffee Address -->
+        <div class="project-panel" data-panel="4">
           <img src="Assets/images/coffee.jpg" alt="Coffee Address" class="panel-bg-img" />
           <div class="panel-overlay"></div>
           <div class="panel-glow"></div>
           <div class="panel-content">
             <div class="panel-text-col">
-              <div class="panel-number">04 / 06</div>
+              <div class="panel-number">05 / 07</div>
               <h3 class="panel-title">Coffee<br/>Address</h3>
-              <p class="panel-desc">Modern coffeehouse brand website showcasing premium coffee experiences, brand storytelling, signature menu, branch locations, and expansion opportunities.</p>
+              <p class="panel-desc">Brand site for a modern coffeehouse — signature menu, storytelling, branch locations, and expansion. Built with React, TypeScript, Vite, and Material UI for a polished, fast storefront.</p>
               <div class="panel-tags">
                 <span class="panel-tag">React</span>
                 <span class="panel-tag">TypeScript</span>
@@ -1165,16 +1248,16 @@
           </div>
         </div>
 
-        <!-- PROJECT 5: Gloria -->
-        <div class="project-panel" data-panel="4">
+        <!-- PROJECT 6: Gloria -->
+        <div class="project-panel" data-panel="5">
           <img src="Assets/images/stoceasy.png" alt="Gloria" class="panel-bg-img" />
           <div class="panel-overlay"></div>
           <div class="panel-glow"></div>
           <div class="panel-content">
             <div class="panel-text-col">
-              <div class="panel-number">05 / 06</div>
+              <div class="panel-number">06 / 07</div>
               <h3 class="panel-title">Gloria</h3>
-              <p class="panel-desc">A sophisticated fashion e-commerce website featuring women's, men's, and kids' clothing collections with accessories, brand showcases, and seasonal sales.</p>
+              <p class="panel-desc">Fashion e-commerce for women’s, men’s, and kids’ collections, plus accessories and seasonal drops. Featured products, add-to-cart, category lookbooks, and a journal-style editorial section.</p>
               <div class="panel-tags">
                 <span class="panel-tag">Vanilla JS</span>
                 <span class="panel-tag">HTML5 & CSS3</span>
@@ -1191,17 +1274,18 @@
           </div>
         </div>
 
-        <!-- PROJECT 6: Karyasthan -->
-        <div class="project-panel" data-panel="5">
+        <!-- PROJECT 7: Karyasthan -->
+        <div class="project-panel" data-panel="6">
           <img src="Assets/images/habit-tracker.png" alt="Karyasthan" class="panel-bg-img" />
           <div class="panel-overlay"></div>
           <div class="panel-glow"></div>
           <div class="panel-content">
             <div class="panel-text-col">
-              <div class="panel-number">06 / 06</div>
+              <div class="panel-number">07 / 07</div>
               <h3 class="panel-title">Karya<br/>sthan</h3>
-              <p class="panel-desc">Comprehensive event management platform with wedding planning, corporate events, admin dashboard, gallery management, and client booking capabilities.</p>
+              <p class="panel-desc">Event management platform for weddings, corporate events, birthdays, and more. Service catalog, enquiry forms, gallery uploads, and an admin-friendly flow on Node, Express, Multer, and Nodemailer.</p>
               <div class="panel-tags">
+                <span class="panel-tag">React</span>
                 <span class="panel-tag">Node.js</span>
                 <span class="panel-tag">Express.js</span>
                 <span class="panel-tag">Multer</span>
@@ -1319,7 +1403,7 @@
             <span class="w-2 h-2 rounded-full bg-mint animate-pulse"></span>
             <span class="font-mono text-xs uppercase tracking-widest" style="color:#c0bfbf">Available for Freelance &amp; Full-time</span>
           </div>
-          <p class="font-body text-base leading-relaxed max-w-sm" style="color:#c0bfbf">I build fast, accessible, and memorable web experiences. Got a project or role in mind? Let's make it happen.</p>
+          <p class="font-body text-base leading-relaxed max-w-sm" style="color:#c0bfbf">I build production web apps, React Native mobile products, and .NET / Node backends. Open for freelance and full-time — if you have a product or role in mind, let's talk.</p>
         </div>
         <div class="space-y-4 reveal reveal-delay-1">
           <a href="mailto:shibinshoukath0@gmail.com" class="contact-link">
@@ -1366,7 +1450,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
         <div class="col-span-1 md:col-span-2">
           <h2 class="font-display font-bold text-3xl mb-4" style="letter-spacing:-0.02em">Shibin<span style="color:var(--acid)">.</span></h2>
-          <p class="font-body text-sm leading-relaxed max-w-sm" style="color:#c0bfbf">Designing scalable digital experiences with the raw discipline of the past and the innovation of the future. Clean architecture, thoughtful design, reliable code.</p>
+          <p class="font-body text-sm leading-relaxed max-w-sm" style="color:#c0bfbf">Full stack developer shipping web and React Native products — ERP modules, freelance mobile apps, and clean Node / .NET backends. Remote from India.</p>
         </div>
         <div>
           <h3 class="font-mono text-xs uppercase tracking-widest mb-5" style="color:var(--acid)">Sitemap</h3>
